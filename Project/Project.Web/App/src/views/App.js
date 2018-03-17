@@ -1,4 +1,5 @@
 import React from "react";
+import Pokemon from '../components/Pokemon';
 
 class App extends React.Component {
   constructor(props) {
@@ -53,16 +54,15 @@ class App extends React.Component {
                 </div>
                 <div className={this.state.panelClass}>
                   <div className="panel-heading">
-                  </div>
-                  <div className="panel-body">
+                    <Pokemon/>
                   </div>
                 </div>
               </div>
             </div>
-            <div className="col-md-8">
-              <div className="panel-group">
+            {/* <div className="col-md-8"> */}
+              {/* <div className="panel-group"> */}
                 <div className="row">
-                  <div className="col-md-6">
+                  <div className="col-md-4">
                     <div className={this.state.panelClass}>
                       <div className="panel-heading">
                         Panel 1
@@ -70,7 +70,7 @@ class App extends React.Component {
                       <div className="panel-body">Panel Content</div>
                     </div>
                   </div>
-                  <div className="col-md-6">
+                  <div className="col-md-4">
                     <div className={this.state.panelClass}>
                       <div className="panel-heading">
                         Panel 2
@@ -105,8 +105,8 @@ class App extends React.Component {
                     <div className="panel-body">Panel Content</div>
                   </div>
                 </div>
-              </div>
-            </div>
+              {/* </div> */}
+            {/* </div> */}
           </div>
         </div>
       </div>

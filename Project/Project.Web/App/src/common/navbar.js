@@ -1,6 +1,6 @@
 import React from 'react';
 import {Link} from 'react-router-dom';
-// import Footer from '../src/Components/footer';
+import Footer from '../common/footer';
 
 class NavBar extends React.Component{
     // constructor(props){
@@ -29,7 +29,7 @@ class NavBar extends React.Component{
                         </div>
                         <ul className="nav navbar-nav">
                             <li><Link to="/register">Register</Link></li>
-                            {/* <li><Link to="/login">Login</Link></li> */}
+                            <li><Link to="/login">Login</Link></li>
                         </ul>
                         <form className="navbar-form navbar-left" action="/action_page.php">
                             <div className="input-group">
@@ -67,7 +67,7 @@ class NavBar extends React.Component{
                 <div>
                     {this.props.children}
                 </div> 
-                {/* <Footer/> */}
+                <Footer/>
             </div>
         );
     }
