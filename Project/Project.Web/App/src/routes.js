@@ -4,22 +4,22 @@ import App from '../src/views/App';
 import Register from '../src/views/Register';
 // import Login from '../src/views/Login';
 // import TermsAndConditions from '../src/Views/TermsAndConditions';
-// import NavBar from './NavBar';
+import NavBar from '../src/common/navbar';
 // import Donations from '../src/Views/Donations';
 
 const Routes = () => (
     <Router>
         <div id="topDiv">
-            {/* <Switch> */}
+            <Switch>
                 {/* <Route path="/login" component={Login}/> */}
                 <Route path="/register" component={Register} />
                 {/* <Route path="/termsandconditions" component={TermsAndConditions} /> */}
-                {/* <NavBar> */}
+                <NavBar>
                     <Route exact path="/" component={App} />
                     <Route path="/app" component={App} />
                     {/* <Route path="/donations" component={Donations}/> */}
-                {/* </NavBar> */}
-            {/* </Switch> */}
+                </NavBar>
+            </Switch>
         </div>
     </Router>
   );
