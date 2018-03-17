@@ -11,15 +11,8 @@ html {
 }
 
 #topDiv{
-  height:750px;
-}
-
-.vl{ 
-  border-left: 60px solid#222;
-  height: 750px;
-  display: inline-block;
-  margin-right: 50px;
-  margin-left: 50px;
+  /* height:750px; */
+  height: 100%;
 }
 
 .footer {
@@ -101,4 +94,13 @@ input:checked + .slider:before {
 
 .slider.round:before {
   border-radius: 50%;
+}
+
+.noPadding{
+  padding-right: 0px !important;
+  padding-left: 0px !important;
+}
+
+.smallMargin{
+  margin-top: 5px !important;
 }
