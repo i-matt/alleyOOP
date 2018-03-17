@@ -1,13 +1,13 @@
 import React from 'react';
 import {Link} from 'react-router-dom';
-// import Footer from '../Components/footer';
-// import Header from '../Components/header';
+import Header from '../common/header';
+import Footer from '../common/footer';
 
 class Login extends React.Component{
     render() {
         return (
           <div className="App">
-            {/* <Header/> */}
+            <Header/>
             <div className="col-md-3"/>
             <form className="form-signin container col-md-6">
               <h2 className="form-signin-heading">Please log in</h2>
@@ -27,7 +27,7 @@ class Login extends React.Component{
                | 
               <Link to="/register"> Register</Link>
             </form>
-            {/* <Footer/> */}
+            <Footer/>
           </div>
         );
       }
