@@ -61,7 +61,7 @@
 /******/ 	
 /******/ 	
 /******/ 	var hotApplyOnUpdate = true;
-/******/ 	var hotCurrentHash = "0404f1e0633123cabc14"; // eslint-disable-line no-unused-vars
+/******/ 	var hotCurrentHash = "8ab59291ef828dc28808"; // eslint-disable-line no-unused-vars
 /******/ 	var hotRequestTimeout = 10000;
 /******/ 	var hotCurrentModuleData = {};
 /******/ 	var hotCurrentChildModule; // eslint-disable-line no-unused-vars
@@ -28338,7 +28338,7 @@ var Pokemon = function (_React$Component) {
 
         _this.componentDidMount = function () {
             var id = _this.getRandomInt(802);
-            __WEBPACK_IMPORTED_MODULE_1_axios___default.a.get('http://pokeapi.co/api/v2/pokemon/' + id).then(function (resp) {
+            __WEBPACK_IMPORTED_MODULE_1_axios___default.a.get('https://pokeapi.co/api/v2/pokemon/' + id).then(function (resp) {
                 var pokemon = resp.data;
                 console.log(pokemon);
                 var name = pokemon.name.toUpperCase();
