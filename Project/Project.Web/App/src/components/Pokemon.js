@@ -12,7 +12,7 @@ class Pokemon extends React.Component{
 
     componentDidMount =() =>{
         var id = this.getRandomInt(802);
-        axios.get('http://pokeapi.co/api/v2/pokemon/'+id)
+        axios.get('https://pokeapi.co/api/v2/pokemon/'+id)
             .then(resp =>{
                 let pokemon = resp.data;
                 console.log(pokemon);
