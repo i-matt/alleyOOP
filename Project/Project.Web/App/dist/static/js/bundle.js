@@ -61,7 +61,7 @@
 /******/ 	
 /******/ 	
 /******/ 	var hotApplyOnUpdate = true;
-/******/ 	var hotCurrentHash = "8ab59291ef828dc28808"; // eslint-disable-line no-unused-vars
+/******/ 	var hotCurrentHash = "d0d9386c20733c064a72"; // eslint-disable-line no-unused-vars
 /******/ 	var hotRequestTimeout = 10000;
 /******/ 	var hotCurrentModuleData = {};
 /******/ 	var hotCurrentChildModule; // eslint-disable-line no-unused-vars
@@ -2725,7 +2725,7 @@ exports = module.exports = __webpack_require__(/*! ../../node_modules/css-loader
 
 
 // module
-exports.push([module.i, "body {\r\n  margin: 0;\r\n  padding: 0;\r\n  font-family: sans-serif;\r\n  height: 100%;\r\n  min-height: 100%;\r\n}\r\n\r\nhtml {\r\n  height: 100%;\r\n}\r\n\r\n#topDiv{\r\n  /* height:750px; */\r\n  height: 100%;\r\n}\r\n\r\n.footer {\r\n  position: fixed;\r\n  left: 0;\r\n  bottom: 0;\r\n  width: 100%;\r\n  background-color: #222;\r\n  color: white;\r\n  text-align: center;\r\n}\r\n\r\n.badge {\r\n  background-color: #61DAFB;\r\n}\r\n\r\n.profileIcon{\r\n  width: 30px;\r\n  height: 30px;\r\n  margin-top: 10px;\r\n}\r\n\r\n.nightMode{\r\n  background-color: #1d1d1d;\r\n  color:  #61DAFB;\r\n}\r\n\r\n.switch {\r\n  position: relative;\r\n  display: inline-block;\r\n  width: 35px;\r\n  height: 18px;\r\n}\r\n\r\n.switch input {display:none;}\r\n\r\n.slider {\r\n  position: absolute;\r\n  cursor: pointer;\r\n  top: 0;\r\n  left: 0;\r\n  right: 0;\r\n  bottom: 0;\r\n  background-color: #ccc;\r\n  -webkit-transition: .4s;\r\n  -o-transition: .4s;\r\n  transition: .4s;\r\n}\r\n\r\n.slider:before {\r\n  position: absolute;\r\n  content: \"\";\r\n  height: 10px;\r\n  width: 10px;\r\n  left: 4px;\r\n  bottom: 4px;\r\n  background-color: white;\r\n  -webkit-transition: .4s;\r\n  -o-transition: .4s;\r\n  transition: .4s;\r\n}\r\n\r\ninput:checked + .slider {\r\n  background-color: #2196F3;\r\n}\r\n\r\ninput:focus + .slider {\r\n  -webkit-box-shadow: 0 0 1px #2196F3;\r\n          box-shadow: 0 0 1px #2196F3;\r\n}\r\n\r\ninput:checked + .slider:before {\r\n  -webkit-transform: translateX(16px);\r\n  -ms-transform: translateX(16px);\r\n  transform: translateX(16px);\r\n}\r\n\r\n/* Rounded sliders */\r\n.slider.round {\r\n  border-radius: 34px;\r\n}\r\n\r\n.slider.round:before {\r\n  border-radius: 50%;\r\n}\r\n\r\n.noPadding{\r\n  padding-right: 0px !important;\r\n  padding-left: 0px !important;\r\n}\r\n\r\n.smallMargin{\r\n  margin-top: 5px !important;\r\n}", ""]);
+exports.push([module.i, "body {\r\n  margin: 0;\r\n  padding: 0;\r\n  font-family: sans-serif;\r\n  height: 100%;\r\n  min-height: 100%;\r\n}\r\n\r\nhtml {\r\n  height: 100%;\r\n}\r\n\r\n#topDiv{\r\n  /* height:750px; */\r\n  height: 100%;\r\n}\r\n\r\n.footer {\r\n  position: fixed;\r\n  left: 0;\r\n  bottom: 0;\r\n  width: 100%;\r\n  background-color: #222;\r\n  color: white;\r\n  text-align: center;\r\n}\r\n\r\n.badge {\r\n  background-color: #61DAFB;\r\n}\r\n\r\n.profileIcon{\r\n  width: 30px;\r\n  height: 30px;\r\n  margin-top: 10px;\r\n}\r\n\r\n.nightMode{\r\n  background-color: #1d1d1d;\r\n  color:  #61DAFB;\r\n}\r\n\r\n.switch {\r\n  position: relative;\r\n  display: inline-block;\r\n  width: 35px;\r\n  height: 18px;\r\n}\r\n\r\n.switch input {display:none;}\r\n\r\n.slider {\r\n  position: absolute;\r\n  cursor: pointer;\r\n  top: 0;\r\n  left: 0;\r\n  right: 0;\r\n  bottom: 0;\r\n  background-color: #ccc;\r\n  -webkit-transition: .4s;\r\n  -o-transition: .4s;\r\n  transition: .4s;\r\n}\r\n\r\n.slider:before {\r\n  position: absolute;\r\n  content: \"\";\r\n  height: 10px;\r\n  width: 10px;\r\n  left: 4px;\r\n  bottom: 4px;\r\n  background-color: white;\r\n  -webkit-transition: .4s;\r\n  -o-transition: .4s;\r\n  transition: .4s;\r\n}\r\n\r\ninput:checked + .slider {\r\n  background-color: #2196F3;\r\n}\r\n\r\ninput:focus + .slider {\r\n  -webkit-box-shadow: 0 0 1px #2196F3;\r\n          box-shadow: 0 0 1px #2196F3;\r\n}\r\n\r\ninput:checked + .slider:before {\r\n  -webkit-transform: translateX(16px);\r\n  -ms-transform: translateX(16px);\r\n  transform: translateX(16px);\r\n}\r\n\r\n/* Rounded sliders */\r\n.slider.round {\r\n  border-radius: 34px;\r\n}\r\n\r\n.slider.round:before {\r\n  border-radius: 50%;\r\n}\r\n\r\n.noPadding{\r\n  padding-right: 0px !important;\r\n  padding-left: 0px !important;\r\n}\r\n\r\n.smallMargin{\r\n  margin-top: 5px !important;\r\n}\r\n\r\ntextarea{\r\n  resize: none;\r\n}", ""]);
 
 // exports
 
@@ -28604,6 +28604,295 @@ var Pokemon = function (_React$Component) {
 
 /***/ }),
 
+/***/ "./src/components/Profile.js":
+/*!***********************************!*\
+  !*** ./src/components/Profile.js ***!
+  \***********************************/
+/*! exports provided: default */
+/*! exports used: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_react__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_react___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_react__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_axios__ = __webpack_require__(/*! axios */ "./node_modules/axios/index.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_axios___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1_axios__);
+var _jsxFileName = 'C:\\SF.Code\\Github\\alleyOOP\\Project\\Project.Web\\App\\src\\components\\Profile.js';
+
+var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+
+
+
+var Profile = function (_React$Component) {
+    _inherits(Profile, _React$Component);
+
+    function Profile(props) {
+        _classCallCheck(this, Profile);
+
+        var _this = _possibleConstructorReturn(this, (Profile.__proto__ || Object.getPrototypeOf(Profile)).call(this, props));
+
+        _this.componentDidMount = function () {
+            __WEBPACK_IMPORTED_MODULE_1_axios___default.a.get("/api/person/4").then(function (resp) {
+                debugger;
+                // let object = resp.data.Items;
+                // let length = resp.data.Items.length;
+                // let description = object[length-1].Description;
+                var description = resp.data.Item.Description;
+                var name = resp.data.Item.Username;
+                _this.setState({
+                    text: description,
+                    name: name
+                });
+            });
+        };
+
+        _this.handleChange = function (e) {
+            var value = e.target.value;
+            var name = e.target.name;
+            _this.setState(_defineProperty({}, name, value));
+        };
+
+        _this.handleClick = function (e) {
+            var data = {
+                accountId: "4",
+                username: "Deadpool",
+                photoId: "0",
+                description: _this.state.text
+            };
+
+            __WEBPACK_IMPORTED_MODULE_1_axios___default.a.put("/api/person/4", data).then(function (resp) {
+                console.log(resp);
+            });
+        };
+
+        _this.state = {
+            text: "",
+            name: ""
+        };
+        return _this;
+    }
+
+    _createClass(Profile, [{
+        key: 'render',
+        value: function render() {
+            return __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                'div',
+                { className: 'panel-heading', __source: {
+                        fileName: _jsxFileName,
+                        lineNumber: 55
+                    },
+                    __self: this
+                },
+                __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                    'p',
+                    {
+                        __source: {
+                            fileName: _jsxFileName,
+                            lineNumber: 56
+                        },
+                        __self: this
+                    },
+                    ' ',
+                    __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                        'strong',
+                        {
+                            __source: {
+                                fileName: _jsxFileName,
+                                lineNumber: 56
+                            },
+                            __self: this
+                        },
+                        this.state.name
+                    )
+                ),
+                __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                    'p',
+                    {
+                        __source: {
+                            fileName: _jsxFileName,
+                            lineNumber: 57
+                        },
+                        __self: this
+                    },
+                    ' ',
+                    this.state.text,
+                    ' '
+                ),
+                __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                    'button',
+                    { type: 'button', className: 'btn btn-primary', 'data-toggle': 'modal', 'data-target': '#myModal', __source: {
+                            fileName: _jsxFileName,
+                            lineNumber: 58
+                        },
+                        __self: this
+                    },
+                    'Update Profile'
+                ),
+                __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                    'div',
+                    { className: 'modal fade', id: 'myModal', role: 'dialog', __source: {
+                            fileName: _jsxFileName,
+                            lineNumber: 59
+                        },
+                        __self: this
+                    },
+                    __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                        'div',
+                        { className: 'modal-dialog', __source: {
+                                fileName: _jsxFileName,
+                                lineNumber: 60
+                            },
+                            __self: this
+                        },
+                        __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                            'div',
+                            { className: 'modal-content', __source: {
+                                    fileName: _jsxFileName,
+                                    lineNumber: 61
+                                },
+                                __self: this
+                            },
+                            __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                                'div',
+                                { className: 'modal-header', __source: {
+                                        fileName: _jsxFileName,
+                                        lineNumber: 62
+                                    },
+                                    __self: this
+                                },
+                                __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                                    'button',
+                                    { type: 'button', className: 'close', 'data-dismiss': 'modal', __source: {
+                                            fileName: _jsxFileName,
+                                            lineNumber: 63
+                                        },
+                                        __self: this
+                                    },
+                                    '\xD7'
+                                ),
+                                __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                                    'h4',
+                                    { className: 'modal-title', __source: {
+                                            fileName: _jsxFileName,
+                                            lineNumber: 64
+                                        },
+                                        __self: this
+                                    },
+                                    'Description'
+                                )
+                            ),
+                            __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                                'div',
+                                { className: 'modal-body', __source: {
+                                        fileName: _jsxFileName,
+                                        lineNumber: 66
+                                    },
+                                    __self: this
+                                },
+                                __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                                    'form',
+                                    {
+                                        __source: {
+                                            fileName: _jsxFileName,
+                                            lineNumber: 67
+                                        },
+                                        __self: this
+                                    },
+                                    __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                                        'div',
+                                        { className: 'form-group', __source: {
+                                                fileName: _jsxFileName,
+                                                lineNumber: 68
+                                            },
+                                            __self: this
+                                        },
+                                        __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('textarea', { className: 'form-control', onChange: this.handleChange, value: this.state.text, name: 'text', __source: {
+                                                fileName: _jsxFileName,
+                                                lineNumber: 69
+                                            },
+                                            __self: this
+                                        })
+                                    ),
+                                    __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                                        'div',
+                                        { className: 'checkbox', __source: {
+                                                fileName: _jsxFileName,
+                                                lineNumber: 73
+                                            },
+                                            __self: this
+                                        },
+                                        __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                                            'label',
+                                            {
+                                                __source: {
+                                                    fileName: _jsxFileName,
+                                                    lineNumber: 74
+                                                },
+                                                __self: this
+                                            },
+                                            __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('input', { type: 'checkbox', __source: {
+                                                    fileName: _jsxFileName,
+                                                    lineNumber: 74
+                                                },
+                                                __self: this
+                                            }),
+                                            ' Do you know da wae?'
+                                        )
+                                    ),
+                                    __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                                        'button',
+                                        { type: 'button', onClick: this.handleClick, className: 'btn btn-primary', 'data-dismiss': 'modal', __source: {
+                                                fileName: _jsxFileName,
+                                                lineNumber: 76
+                                            },
+                                            __self: this
+                                        },
+                                        'Update'
+                                    )
+                                )
+                            ),
+                            __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                                'div',
+                                { className: 'modal-footer', __source: {
+                                        fileName: _jsxFileName,
+                                        lineNumber: 79
+                                    },
+                                    __self: this
+                                },
+                                __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                                    'button',
+                                    { type: 'button', className: 'btn btn-default', 'data-dismiss': 'modal', __source: {
+                                            fileName: _jsxFileName,
+                                            lineNumber: 80
+                                        },
+                                        __self: this
+                                    },
+                                    'Close'
+                                )
+                            )
+                        )
+                    )
+                )
+            );
+        }
+    }]);
+
+    return Profile;
+}(__WEBPACK_IMPORTED_MODULE_0_react___default.a.Component);
+
+/* harmony default export */ __webpack_exports__["a"] = (Profile);
+
+/***/ }),
+
 /***/ "./src/images/final.gif":
 /*!******************************!*\
   !*** ./src/images/final.gif ***!
@@ -28868,6 +29157,7 @@ if(true) {
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__images_thunder_png___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_2__images_thunder_png__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__images_ravens_png__ = __webpack_require__(/*! ../images/ravens.png */ "./src/images/ravens.png");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__images_ravens_png___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_3__images_ravens_png__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__components_Profile__ = __webpack_require__(/*! ../components/Profile */ "./src/components/Profile.js");
 var _jsxFileName = 'C:\\SF.Code\\Github\\alleyOOP\\Project\\Project.Web\\App\\src\\views\\App.js';
 
 var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
@@ -28877,6 +29167,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
 function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
 
 function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
 
 
 
@@ -28918,7 +29209,7 @@ var App = function (_React$Component) {
         'div',
         { className: 'container', __source: {
             fileName: _jsxFileName,
-            lineNumber: 34
+            lineNumber: 35
           },
           __self: this
         },
@@ -28926,7 +29217,7 @@ var App = function (_React$Component) {
           'div',
           { className: 'App', __source: {
               fileName: _jsxFileName,
-              lineNumber: 35
+              lineNumber: 36
             },
             __self: this
           },
@@ -28934,7 +29225,7 @@ var App = function (_React$Component) {
             'div',
             { className: 'row', __source: {
                 fileName: _jsxFileName,
-                lineNumber: 36
+                lineNumber: 37
               },
               __self: this
             },
@@ -28942,7 +29233,7 @@ var App = function (_React$Component) {
               'div',
               { className: 'col-md-4', __source: {
                   fileName: _jsxFileName,
-                  lineNumber: 37
+                  lineNumber: 38
                 },
                 __self: this
               },
@@ -28951,7 +29242,7 @@ var App = function (_React$Component) {
                 {
                   __source: {
                     fileName: _jsxFileName,
-                    lineNumber: 38
+                    lineNumber: 39
                   },
                   __self: this
                 },
@@ -28961,7 +29252,7 @@ var App = function (_React$Component) {
                 'div',
                 { className: 'form-group', __source: {
                     fileName: _jsxFileName,
-                    lineNumber: 39
+                    lineNumber: 40
                   },
                   __self: this
                 },
@@ -28970,7 +29261,7 @@ var App = function (_React$Component) {
                   {
                     __source: {
                       fileName: _jsxFileName,
-                      lineNumber: 40
+                      lineNumber: 41
                     },
                     __self: this
                   },
@@ -28980,7 +29271,7 @@ var App = function (_React$Component) {
                   'select',
                   { onChange: this.handleChange, className: 'form-control', id: 'panelColor', __source: {
                       fileName: _jsxFileName,
-                      lineNumber: 41
+                      lineNumber: 42
                     },
                     __self: this
                   },
@@ -28988,7 +29279,7 @@ var App = function (_React$Component) {
                     'option',
                     { value: '0', __source: {
                         fileName: _jsxFileName,
-                        lineNumber: 42
+                        lineNumber: 43
                       },
                       __self: this
                     },
@@ -28998,7 +29289,7 @@ var App = function (_React$Component) {
                     'option',
                     { value: '1', __source: {
                         fileName: _jsxFileName,
-                        lineNumber: 43
+                        lineNumber: 44
                       },
                       __self: this
                     },
@@ -29008,7 +29299,7 @@ var App = function (_React$Component) {
                     'option',
                     { value: '2', __source: {
                         fileName: _jsxFileName,
-                        lineNumber: 44
+                        lineNumber: 45
                       },
                       __self: this
                     },
@@ -29018,7 +29309,7 @@ var App = function (_React$Component) {
                     'option',
                     { value: '3', __source: {
                         fileName: _jsxFileName,
-                        lineNumber: 45
+                        lineNumber: 46
                       },
                       __self: this
                     },
@@ -29028,7 +29319,7 @@ var App = function (_React$Component) {
                     'option',
                     { value: '4', __source: {
                         fileName: _jsxFileName,
-                        lineNumber: 46
+                        lineNumber: 47
                       },
                       __self: this
                     },
@@ -29042,7 +29333,7 @@ var App = function (_React$Component) {
                     return _this2.handlePanelColor(_this2.state.value);
                   }, className: 'btn btn-primary align-left', __source: {
                     fileName: _jsxFileName,
-                    lineNumber: 49
+                    lineNumber: 50
                   },
                   __self: this
                 },
@@ -29052,7 +29343,7 @@ var App = function (_React$Component) {
                 'div',
                 { className: 'panel-group', __source: {
                     fileName: _jsxFileName,
-                    lineNumber: 51
+                    lineNumber: 52
                   },
                   __self: this
                 },
@@ -29060,7 +29351,7 @@ var App = function (_React$Component) {
                   'div',
                   { className: this.state.panelClass, __source: {
                       fileName: _jsxFileName,
-                      lineNumber: 52
+                      lineNumber: 53
                     },
                     __self: this
                   },
@@ -29068,13 +29359,13 @@ var App = function (_React$Component) {
                     'div',
                     { className: 'panel-heading', __source: {
                         fileName: _jsxFileName,
-                        lineNumber: 53
+                        lineNumber: 54
                       },
                       __self: this
                     },
                     __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('img', { src: 'https://cdn-images-1.medium.com/max/1920/1*-4nkXQYN05ljzfJez_azbg.jpeg', className: 'img-responsive', alt: 'profilePic', __source: {
                         fileName: _jsxFileName,
-                        lineNumber: 54
+                        lineNumber: 55
                       },
                       __self: this
                     })
@@ -29084,68 +29375,23 @@ var App = function (_React$Component) {
                   'div',
                   { className: this.state.panelClass, __source: {
                       fileName: _jsxFileName,
-                      lineNumber: 57
+                      lineNumber: 58
                     },
                     __self: this
                   },
-                  __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-                    'div',
-                    { className: 'panel-heading', __source: {
-                        fileName: _jsxFileName,
-                        lineNumber: 58
-                      },
-                      __self: this
+                  __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_4__components_Profile__["a" /* default */], {
+                    __source: {
+                      fileName: _jsxFileName,
+                      lineNumber: 59
                     },
-                    __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-                      'p',
-                      {
-                        __source: {
-                          fileName: _jsxFileName,
-                          lineNumber: 59
-                        },
-                        __self: this
-                      },
-                      ' ',
-                      __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-                        'strong',
-                        {
-                          __source: {
-                            fileName: _jsxFileName,
-                            lineNumber: 59
-                          },
-                          __self: this
-                        },
-                        'Deadpool'
-                      )
-                    ),
-                    __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-                      'p',
-                      {
-                        __source: {
-                          fileName: _jsxFileName,
-                          lineNumber: 60
-                        },
-                        __self: this
-                      },
-                      ' I like to slice things. Bang bang. '
-                    ),
-                    __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-                      'button',
-                      { type: 'button', className: 'btn btn-primary', __source: {
-                          fileName: _jsxFileName,
-                          lineNumber: 61
-                        },
-                        __self: this
-                      },
-                      'Update Profile '
-                    )
-                  )
+                    __self: this
+                  })
                 ),
                 __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
                   'div',
                   { className: this.state.panelClass, __source: {
                       fileName: _jsxFileName,
-                      lineNumber: 64
+                      lineNumber: 61
                     },
                     __self: this
                   },
@@ -29153,33 +29399,26 @@ var App = function (_React$Component) {
                     'div',
                     { className: 'panel-heading', __source: {
                         fileName: _jsxFileName,
-                        lineNumber: 65
+                        lineNumber: 62
                       },
                       __self: this
                     },
                     __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_1__components_Pokemon__["a" /* default */], {
                       __source: {
                         fileName: _jsxFileName,
-                        lineNumber: 66
+                        lineNumber: 63
                       },
                       __self: this
                     })
                   )
-                ),
-                __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('iframe', { src: 'https://open.spotify.com/embed?uri=spotify:user:erebore:playlist:788MOXyTfcUb1tdw4oC7KJ',
-                  width: '360', className: 'smallMargin', height: '75', frameBorder: '0', allow: 'encrypted-media', allowtransparency: 'true', __source: {
-                    fileName: _jsxFileName,
-                    lineNumber: 71
-                  },
-                  __self: this
-                })
+                )
               )
             ),
             __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
               'div',
               { className: 'col-md-8', __source: {
                   fileName: _jsxFileName,
-                  lineNumber: 77
+                  lineNumber: 70
                 },
                 __self: this
               },
@@ -29187,7 +29426,7 @@ var App = function (_React$Component) {
                 'div',
                 { className: 'panel-group', __source: {
                     fileName: _jsxFileName,
-                    lineNumber: 78
+                    lineNumber: 71
                   },
                   __self: this
                 },
@@ -29195,13 +29434,46 @@ var App = function (_React$Component) {
                   'div',
                   { className: 'row', __source: {
                       fileName: _jsxFileName,
-                      lineNumber: 80
+                      lineNumber: 73
                     },
                     __self: this
                   },
                   __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
                     'div',
                     { className: 'col-md-9 noPadding', __source: {
+                        fileName: _jsxFileName,
+                        lineNumber: 74
+                      },
+                      __self: this
+                    },
+                    __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                      'div',
+                      { className: this.state.panelClass, __source: {
+                          fileName: _jsxFileName,
+                          lineNumber: 75
+                        },
+                        __self: this
+                      },
+                      __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                        'div',
+                        { className: 'panel-heading', __source: {
+                            fileName: _jsxFileName,
+                            lineNumber: 76
+                          },
+                          __self: this
+                        },
+                        __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('iframe', { width: '555', height: '315', src: 'https://www.youtube.com/embed/xa-4IAR_9Yw', frameBorder: '0', 'encrypted-media': true, allowFullScreen: true, __source: {
+                            fileName: _jsxFileName,
+                            lineNumber: 77
+                          },
+                          __self: this
+                        })
+                      )
+                    )
+                  ),
+                  __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                    'div',
+                    { className: 'col-md-3 noPadding', __source: {
                         fileName: _jsxFileName,
                         lineNumber: 81
                       },
@@ -29215,42 +29487,9 @@ var App = function (_React$Component) {
                         },
                         __self: this
                       },
-                      __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-                        'div',
-                        { className: 'panel-heading', __source: {
-                            fileName: _jsxFileName,
-                            lineNumber: 83
-                          },
-                          __self: this
-                        },
-                        __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('iframe', { width: '555', height: '315', src: 'https://www.youtube.com/embed/xa-4IAR_9Yw', frameBorder: '0', 'encrypted-media': true, allowFullScreen: true, __source: {
-                            fileName: _jsxFileName,
-                            lineNumber: 84
-                          },
-                          __self: this
-                        })
-                      )
-                    )
-                  ),
-                  __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-                    'div',
-                    { className: 'col-md-3 noPadding', __source: {
-                        fileName: _jsxFileName,
-                        lineNumber: 88
-                      },
-                      __self: this
-                    },
-                    __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-                      'div',
-                      { className: this.state.panelClass, __source: {
-                          fileName: _jsxFileName,
-                          lineNumber: 89
-                        },
-                        __self: this
-                      },
                       __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('div', { className: 'panel-heading', __source: {
                           fileName: _jsxFileName,
-                          lineNumber: 90
+                          lineNumber: 83
                         },
                         __self: this
                       })
@@ -29261,7 +29500,7 @@ var App = function (_React$Component) {
                   'div',
                   { className: 'row smallMargin', __source: {
                       fileName: _jsxFileName,
-                      lineNumber: 96
+                      lineNumber: 89
                     },
                     __self: this
                   },
@@ -29269,7 +29508,7 @@ var App = function (_React$Component) {
                     'div',
                     { className: this.state.panelClass, __source: {
                         fileName: _jsxFileName,
-                        lineNumber: 97
+                        lineNumber: 90
                       },
                       __self: this
                     },
@@ -29277,13 +29516,13 @@ var App = function (_React$Component) {
                       'div',
                       { className: 'panel-body', __source: {
                           fileName: _jsxFileName,
-                          lineNumber: 98
+                          lineNumber: 91
                         },
                         __self: this
                       },
                       __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('img', { src: __WEBPACK_IMPORTED_MODULE_2__images_thunder_png___default.a, alt: 'basketball', className: 'img-responsive', __source: {
                           fileName: _jsxFileName,
-                          lineNumber: 99
+                          lineNumber: 92
                         },
                         __self: this
                       })
@@ -29293,13 +29532,13 @@ var App = function (_React$Component) {
                     'div',
                     { className: this.state.panelClass, __source: {
                         fileName: _jsxFileName,
-                        lineNumber: 102
+                        lineNumber: 95
                       },
                       __self: this
                     },
                     __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('div', { className: 'panel-heading', __source: {
                         fileName: _jsxFileName,
-                        lineNumber: 103
+                        lineNumber: 96
                       },
                       __self: this
                     }),
@@ -29307,13 +29546,13 @@ var App = function (_React$Component) {
                       'div',
                       { className: 'panel-body', __source: {
                           fileName: _jsxFileName,
-                          lineNumber: 105
+                          lineNumber: 98
                         },
                         __self: this
                       },
                       __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('img', { src: __WEBPACK_IMPORTED_MODULE_3__images_ravens_png___default.a, alt: 'football', className: 'img-responsive', __source: {
                           fileName: _jsxFileName,
-                          lineNumber: 106
+                          lineNumber: 99
                         },
                         __self: this
                       })

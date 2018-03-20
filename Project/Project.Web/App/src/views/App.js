@@ -2,6 +2,7 @@ import React from "react";
 import Pokemon from '../components/Pokemon';
 import thunder from '../images/thunder.png';
 import ravens from '../images/ravens.png';
+import Profile from '../components/Profile';
 
 class App extends React.Component {
   constructor(props) {
@@ -55,23 +56,15 @@ class App extends React.Component {
                   </div>
                 </div>
                 <div className={this.state.panelClass}>
-                  <div className="panel-heading">
-                    <p> <strong>Deadpool</strong></p>
-                    <p> I like to slice things. Bang bang. </p>
-                    <button type="button" className="btn btn-primary">Update Profile </button>
-                  </div>
+                  <Profile/>
                 </div>
                 <div className={this.state.panelClass}>
                   <div className="panel-heading">
                     <Pokemon/>
                   </div>
                 </div>
-                {/* <div className={this.state.panelClass}>
-                  <div className="panel-heading"> */}
-                    <iframe src="https://open.spotify.com/embed?uri=spotify:user:erebore:playlist:788MOXyTfcUb1tdw4oC7KJ"
-                    width="360" className="smallMargin" height="75" frameBorder="0" allow="encrypted-media" allowtransparency="true"></iframe>
-                  {/* </div>
-                </div> */}
+                    {/* <iframe src="https://open.spotify.com/embed?uri=spotify:user:erebore:playlist:788MOXyTfcUb1tdw4oC7KJ"
+                    width="360" className="smallMargin" height="75" frameBorder="0" allow="encrypted-media" allowtransparency="true"></iframe> */}
               </div>
             </div>
             <div className="col-md-8">
