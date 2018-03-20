@@ -71,8 +71,8 @@ namespace Project.Web.Controllers.API
                 if (ModelState.IsValid)
                 {
                     model.ModifiedBy = "C#";
-                    svc.Insert(model);
                     SuccessResponse resp = new SuccessResponse();
+                    svc.Insert(model);
                     return Request.CreateResponse(HttpStatusCode.OK, resp);
                 }
                 else

@@ -104,3 +104,7 @@ input:checked + .slider:before {
 .smallMargin{
   margin-top: 5px !important;
 }
+
+textarea{
+  resize: none;
+}

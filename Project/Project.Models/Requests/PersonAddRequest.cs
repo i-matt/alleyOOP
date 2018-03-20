@@ -21,7 +21,6 @@ namespace Project.Models.Requests
         [Required]
         public string Description { get; set; }
 
-        [Required]
         public string ModifiedBy { get; set; }
     }
 }
