@@ -36,7 +36,7 @@ class Sports extends React.Component{
     }
 
     render(){
-        if(this.state.opponent==""){
+        if(this.state.opponent===""){
             return <p>Loading...</p>
         }
 

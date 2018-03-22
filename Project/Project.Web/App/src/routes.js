@@ -15,9 +15,9 @@ const Routes = () => (
                 <Route path="/login" component={Login}/>
                 <Route path="/register" component={Register} />
                 <Route path="/terms" component={TConditions} />
+                {/* <Route path="/donations" component={Donations}/> */}
                 <NavBar>
                     <Route path="/app" component={App} />
-                    {/* <Route path="/donations" component={Donations}/> */}
                 </NavBar>
             </Switch>
         </div>

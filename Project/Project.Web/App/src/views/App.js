@@ -30,6 +30,14 @@ class App extends React.Component {
     });
   };
 
+  changeImg = () => {
+    $("#changeImg").attr('src','http://cdn1us.denofgeek.com/sites/denofgeekus/files/styles/main_wide/public/2016/01/deadpool-ryan-reynolds-petition.jpg?itok=BcgLxkHQ')
+  }
+
+  changeImgBack = () =>{
+    $("#changeImg").attr('src','https://cdn-images-1.medium.com/max/1920/1*-4nkXQYN05ljzfJez_azbg.jpeg');
+  }
+
   render() {
     return (
       <div className="container">
@@ -56,7 +64,7 @@ class App extends React.Component {
               <div className="panel-group">
                 <div className={this.state.panelClass}>
                   <div className="panel-heading">
-                    <img src="https://cdn-images-1.medium.com/max/1920/1*-4nkXQYN05ljzfJez_azbg.jpeg" className="img-responsive" alt="profilePic"/>
+                    <img id="changeImg" onMouseOver={this.changeImg} onMouseOut={this.changeImgBack} src="https://cdn-images-1.medium.com/max/1920/1*-4nkXQYN05ljzfJez_azbg.jpeg" className="img-responsive" alt="profilePic"/>
                   </div>
                 </div>
                 <div className={this.state.panelClass}>
@@ -69,8 +77,7 @@ class App extends React.Component {
                 </div>
                 <div>
                   <div className="panel-heading video-container"> 
-                    <iframe src="https://open.spotify.com/embed?uri=spotify:user:erebore:playlist:788MOXyTfcUb1tdw4oC7KJ"
-                    width="360" className="smallMargin" height="75" frameBorder="0" allow="encrypted-media" allowtransparency="true"></iframe>
+        <iframe src="https://open.spotify.com/embed/user/spotifycharts/playlist/37i9dQZEVXbLRQDuF5jeBp" title="spotify" width="300" height="380" allow="encrypted-media"></iframe>
                   </div>
                 </div>
                 <div className={this.state.panelClass}>
@@ -86,17 +93,17 @@ class App extends React.Component {
                 <div className="noPadding">
                   <div className={this.state.panelClass}>
                     <div className="panel-heading video-container"> 
-                      <iframe src="https://www.youtube.com/embed/k4hcdxTHARw" frameborder="0" allowfullscreen></iframe>                    
+                      <iframe src="https://www.youtube.com/embed/k4hcdxTHARw" title="video1" allowFullScreen></iframe>                    
                     </div> 
                   </div>
                   <div className={this.state.panelClass}>
                     <div className="panel-heading video-container"> 
-                      <iframe src="https://www.youtube.com/embed/BwWK2Xd9gWI" frameborder="0" allowfullscreen></iframe>
+                      <iframe src="https://www.youtube.com/embed/BwWK2Xd9gWI" title="video2" allowFullScreen></iframe>
                     </div> 
                   </div>
                   <div className={this.state.panelClass}>
                     <div className="panel-heading video-container"> 
-                      <iframe src="https://www.youtube.com/embed/xa-4IAR_9Yw" frameBorder="0" allowFullScreen></iframe>
+                      <iframe src="https://www.youtube.com/embed/xa-4IAR_9Yw" title="video3" allowFullScreen></iframe>
                     </div> 
                   </div>
                 </div>
