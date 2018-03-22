@@ -3,9 +3,6 @@ import {Link} from 'react-router-dom';
 import Footer from '../common/footer';
 
 class NavBar extends React.Component{
-    // constructor(props){
-    //     super(props);
-    // }
 
     handleNightMode = () => {
         let clicked = document.getElementById("nightMode").checked;
@@ -43,7 +40,7 @@ class NavBar extends React.Component{
                         </form>
                         <ul className="nav navbar-nav pull-right">
                             <li><img src="https://cdn-images-1.medium.com/max/1920/1*-4nkXQYN05ljzfJez_azbg.jpeg" className="profileIcon img-circle" alt="profilePic"/></li>
-                            <li><a href="/app"><font color="#61DAFB"> Matt <i/></font></a></li>
+                            <li><a href="/app"><font color="#61DAFB"> Deadpool <i/></font></a></li>
                             <li><a href="/app"><font color="#61DAFB"> Home <i/></font></a></li>
                             <li><a href="/messages"><i className="fas fa-inbox"/><span className="badge">5</span></a></li>
                             <li className="dropdown">
@@ -56,8 +53,6 @@ class NavBar extends React.Component{
                                         <span className="slider round"></span>
                                     </label></a>
                                 </li>
-                                {/* <li><a href="">Page 1-2</a></li>
-                                <li><a href="">Page 1-3</a></li> */}
                                 </ul>
                             </li>
                             <li><a href="/login"><i className="fas fa-sign-out-alt"></i> Logout </a></li>

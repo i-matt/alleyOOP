@@ -61,7 +61,7 @@
 /******/ 	
 /******/ 	
 /******/ 	var hotApplyOnUpdate = true;
-/******/ 	var hotCurrentHash = "3ed1b910fd2938f437d5"; // eslint-disable-line no-unused-vars
+/******/ 	var hotCurrentHash = "a20e16ca5b4048642917"; // eslint-disable-line no-unused-vars
 /******/ 	var hotRequestTimeout = 10000;
 /******/ 	var hotCurrentModuleData = {};
 /******/ 	var hotCurrentChildModule; // eslint-disable-line no-unused-vars
@@ -27836,9 +27836,6 @@ var NavBar = function (_React$Component) {
             }
         }, _temp), _possibleConstructorReturn(_this, _ret);
     }
-    // constructor(props){
-    //     super(props);
-    // }
 
     _createClass(NavBar, [{
         key: 'render',
@@ -27848,7 +27845,7 @@ var NavBar = function (_React$Component) {
                 {
                     __source: {
                         fileName: _jsxFileName,
-                        lineNumber: 24
+                        lineNumber: 21
                     },
                     __self: this
                 },
@@ -27856,7 +27853,7 @@ var NavBar = function (_React$Component) {
                     'nav',
                     { className: 'navbar navbar-inverse', __source: {
                             fileName: _jsxFileName,
-                            lineNumber: 25
+                            lineNumber: 22
                         },
                         __self: this
                     },
@@ -27864,7 +27861,7 @@ var NavBar = function (_React$Component) {
                         'div',
                         { className: 'container-fluid', __source: {
                                 fileName: _jsxFileName,
-                                lineNumber: 26
+                                lineNumber: 23
                             },
                             __self: this
                         },
@@ -27872,7 +27869,7 @@ var NavBar = function (_React$Component) {
                             'div',
                             { className: 'navbar-header', __source: {
                                     fileName: _jsxFileName,
-                                    lineNumber: 27
+                                    lineNumber: 24
                                 },
                                 __self: this
                             },
@@ -27880,7 +27877,7 @@ var NavBar = function (_React$Component) {
                                 __WEBPACK_IMPORTED_MODULE_1_react_router_dom__["b" /* Link */],
                                 { to: '/app', className: 'navbar-brand', __source: {
                                         fileName: _jsxFileName,
-                                        lineNumber: 28
+                                        lineNumber: 25
                                     },
                                     __self: this
                                 },
@@ -27888,7 +27885,7 @@ var NavBar = function (_React$Component) {
                                     'font',
                                     { color: '#61DAFB', __source: {
                                             fileName: _jsxFileName,
-                                            lineNumber: 28
+                                            lineNumber: 25
                                         },
                                         __self: this
                                     },
@@ -27900,7 +27897,7 @@ var NavBar = function (_React$Component) {
                             'ul',
                             { className: 'nav navbar-nav', __source: {
                                     fileName: _jsxFileName,
-                                    lineNumber: 30
+                                    lineNumber: 27
                                 },
                                 __self: this
                             },
@@ -27909,7 +27906,7 @@ var NavBar = function (_React$Component) {
                                 {
                                     __source: {
                                         fileName: _jsxFileName,
-                                        lineNumber: 31
+                                        lineNumber: 28
                                     },
                                     __self: this
                                 },
@@ -27917,7 +27914,7 @@ var NavBar = function (_React$Component) {
                                     __WEBPACK_IMPORTED_MODULE_1_react_router_dom__["b" /* Link */],
                                     { to: '/register', __source: {
                                             fileName: _jsxFileName,
-                                            lineNumber: 31
+                                            lineNumber: 28
                                         },
                                         __self: this
                                     },
@@ -27929,7 +27926,7 @@ var NavBar = function (_React$Component) {
                                 {
                                     __source: {
                                         fileName: _jsxFileName,
-                                        lineNumber: 32
+                                        lineNumber: 29
                                     },
                                     __self: this
                                 },
@@ -27937,7 +27934,7 @@ var NavBar = function (_React$Component) {
                                     __WEBPACK_IMPORTED_MODULE_1_react_router_dom__["b" /* Link */],
                                     { to: '/login', __source: {
                                             fileName: _jsxFileName,
-                                            lineNumber: 32
+                                            lineNumber: 29
                                         },
                                         __self: this
                                     },
@@ -27949,7 +27946,7 @@ var NavBar = function (_React$Component) {
                             'form',
                             { className: 'navbar-form navbar-left', action: '/action_page.php', __source: {
                                     fileName: _jsxFileName,
-                                    lineNumber: 34
+                                    lineNumber: 31
                                 },
                                 __self: this
                             },
@@ -27957,13 +27954,13 @@ var NavBar = function (_React$Component) {
                                 'div',
                                 { className: 'input-group', __source: {
                                         fileName: _jsxFileName,
-                                        lineNumber: 35
+                                        lineNumber: 32
                                     },
                                     __self: this
                                 },
                                 __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('input', { type: 'text', className: 'form-control', placeholder: 'Search', name: 'search', __source: {
                                         fileName: _jsxFileName,
-                                        lineNumber: 36
+                                        lineNumber: 33
                                     },
                                     __self: this
                                 }),
@@ -27971,7 +27968,7 @@ var NavBar = function (_React$Component) {
                                     'div',
                                     { className: 'input-group-btn', __source: {
                                             fileName: _jsxFileName,
-                                            lineNumber: 37
+                                            lineNumber: 34
                                         },
                                         __self: this
                                     },
@@ -27979,13 +27976,13 @@ var NavBar = function (_React$Component) {
                                         'button',
                                         { className: 'btn btn-default', type: 'submit', __source: {
                                                 fileName: _jsxFileName,
-                                                lineNumber: 38
+                                                lineNumber: 35
                                             },
                                             __self: this
                                         },
                                         __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('i', { className: 'glyphicon glyphicon-search', __source: {
                                                 fileName: _jsxFileName,
-                                                lineNumber: 39
+                                                lineNumber: 36
                                             },
                                             __self: this
                                         })
@@ -27997,7 +27994,7 @@ var NavBar = function (_React$Component) {
                             'ul',
                             { className: 'nav navbar-nav pull-right', __source: {
                                     fileName: _jsxFileName,
-                                    lineNumber: 44
+                                    lineNumber: 41
                                 },
                                 __self: this
                             },
@@ -28006,13 +28003,13 @@ var NavBar = function (_React$Component) {
                                 {
                                     __source: {
                                         fileName: _jsxFileName,
-                                        lineNumber: 45
+                                        lineNumber: 42
                                     },
                                     __self: this
                                 },
                                 __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('img', { src: 'https://cdn-images-1.medium.com/max/1920/1*-4nkXQYN05ljzfJez_azbg.jpeg', className: 'profileIcon img-circle', alt: 'profilePic', __source: {
                                         fileName: _jsxFileName,
-                                        lineNumber: 45
+                                        lineNumber: 42
                                     },
                                     __self: this
                                 })
@@ -28022,7 +28019,7 @@ var NavBar = function (_React$Component) {
                                 {
                                     __source: {
                                         fileName: _jsxFileName,
-                                        lineNumber: 46
+                                        lineNumber: 43
                                     },
                                     __self: this
                                 },
@@ -28030,7 +28027,7 @@ var NavBar = function (_React$Component) {
                                     'a',
                                     { href: '/app', __source: {
                                             fileName: _jsxFileName,
-                                            lineNumber: 46
+                                            lineNumber: 43
                                         },
                                         __self: this
                                     },
@@ -28038,15 +28035,15 @@ var NavBar = function (_React$Component) {
                                         'font',
                                         { color: '#61DAFB', __source: {
                                                 fileName: _jsxFileName,
-                                                lineNumber: 46
+                                                lineNumber: 43
                                             },
                                             __self: this
                                         },
-                                        ' Matt ',
+                                        ' Deadpool ',
                                         __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('i', {
                                             __source: {
                                                 fileName: _jsxFileName,
-                                                lineNumber: 46
+                                                lineNumber: 43
                                             },
                                             __self: this
                                         })
@@ -28058,7 +28055,7 @@ var NavBar = function (_React$Component) {
                                 {
                                     __source: {
                                         fileName: _jsxFileName,
-                                        lineNumber: 47
+                                        lineNumber: 44
                                     },
                                     __self: this
                                 },
@@ -28066,7 +28063,7 @@ var NavBar = function (_React$Component) {
                                     'a',
                                     { href: '/app', __source: {
                                             fileName: _jsxFileName,
-                                            lineNumber: 47
+                                            lineNumber: 44
                                         },
                                         __self: this
                                     },
@@ -28074,7 +28071,7 @@ var NavBar = function (_React$Component) {
                                         'font',
                                         { color: '#61DAFB', __source: {
                                                 fileName: _jsxFileName,
-                                                lineNumber: 47
+                                                lineNumber: 44
                                             },
                                             __self: this
                                         },
@@ -28082,7 +28079,7 @@ var NavBar = function (_React$Component) {
                                         __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('i', {
                                             __source: {
                                                 fileName: _jsxFileName,
-                                                lineNumber: 47
+                                                lineNumber: 44
                                             },
                                             __self: this
                                         })
@@ -28094,7 +28091,7 @@ var NavBar = function (_React$Component) {
                                 {
                                     __source: {
                                         fileName: _jsxFileName,
-                                        lineNumber: 48
+                                        lineNumber: 45
                                     },
                                     __self: this
                                 },
@@ -28102,13 +28099,13 @@ var NavBar = function (_React$Component) {
                                     'a',
                                     { href: '/messages', __source: {
                                             fileName: _jsxFileName,
-                                            lineNumber: 48
+                                            lineNumber: 45
                                         },
                                         __self: this
                                     },
                                     __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('i', { className: 'fas fa-inbox', __source: {
                                             fileName: _jsxFileName,
-                                            lineNumber: 48
+                                            lineNumber: 45
                                         },
                                         __self: this
                                     }),
@@ -28116,7 +28113,7 @@ var NavBar = function (_React$Component) {
                                         'span',
                                         { className: 'badge', __source: {
                                                 fileName: _jsxFileName,
-                                                lineNumber: 48
+                                                lineNumber: 45
                                             },
                                             __self: this
                                         },
@@ -28128,7 +28125,7 @@ var NavBar = function (_React$Component) {
                                 'li',
                                 { className: 'dropdown', __source: {
                                         fileName: _jsxFileName,
-                                        lineNumber: 49
+                                        lineNumber: 46
                                     },
                                     __self: this
                                 },
@@ -28136,19 +28133,19 @@ var NavBar = function (_React$Component) {
                                     'a',
                                     { className: 'dropdown-toggle', 'data-toggle': 'dropdown', href: '', __source: {
                                             fileName: _jsxFileName,
-                                            lineNumber: 50
+                                            lineNumber: 47
                                         },
                                         __self: this
                                     },
                                     __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('i', { className: 'fas fa-cog', __source: {
                                             fileName: _jsxFileName,
-                                            lineNumber: 50
+                                            lineNumber: 47
                                         },
                                         __self: this
                                     }),
                                     __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('span', { className: 'caret', __source: {
                                             fileName: _jsxFileName,
-                                            lineNumber: 51
+                                            lineNumber: 48
                                         },
                                         __self: this
                                     })
@@ -28157,7 +28154,7 @@ var NavBar = function (_React$Component) {
                                     'ul',
                                     { className: 'dropdown-menu', __source: {
                                             fileName: _jsxFileName,
-                                            lineNumber: 52
+                                            lineNumber: 49
                                         },
                                         __self: this
                                     },
@@ -28166,7 +28163,7 @@ var NavBar = function (_React$Component) {
                                         {
                                             __source: {
                                                 fileName: _jsxFileName,
-                                                lineNumber: 53
+                                                lineNumber: 50
                                             },
                                             __self: this
                                         },
@@ -28174,7 +28171,7 @@ var NavBar = function (_React$Component) {
                                             'a',
                                             { href: '', __source: {
                                                     fileName: _jsxFileName,
-                                                    lineNumber: 53
+                                                    lineNumber: 50
                                                 },
                                                 __self: this
                                             },
@@ -28183,19 +28180,19 @@ var NavBar = function (_React$Component) {
                                                 'label',
                                                 { htmlFor: 'nightMode', className: 'switch', __source: {
                                                         fileName: _jsxFileName,
-                                                        lineNumber: 54
+                                                        lineNumber: 51
                                                     },
                                                     __self: this
                                                 },
                                                 __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('input', { type: 'checkbox', id: 'nightMode', onClick: this.handleNightMode, __source: {
                                                         fileName: _jsxFileName,
-                                                        lineNumber: 55
+                                                        lineNumber: 52
                                                     },
                                                     __self: this
                                                 }),
                                                 __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('span', { className: 'slider round', __source: {
                                                         fileName: _jsxFileName,
-                                                        lineNumber: 56
+                                                        lineNumber: 53
                                                     },
                                                     __self: this
                                                 })
@@ -28209,7 +28206,7 @@ var NavBar = function (_React$Component) {
                                 {
                                     __source: {
                                         fileName: _jsxFileName,
-                                        lineNumber: 63
+                                        lineNumber: 58
                                     },
                                     __self: this
                                 },
@@ -28217,13 +28214,13 @@ var NavBar = function (_React$Component) {
                                     'a',
                                     { href: '/login', __source: {
                                             fileName: _jsxFileName,
-                                            lineNumber: 63
+                                            lineNumber: 58
                                         },
                                         __self: this
                                     },
                                     __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('i', { className: 'fas fa-sign-out-alt', __source: {
                                             fileName: _jsxFileName,
-                                            lineNumber: 63
+                                            lineNumber: 58
                                         },
                                         __self: this
                                     }),
@@ -28238,7 +28235,7 @@ var NavBar = function (_React$Component) {
                     {
                         __source: {
                             fileName: _jsxFileName,
-                            lineNumber: 67
+                            lineNumber: 62
                         },
                         __self: this
                     },
@@ -28247,7 +28244,7 @@ var NavBar = function (_React$Component) {
                 __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_2__common_footer__["a" /* default */], {
                     __source: {
                         fileName: _jsxFileName,
-                        lineNumber: 70
+                        lineNumber: 65
                     },
                     __self: this
                 })
@@ -28921,7 +28918,7 @@ var Sports = function (_React$Component) {
     _createClass(Sports, [{
         key: 'render',
         value: function render() {
-            if (this.state.opponent == "") {
+            if (this.state.opponent === "") {
                 return __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
                     'p',
                     {
@@ -29166,13 +29163,13 @@ var Routes = function Routes() {
                     {
                         __source: {
                             fileName: _jsxFileName,
-                            lineNumber: 18
+                            lineNumber: 19
                         },
                         __self: _this
                     },
                     __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_1_react_router_dom__["c" /* Route */], { path: '/app', component: __WEBPACK_IMPORTED_MODULE_2__src_views_App__["a" /* default */], __source: {
                             fileName: _jsxFileName,
-                            lineNumber: 19
+                            lineNumber: 20
                         },
                         __self: _this
                     })
@@ -29310,6 +29307,14 @@ var App = function (_React$Component) {
       });
     };
 
+    _this.changeImg = function () {
+      $("#changeImg").attr('src', 'http://cdn1us.denofgeek.com/sites/denofgeekus/files/styles/main_wide/public/2016/01/deadpool-ryan-reynolds-petition.jpg?itok=BcgLxkHQ');
+    };
+
+    _this.changeImgBack = function () {
+      $("#changeImg").attr('src', 'https://cdn-images-1.medium.com/max/1920/1*-4nkXQYN05ljzfJez_azbg.jpeg');
+    };
+
     _this.state = {
       panelClass: "panel panel-default"
     };
@@ -29325,7 +29330,7 @@ var App = function (_React$Component) {
         'div',
         { className: 'container', __source: {
             fileName: _jsxFileName,
-            lineNumber: 35
+            lineNumber: 43
           },
           __self: this
         },
@@ -29333,7 +29338,7 @@ var App = function (_React$Component) {
           'div',
           { className: 'App', __source: {
               fileName: _jsxFileName,
-              lineNumber: 36
+              lineNumber: 44
             },
             __self: this
           },
@@ -29341,7 +29346,7 @@ var App = function (_React$Component) {
             'div',
             { className: 'row', __source: {
                 fileName: _jsxFileName,
-                lineNumber: 37
+                lineNumber: 45
               },
               __self: this
             },
@@ -29349,7 +29354,7 @@ var App = function (_React$Component) {
               'div',
               { className: 'col-md-4', __source: {
                   fileName: _jsxFileName,
-                  lineNumber: 39
+                  lineNumber: 47
                 },
                 __self: this
               },
@@ -29357,7 +29362,7 @@ var App = function (_React$Component) {
                 'div',
                 { className: 'form-group', __source: {
                     fileName: _jsxFileName,
-                    lineNumber: 40
+                    lineNumber: 48
                   },
                   __self: this
                 },
@@ -29366,7 +29371,7 @@ var App = function (_React$Component) {
                   {
                     __source: {
                       fileName: _jsxFileName,
-                      lineNumber: 41
+                      lineNumber: 49
                     },
                     __self: this
                   },
@@ -29376,7 +29381,7 @@ var App = function (_React$Component) {
                   'select',
                   { onChange: this.handleChange, className: 'form-control noPadding', id: 'panelColor', __source: {
                       fileName: _jsxFileName,
-                      lineNumber: 42
+                      lineNumber: 50
                     },
                     __self: this
                   },
@@ -29384,7 +29389,7 @@ var App = function (_React$Component) {
                     'option',
                     { value: '0', __source: {
                         fileName: _jsxFileName,
-                        lineNumber: 43
+                        lineNumber: 51
                       },
                       __self: this
                     },
@@ -29394,7 +29399,7 @@ var App = function (_React$Component) {
                     'option',
                     { value: '1', __source: {
                         fileName: _jsxFileName,
-                        lineNumber: 44
+                        lineNumber: 52
                       },
                       __self: this
                     },
@@ -29404,7 +29409,7 @@ var App = function (_React$Component) {
                     'option',
                     { value: '2', __source: {
                         fileName: _jsxFileName,
-                        lineNumber: 45
+                        lineNumber: 53
                       },
                       __self: this
                     },
@@ -29414,7 +29419,7 @@ var App = function (_React$Component) {
                     'option',
                     { value: '3', __source: {
                         fileName: _jsxFileName,
-                        lineNumber: 46
+                        lineNumber: 54
                       },
                       __self: this
                     },
@@ -29424,7 +29429,7 @@ var App = function (_React$Component) {
                     'option',
                     { value: '4', __source: {
                         fileName: _jsxFileName,
-                        lineNumber: 47
+                        lineNumber: 55
                       },
                       __self: this
                     },
@@ -29437,7 +29442,7 @@ var App = function (_React$Component) {
                       return _this2.handlePanelColor(_this2.state.value);
                     }, className: 'btn btn-primary pull-left btn-block noPadding', __source: {
                       fileName: _jsxFileName,
-                      lineNumber: 49
+                      lineNumber: 57
                     },
                     __self: this
                   },
@@ -29447,14 +29452,14 @@ var App = function (_React$Component) {
               __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('br', {
                 __source: {
                   fileName: _jsxFileName,
-                  lineNumber: 54
+                  lineNumber: 62
                 },
                 __self: this
               }),
               __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('br', {
                 __source: {
                   fileName: _jsxFileName,
-                  lineNumber: 55
+                  lineNumber: 63
                 },
                 __self: this
               }),
@@ -29462,50 +29467,10 @@ var App = function (_React$Component) {
                 'div',
                 { className: 'panel-group', __source: {
                     fileName: _jsxFileName,
-                    lineNumber: 56
+                    lineNumber: 64
                   },
                   __self: this
                 },
-                __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-                  'div',
-                  { className: this.state.panelClass, __source: {
-                      fileName: _jsxFileName,
-                      lineNumber: 57
-                    },
-                    __self: this
-                  },
-                  __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-                    'div',
-                    { className: 'panel-heading', __source: {
-                        fileName: _jsxFileName,
-                        lineNumber: 58
-                      },
-                      __self: this
-                    },
-                    __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('img', { src: 'https://cdn-images-1.medium.com/max/1920/1*-4nkXQYN05ljzfJez_azbg.jpeg', className: 'img-responsive', alt: 'profilePic', __source: {
-                        fileName: _jsxFileName,
-                        lineNumber: 59
-                      },
-                      __self: this
-                    })
-                  )
-                ),
-                __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-                  'div',
-                  { className: this.state.panelClass, __source: {
-                      fileName: _jsxFileName,
-                      lineNumber: 62
-                    },
-                    __self: this
-                  },
-                  __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_3__components_Profile__["a" /* default */], {
-                    __source: {
-                      fileName: _jsxFileName,
-                      lineNumber: 63
-                    },
-                    __self: this
-                  })
-                ),
                 __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
                   'div',
                   { className: this.state.panelClass, __source: {
@@ -29522,10 +29487,50 @@ var App = function (_React$Component) {
                       },
                       __self: this
                     },
+                    __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('img', { id: 'changeImg', onMouseOver: this.changeImg, onMouseOut: this.changeImgBack, src: 'https://cdn-images-1.medium.com/max/1920/1*-4nkXQYN05ljzfJez_azbg.jpeg', className: 'img-responsive', alt: 'profilePic', __source: {
+                        fileName: _jsxFileName,
+                        lineNumber: 67
+                      },
+                      __self: this
+                    })
+                  )
+                ),
+                __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                  'div',
+                  { className: this.state.panelClass, __source: {
+                      fileName: _jsxFileName,
+                      lineNumber: 70
+                    },
+                    __self: this
+                  },
+                  __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_3__components_Profile__["a" /* default */], {
+                    __source: {
+                      fileName: _jsxFileName,
+                      lineNumber: 71
+                    },
+                    __self: this
+                  })
+                ),
+                __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                  'div',
+                  { className: this.state.panelClass, __source: {
+                      fileName: _jsxFileName,
+                      lineNumber: 73
+                    },
+                    __self: this
+                  },
+                  __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                    'div',
+                    { className: 'panel-heading', __source: {
+                        fileName: _jsxFileName,
+                        lineNumber: 74
+                      },
+                      __self: this
+                    },
                     __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_1__components_Pokemon__["a" /* default */], {
                       __source: {
                         fileName: _jsxFileName,
-                        lineNumber: 67
+                        lineNumber: 75
                       },
                       __self: this
                     })
@@ -29536,7 +29541,7 @@ var App = function (_React$Component) {
                   {
                     __source: {
                       fileName: _jsxFileName,
-                      lineNumber: 70
+                      lineNumber: 78
                     },
                     __self: this
                   },
@@ -29544,14 +29549,13 @@ var App = function (_React$Component) {
                     'div',
                     { className: 'panel-heading video-container', __source: {
                         fileName: _jsxFileName,
-                        lineNumber: 71
+                        lineNumber: 79
                       },
                       __self: this
                     },
-                    __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('iframe', { src: 'https://open.spotify.com/embed?uri=spotify:user:erebore:playlist:788MOXyTfcUb1tdw4oC7KJ',
-                      width: '360', className: 'smallMargin', height: '75', frameBorder: '0', allow: 'encrypted-media', allowtransparency: 'true', __source: {
+                    __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('iframe', { src: 'https://open.spotify.com/embed/user/spotifycharts/playlist/37i9dQZEVXbLRQDuF5jeBp', title: 'spotify', width: '300', height: '380', allow: 'encrypted-media', __source: {
                         fileName: _jsxFileName,
-                        lineNumber: 72
+                        lineNumber: 80
                       },
                       __self: this
                     })
@@ -29561,7 +29565,7 @@ var App = function (_React$Component) {
                   'div',
                   { className: this.state.panelClass, __source: {
                       fileName: _jsxFileName,
-                      lineNumber: 76
+                      lineNumber: 83
                     },
                     __self: this
                   },
@@ -29569,7 +29573,7 @@ var App = function (_React$Component) {
                     'div',
                     { className: 'panel-heading', __source: {
                         fileName: _jsxFileName,
-                        lineNumber: 77
+                        lineNumber: 84
                       },
                       __self: this
                     },
@@ -29582,7 +29586,7 @@ var App = function (_React$Component) {
               'div',
               { className: 'col-md-5', __source: {
                   fileName: _jsxFileName,
-                  lineNumber: 84
+                  lineNumber: 91
                 },
                 __self: this
               },
@@ -29590,7 +29594,7 @@ var App = function (_React$Component) {
                 'div',
                 { className: 'panel-group', __source: {
                     fileName: _jsxFileName,
-                    lineNumber: 85
+                    lineNumber: 92
                   },
                   __self: this
                 },
@@ -29598,7 +29602,7 @@ var App = function (_React$Component) {
                   'div',
                   { className: 'noPadding', __source: {
                       fileName: _jsxFileName,
-                      lineNumber: 86
+                      lineNumber: 93
                     },
                     __self: this
                   },
@@ -29606,7 +29610,7 @@ var App = function (_React$Component) {
                     'div',
                     { className: this.state.panelClass, __source: {
                         fileName: _jsxFileName,
-                        lineNumber: 87
+                        lineNumber: 94
                       },
                       __self: this
                     },
@@ -29614,13 +29618,13 @@ var App = function (_React$Component) {
                       'div',
                       { className: 'panel-heading video-container', __source: {
                           fileName: _jsxFileName,
-                          lineNumber: 88
+                          lineNumber: 95
                         },
                         __self: this
                       },
-                      __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('iframe', { src: 'https://www.youtube.com/embed/k4hcdxTHARw', frameborder: '0', allowfullscreen: true, __source: {
+                      __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('iframe', { src: 'https://www.youtube.com/embed/k4hcdxTHARw', title: 'video1', allowFullScreen: true, __source: {
                           fileName: _jsxFileName,
-                          lineNumber: 89
+                          lineNumber: 96
                         },
                         __self: this
                       })
@@ -29630,7 +29634,7 @@ var App = function (_React$Component) {
                     'div',
                     { className: this.state.panelClass, __source: {
                         fileName: _jsxFileName,
-                        lineNumber: 92
+                        lineNumber: 99
                       },
                       __self: this
                     },
@@ -29638,13 +29642,13 @@ var App = function (_React$Component) {
                       'div',
                       { className: 'panel-heading video-container', __source: {
                           fileName: _jsxFileName,
-                          lineNumber: 93
+                          lineNumber: 100
                         },
                         __self: this
                       },
-                      __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('iframe', { src: 'https://www.youtube.com/embed/BwWK2Xd9gWI', frameborder: '0', allowfullscreen: true, __source: {
+                      __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('iframe', { src: 'https://www.youtube.com/embed/BwWK2Xd9gWI', title: 'video2', allowFullScreen: true, __source: {
                           fileName: _jsxFileName,
-                          lineNumber: 94
+                          lineNumber: 101
                         },
                         __self: this
                       })
@@ -29654,7 +29658,7 @@ var App = function (_React$Component) {
                     'div',
                     { className: this.state.panelClass, __source: {
                         fileName: _jsxFileName,
-                        lineNumber: 97
+                        lineNumber: 104
                       },
                       __self: this
                     },
@@ -29662,13 +29666,13 @@ var App = function (_React$Component) {
                       'div',
                       { className: 'panel-heading video-container', __source: {
                           fileName: _jsxFileName,
-                          lineNumber: 98
+                          lineNumber: 105
                         },
                         __self: this
                       },
-                      __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('iframe', { src: 'https://www.youtube.com/embed/xa-4IAR_9Yw', frameBorder: '0', allowFullScreen: true, __source: {
+                      __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('iframe', { src: 'https://www.youtube.com/embed/xa-4IAR_9Yw', title: 'video3', allowFullScreen: true, __source: {
                           fileName: _jsxFileName,
-                          lineNumber: 99
+                          lineNumber: 106
                         },
                         __self: this
                       })
@@ -29681,7 +29685,7 @@ var App = function (_React$Component) {
               'div',
               { className: 'col-md-3', __source: {
                   fileName: _jsxFileName,
-                  lineNumber: 106
+                  lineNumber: 113
                 },
                 __self: this
               },
@@ -29689,7 +29693,7 @@ var App = function (_React$Component) {
                 'div',
                 { className: 'panel-group', __source: {
                     fileName: _jsxFileName,
-                    lineNumber: 107
+                    lineNumber: 114
                   },
                   __self: this
                 },
@@ -29697,7 +29701,7 @@ var App = function (_React$Component) {
                   'div',
                   { className: ' noPadding', __source: {
                       fileName: _jsxFileName,
-                      lineNumber: 108
+                      lineNumber: 115
                     },
                     __self: this
                   },
@@ -29705,7 +29709,7 @@ var App = function (_React$Component) {
                     'div',
                     { className: this.state.panelClass, __source: {
                         fileName: _jsxFileName,
-                        lineNumber: 109
+                        lineNumber: 116
                       },
                       __self: this
                     },
@@ -29713,13 +29717,13 @@ var App = function (_React$Component) {
                       'div',
                       { className: 'panel-heading', __source: {
                           fileName: _jsxFileName,
-                          lineNumber: 110
+                          lineNumber: 117
                         },
                         __self: this
                       },
                       __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('img', { src: __WEBPACK_IMPORTED_MODULE_2__images_thunder_png___default.a, className: 'img-responsive', alt: 'thunder-logo', __source: {
                           fileName: _jsxFileName,
-                          lineNumber: 111
+                          lineNumber: 118
                         },
                         __self: this
                       })
@@ -29729,7 +29733,7 @@ var App = function (_React$Component) {
                     'div',
                     { className: this.state.panelClass, __source: {
                         fileName: _jsxFileName,
-                        lineNumber: 114
+                        lineNumber: 121
                       },
                       __self: this
                     },
@@ -29737,14 +29741,14 @@ var App = function (_React$Component) {
                       'div',
                       { className: 'panel-heading', __source: {
                           fileName: _jsxFileName,
-                          lineNumber: 115
+                          lineNumber: 122
                         },
                         __self: this
                       },
                       __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_4__components_Sports__["a" /* default */], {
                         __source: {
                           fileName: _jsxFileName,
-                          lineNumber: 116
+                          lineNumber: 123
                         },
                         __self: this
                       })
