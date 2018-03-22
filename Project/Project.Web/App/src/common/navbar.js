@@ -56,8 +56,8 @@ class NavBar extends React.Component{
                                         <span className="slider round"></span>
                                     </label></a>
                                 </li>
-                                <li><a href="">Page 1-2</a></li>
-                                <li><a href="">Page 1-3</a></li>
+                                {/* <li><a href="">Page 1-2</a></li>
+                                <li><a href="">Page 1-3</a></li> */}
                                 </ul>
                             </li>
                             <li><a href="/login"><i className="fas fa-sign-out-alt"></i> Logout </a></li>

@@ -10,12 +10,12 @@ import NavBar from '../src/common/navbar';
 const Routes = () => (
     <Router>
         <div id="topDiv">
-            <Switch>
+            <Switch>           
+                <Route exact path="/" component={Register} />
                 <Route path="/login" component={Login}/>
                 <Route path="/register" component={Register} />
                 <Route path="/terms" component={TConditions} />
                 <NavBar>
-                    <Route exact path="/" component={App} />
                     <Route path="/app" component={App} />
                     {/* <Route path="/donations" component={Donations}/> */}
                 </NavBar>

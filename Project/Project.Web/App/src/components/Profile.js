@@ -13,10 +13,9 @@ class Profile extends React.Component{
     componentDidMount = () =>{
         axios.get("/api/person/4")
             .then(resp=>{
-                debugger;
                 // let object = resp.data.Items;
                 // let length = resp.data.Items.length;
-                // let description = object[length-1].Description;
+                // let description = object[length-1].Description;ß
                 let description = resp.data.Item.Description;
                 let name = resp.data.Item.Username;
                 this.setState({
@@ -75,9 +74,6 @@ class Profile extends React.Component{
                                     </div>
                                     <button type="button" onClick={this.handleClick} className="btn btn-primary" data-dismiss="modal">Update</button>
                                 </form>
-                            </div>
-                            <div className="modal-footer">
-                                <button type="button" className="btn btn-default" data-dismiss="modal">Close</button>
                             </div>
                         </div>
                     </div>
