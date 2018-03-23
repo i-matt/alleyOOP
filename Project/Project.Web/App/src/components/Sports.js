@@ -21,7 +21,6 @@ class Sports extends React.Component{
                 let score = resp.data.Item.Score;
                 score[0] = "TBD";
 
-                // let newOpp = opponent.map();
                 let newOpp = opponent.map((opp,index) =>
                     <p key={index}>{opp}</p>
                 );

@@ -27,6 +27,7 @@ class NavBar extends React.Component{
                         <ul className="nav navbar-nav">
                             <li><Link to="/register">Register</Link></li>
                             <li><Link to="/login">Login</Link></li>
+                            <li><Link to="/accounts">Accounts</Link></li>
                         </ul>
                         <form className="navbar-form navbar-left" action="/action_page.php">
                             <div className="input-group">

@@ -7,7 +7,7 @@ class Header extends React.Component{
     render(){
         return(
             <header className="App-header">
-              <h1 className="App-title"><font color="#61DAFB">alley OOP</font><img src={final} className="App-logo" alt="logo" /></h1>
+              <h1 className="App-title"><img src={final} className="App-logo" alt="logo" /><font color="#61DAFB">alley OOP</font><img src={final} className="App-logo" alt="logo" /></h1>
             </header>
         )
     }
