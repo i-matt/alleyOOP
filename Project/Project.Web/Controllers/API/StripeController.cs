@@ -10,10 +10,10 @@ using System.Web.Http;
 
 namespace Project.Web.Controllers.Api
 {
-    [RoutePrefix("api")]
+    [RoutePrefix("api/stripe")]
     public class StripeController : ApiController
     {
-        [Route("stripe"), HttpPost]
+        [Route, HttpPost]
         public HttpResponseMessage ChargeUser(ChargeStripe model)
         {
             try

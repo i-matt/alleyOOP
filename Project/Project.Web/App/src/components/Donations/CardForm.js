@@ -3,6 +3,7 @@ import {injectStripe} from 'react-stripe-elements';
 import {CardElement} from 'react-stripe-elements';
 import axios from 'axios';
 import {Link} from 'react-router-dom';
+import {withRouter} from 'react-router-dom';
 
 const createOptions = (fontSize) => {
   return {
@@ -48,8 +49,7 @@ class _CardForm extends React.Component {
           newAmount: newAmount
         });
       }
-      debugger;
-      axios.post("api/stripe", {
+      axios.post("/api/stripe", {
         //send required object to backend
         receipt_email: this.stripeEmail,
         amount: this.state.newAmount,
@@ -59,7 +59,7 @@ class _CardForm extends React.Component {
       })
         .then((response) => {
             console.log(this.props.history);
-            this.props.history.push('/donations/thankyou');
+            this.props.history.push('/thankyou');
         })
     });
   };
@@ -143,4 +143,4 @@ class _CardForm extends React.Component {
 }
 const CardForm = injectStripe(_CardForm);
   
-export default CardForm;
+export default withRouter(CardForm);

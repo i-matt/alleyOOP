@@ -80,11 +80,6 @@ class App extends React.Component {
                     <iframe src="https://open.spotify.com/embed/user/spotifycharts/playlist/37i9dQZEVXbLRQDuF5jeBp" title="spotify" width="300" height="380" allow="encrypted-media"></iframe>
                   </div>
                 </div>
-                <div className={this.state.panelClass}>
-                  <div className="panel-heading">
-                    This is empty
-                  </div>
-                </div>
               </div>
             </div>
 

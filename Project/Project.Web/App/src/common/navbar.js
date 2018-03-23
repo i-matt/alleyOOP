@@ -28,7 +28,6 @@ class NavBar extends React.Component{
                             {/* <li><Link to="/register">Register</Link></li>
                             <li><Link to="/login">Login</Link></li> */}
                             <li><Link to="/accounts">Accounts</Link></li>
-                            
                         </ul>
                         <form className="navbar-form navbar-left" action="Https://www.google.com">
                             <div className="input-group">
@@ -45,7 +44,7 @@ class NavBar extends React.Component{
                             <li><Link to="/app"><font color="#61DAFB"> Deadpool <i/></font></Link></li>
                             <li><Link to="/app"><font color="#61DAFB"> Home <i/></font></Link></li>
                             <li><Link to="/donations">Donate</Link></li>
-                            <li><a href="/messages"><i className="fas fa-inbox"/><span className="badge">5</span></a></li>
+                            <li><Link to="/messages"><i className="fas fa-inbox"/><span className="badge">5</span></Link></li>
                             <li className="dropdown">
                                 <a className="dropdown-toggle" data-toggle="dropdown" ><i className="fas fa-cog"></i>
                                 <span className="caret"></span></a>

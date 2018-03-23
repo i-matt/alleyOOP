@@ -8,6 +8,7 @@ import NavBar from '../src/common/navbar';
 import Accounts from '../src/views/Accounts';
 import Donations from '../src/views/Donations';
 import ThankYou from '../src/views/ThankYou';
+import Game from '../src/views/Messages';
 
 const Routes = () => (
     <Router>
@@ -22,6 +23,7 @@ const Routes = () => (
                     <Route path="/accounts" component={Accounts}/>
                     <Route path="/donations" component={Donations}/>
                     <Route path="/thankyou" component={ThankYou}/>
+                    <Route path="/messages" component={Game}/>
                 </NavBar>
             </Switch>
         </div>

@@ -61,7 +61,7 @@
 /******/ 	
 /******/ 	
 /******/ 	var hotApplyOnUpdate = true;
-/******/ 	var hotCurrentHash = "677c56fd031e9eada8d1"; // eslint-disable-line no-unused-vars
+/******/ 	var hotCurrentHash = "5bf904d21b6c7d6329b2"; // eslint-disable-line no-unused-vars
 /******/ 	var hotRequestTimeout = 10000;
 /******/ 	var hotCurrentModuleData = {};
 /******/ 	var hotCurrentChildModule; // eslint-disable-line no-unused-vars
@@ -2726,6 +2726,26 @@ exports = module.exports = __webpack_require__(/*! ../../node_modules/css-loader
 
 // module
 exports.push([module.i, ".deadPool{\r\n\tposition:relative;\r\n}\r\n\r\n#dpToon{\r\n\tleft:100%;\r\n\t-webkit-animation: volar 5s infinite;\r\n\tanimation:volar 10s infinite;\r\n}\r\n@-webkit-keyframes volar{\r\n\t0%{\r\n\t\tmargin-left:100%;\r\n\t\ttop:5px;\r\n\t}25%{\r\n\t\ttop:100px;\r\n\t}50%{\r\n\t\ttop:80px;\r\n\t}75%{\r\n\t\ttop:25px;\r\n\t}100%{\r\n\t\tleft:-177px;\r\n\t\ttop:102px;\r\n\t}\r\n}\r\n@keyframes volar{\r\n\t0%{\r\n\t\tleft:100%;\r\n\t\ttop:5px;\r\n\t}25%{\r\n\t\ttop:100px;\r\n\t}50px{\r\n\t\ttop:80px;\r\n\t}75%{\r\n\t\ttop:25px;\r\n\t}100%{\r\n\t\tleft:-177px;\r\n\t\ttop:102px;\r\n\t}\r\n}", ""]);
+
+// exports
+
+
+/***/ }),
+
+/***/ "./node_modules/css-loader/index.js?{\"importLoaders\":1}!./node_modules/postcss-loader/lib/index.js?{\"ident\":\"postcss\",\"plugins\":[null,null]}!./src/styles/Messages.css":
+/*!***********************************************************************************************************************************************************!*\
+  !*** ./node_modules/css-loader?{"importLoaders":1}!./node_modules/postcss-loader/lib?{"ident":"postcss","plugins":[null,null]}!./src/styles/Messages.css ***!
+  \***********************************************************************************************************************************************************/
+/*! dynamic exports provided */
+/*! all exports used */
+/***/ (function(module, exports, __webpack_require__) {
+
+exports = module.exports = __webpack_require__(/*! ../../node_modules/css-loader/lib/css-base.js */ "./node_modules/css-loader/lib/css-base.js")(undefined);
+// imports
+
+
+// module
+exports.push([module.i, "body {\r\n    font: 14px \"Century Gothic\", Futura, sans-serif;\r\n  }\r\n  \r\n  ol, ul {\r\n    padding-left: 30px;\r\n  }\r\n  \r\n  .board-row:after {\r\n    clear: both;\r\n    content: \"\";\r\n    display: table;\r\n  }\r\n  \r\n  .status {\r\n    margin-bottom: 10px;\r\n  }\r\n  \r\n  .square {\r\n    background: #fff;\r\n    border: 1px solid #999;\r\n    float: left;\r\n    font-size: 24px;\r\n    font-weight: bold;\r\n    line-height: 34px;\r\n    height: 34px;\r\n    margin-right: -1px;\r\n    margin-top: -1px;\r\n    padding: 0;\r\n    text-align: center;\r\n    width: 34px;\r\n  }\r\n  \r\n  .square:focus {\r\n    outline: none;\r\n  }\r\n  \r\n  .kbd-navigation .square:focus {\r\n    background: #ddd;\r\n  }\r\n  \r\n  .game {\r\n    display: -ms-flexbox;\r\n    display: flex;\r\n    -ms-flex-direction: row;\r\n        flex-direction: row;\r\n  }\r\n  \r\n  .game-info {\r\n    margin-left: 20px;\r\n  }\r\n  ", ""]);
 
 // exports
 
@@ -23990,7 +24010,7 @@ NavLink.defaultProps = {
   !*** ./node_modules/react-router-dom/es/index.js ***!
   \***************************************************/
 /*! exports provided: BrowserRouter, HashRouter, Link, MemoryRouter, NavLink, Prompt, Redirect, Route, Router, StaticRouter, Switch, matchPath, withRouter */
-/*! exports used: BrowserRouter, Link, Route, Switch */
+/*! exports used: BrowserRouter, Link, Route, Switch, withRouter */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -24019,7 +24039,7 @@ NavLink.defaultProps = {
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_11__matchPath__ = __webpack_require__(/*! ./matchPath */ "./node_modules/react-router-dom/es/matchPath.js");
 /* unused harmony reexport matchPath */
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_12__withRouter__ = __webpack_require__(/*! ./withRouter */ "./node_modules/react-router-dom/es/withRouter.js");
-/* unused harmony reexport withRouter */
+/* harmony reexport (binding) */ __webpack_require__.d(__webpack_exports__, "e", function() { return __WEBPACK_IMPORTED_MODULE_12__withRouter__["a"]; });
 
 
 
@@ -24070,6 +24090,7 @@ NavLink.defaultProps = {
   !*** ./node_modules/react-router-dom/es/withRouter.js ***!
   \********************************************************/
 /*! exports provided: default */
+/*! exports used: default */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -24077,7 +24098,7 @@ NavLink.defaultProps = {
 // Written in this round about way for babel-transform-imports
 
 
-/* unused harmony default export */ var _unused_webpack_default_export = (__WEBPACK_IMPORTED_MODULE_0_react_router_es_withRouter__["a" /* default */]);
+/* harmony default export */ __webpack_exports__["a"] = (__WEBPACK_IMPORTED_MODULE_0_react_router_es_withRouter__["a" /* default */]);
 
 /***/ }),
 
@@ -28897,7 +28918,7 @@ var NavBar = function (_React$Component) {
                             'form',
                             { className: 'navbar-form navbar-left', action: 'Https://www.google.com', __source: {
                                     fileName: _jsxFileName,
-                                    lineNumber: 33
+                                    lineNumber: 32
                                 },
                                 __self: this
                             },
@@ -28905,13 +28926,13 @@ var NavBar = function (_React$Component) {
                                 'div',
                                 { className: 'input-group', __source: {
                                         fileName: _jsxFileName,
-                                        lineNumber: 34
+                                        lineNumber: 33
                                     },
                                     __self: this
                                 },
                                 __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('input', { type: 'text', className: 'form-control', placeholder: 'Search', name: 'search', __source: {
                                         fileName: _jsxFileName,
-                                        lineNumber: 35
+                                        lineNumber: 34
                                     },
                                     __self: this
                                 }),
@@ -28919,7 +28940,7 @@ var NavBar = function (_React$Component) {
                                     'div',
                                     { className: 'input-group-btn', __source: {
                                             fileName: _jsxFileName,
-                                            lineNumber: 36
+                                            lineNumber: 35
                                         },
                                         __self: this
                                     },
@@ -28927,13 +28948,13 @@ var NavBar = function (_React$Component) {
                                         'button',
                                         { className: 'btn btn-default', type: 'submit', __source: {
                                                 fileName: _jsxFileName,
-                                                lineNumber: 37
+                                                lineNumber: 36
                                             },
                                             __self: this
                                         },
                                         __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('i', { className: 'glyphicon glyphicon-search', __source: {
                                                 fileName: _jsxFileName,
-                                                lineNumber: 38
+                                                lineNumber: 37
                                             },
                                             __self: this
                                         })
@@ -28945,10 +28966,26 @@ var NavBar = function (_React$Component) {
                             'ul',
                             { className: 'nav navbar-nav pull-right', __source: {
                                     fileName: _jsxFileName,
-                                    lineNumber: 43
+                                    lineNumber: 42
                                 },
                                 __self: this
                             },
+                            __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                                'li',
+                                {
+                                    __source: {
+                                        fileName: _jsxFileName,
+                                        lineNumber: 43
+                                    },
+                                    __self: this
+                                },
+                                __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('img', { src: 'https://cdn-images-1.medium.com/max/1920/1*-4nkXQYN05ljzfJez_azbg.jpeg', className: 'profileIcon img-circle', alt: 'profilePic', __source: {
+                                        fileName: _jsxFileName,
+                                        lineNumber: 43
+                                    },
+                                    __self: this
+                                })
+                            ),
                             __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
                                 'li',
                                 {
@@ -28958,12 +28995,32 @@ var NavBar = function (_React$Component) {
                                     },
                                     __self: this
                                 },
-                                __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('img', { src: 'https://cdn-images-1.medium.com/max/1920/1*-4nkXQYN05ljzfJez_azbg.jpeg', className: 'profileIcon img-circle', alt: 'profilePic', __source: {
-                                        fileName: _jsxFileName,
-                                        lineNumber: 44
+                                __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                                    __WEBPACK_IMPORTED_MODULE_1_react_router_dom__["b" /* Link */],
+                                    { to: '/app', __source: {
+                                            fileName: _jsxFileName,
+                                            lineNumber: 44
+                                        },
+                                        __self: this
                                     },
-                                    __self: this
-                                })
+                                    __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                                        'font',
+                                        { color: '#61DAFB', __source: {
+                                                fileName: _jsxFileName,
+                                                lineNumber: 44
+                                            },
+                                            __self: this
+                                        },
+                                        ' Deadpool ',
+                                        __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('i', {
+                                            __source: {
+                                                fileName: _jsxFileName,
+                                                lineNumber: 44
+                                            },
+                                            __self: this
+                                        })
+                                    )
+                                )
                             ),
                             __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
                                 'li',
@@ -28990,7 +29047,7 @@ var NavBar = function (_React$Component) {
                                             },
                                             __self: this
                                         },
-                                        ' Deadpool ',
+                                        ' Home ',
                                         __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('i', {
                                             __source: {
                                                 fileName: _jsxFileName,
@@ -29012,29 +29069,13 @@ var NavBar = function (_React$Component) {
                                 },
                                 __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
                                     __WEBPACK_IMPORTED_MODULE_1_react_router_dom__["b" /* Link */],
-                                    { to: '/app', __source: {
+                                    { to: '/donations', __source: {
                                             fileName: _jsxFileName,
                                             lineNumber: 46
                                         },
                                         __self: this
                                     },
-                                    __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-                                        'font',
-                                        { color: '#61DAFB', __source: {
-                                                fileName: _jsxFileName,
-                                                lineNumber: 46
-                                            },
-                                            __self: this
-                                        },
-                                        ' Home ',
-                                        __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('i', {
-                                            __source: {
-                                                fileName: _jsxFileName,
-                                                lineNumber: 46
-                                            },
-                                            __self: this
-                                        })
-                                    )
+                                    'Donate'
                                 )
                             ),
                             __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
@@ -29048,35 +29089,15 @@ var NavBar = function (_React$Component) {
                                 },
                                 __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
                                     __WEBPACK_IMPORTED_MODULE_1_react_router_dom__["b" /* Link */],
-                                    { to: '/donations', __source: {
+                                    { to: '/messages', __source: {
                                             fileName: _jsxFileName,
                                             lineNumber: 47
                                         },
                                         __self: this
                                     },
-                                    'Donate'
-                                )
-                            ),
-                            __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-                                'li',
-                                {
-                                    __source: {
-                                        fileName: _jsxFileName,
-                                        lineNumber: 48
-                                    },
-                                    __self: this
-                                },
-                                __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-                                    'a',
-                                    { href: '/messages', __source: {
-                                            fileName: _jsxFileName,
-                                            lineNumber: 48
-                                        },
-                                        __self: this
-                                    },
                                     __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('i', { className: 'fas fa-inbox', __source: {
                                             fileName: _jsxFileName,
-                                            lineNumber: 48
+                                            lineNumber: 47
                                         },
                                         __self: this
                                     }),
@@ -29084,7 +29105,7 @@ var NavBar = function (_React$Component) {
                                         'span',
                                         { className: 'badge', __source: {
                                                 fileName: _jsxFileName,
-                                                lineNumber: 48
+                                                lineNumber: 47
                                             },
                                             __self: this
                                         },
@@ -29096,7 +29117,7 @@ var NavBar = function (_React$Component) {
                                 'li',
                                 { className: 'dropdown', __source: {
                                         fileName: _jsxFileName,
-                                        lineNumber: 49
+                                        lineNumber: 48
                                     },
                                     __self: this
                                 },
@@ -29104,19 +29125,19 @@ var NavBar = function (_React$Component) {
                                     'a',
                                     { className: 'dropdown-toggle', 'data-toggle': 'dropdown', __source: {
                                             fileName: _jsxFileName,
-                                            lineNumber: 50
+                                            lineNumber: 49
                                         },
                                         __self: this
                                     },
                                     __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('i', { className: 'fas fa-cog', __source: {
                                             fileName: _jsxFileName,
-                                            lineNumber: 50
+                                            lineNumber: 49
                                         },
                                         __self: this
                                     }),
                                     __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('span', { className: 'caret', __source: {
                                             fileName: _jsxFileName,
-                                            lineNumber: 51
+                                            lineNumber: 50
                                         },
                                         __self: this
                                     })
@@ -29125,7 +29146,7 @@ var NavBar = function (_React$Component) {
                                     'ul',
                                     { className: 'dropdown-menu', __source: {
                                             fileName: _jsxFileName,
-                                            lineNumber: 52
+                                            lineNumber: 51
                                         },
                                         __self: this
                                     },
@@ -29134,7 +29155,7 @@ var NavBar = function (_React$Component) {
                                         {
                                             __source: {
                                                 fileName: _jsxFileName,
-                                                lineNumber: 53
+                                                lineNumber: 52
                                             },
                                             __self: this
                                         },
@@ -29143,19 +29164,19 @@ var NavBar = function (_React$Component) {
                                             'label',
                                             { htmlFor: 'nightMode', className: 'switch', __source: {
                                                     fileName: _jsxFileName,
-                                                    lineNumber: 54
+                                                    lineNumber: 53
                                                 },
                                                 __self: this
                                             },
                                             __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('input', { type: 'checkbox', id: 'nightMode', onClick: this.handleNightMode, __source: {
                                                     fileName: _jsxFileName,
-                                                    lineNumber: 55
+                                                    lineNumber: 54
                                                 },
                                                 __self: this
                                             }),
                                             __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('span', { className: 'slider round', __source: {
                                                     fileName: _jsxFileName,
-                                                    lineNumber: 56
+                                                    lineNumber: 55
                                                 },
                                                 __self: this
                                             })
@@ -29168,7 +29189,7 @@ var NavBar = function (_React$Component) {
                                 {
                                     __source: {
                                         fileName: _jsxFileName,
-                                        lineNumber: 61
+                                        lineNumber: 60
                                     },
                                     __self: this
                                 },
@@ -29176,13 +29197,13 @@ var NavBar = function (_React$Component) {
                                     __WEBPACK_IMPORTED_MODULE_1_react_router_dom__["b" /* Link */],
                                     { to: '/login', __source: {
                                             fileName: _jsxFileName,
-                                            lineNumber: 61
+                                            lineNumber: 60
                                         },
                                         __self: this
                                     },
                                     __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('i', { className: 'fas fa-sign-out-alt', __source: {
                                             fileName: _jsxFileName,
-                                            lineNumber: 61
+                                            lineNumber: 60
                                         },
                                         __self: this
                                     }),
@@ -29197,7 +29218,7 @@ var NavBar = function (_React$Component) {
                     {
                         __source: {
                             fileName: _jsxFileName,
-                            lineNumber: 65
+                            lineNumber: 64
                         },
                         __self: this
                     },
@@ -29206,7 +29227,7 @@ var NavBar = function (_React$Component) {
                 __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_2__common_footer__["a" /* default */], {
                     __source: {
                         fileName: _jsxFileName,
-                        lineNumber: 68
+                        lineNumber: 67
                     },
                     __self: this
                 })
@@ -29246,6 +29267,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
 function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
 
 function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
 
 
 
@@ -29295,8 +29317,7 @@ var _CardForm = function (_React$Component) {
             newAmount: newAmount
           });
         }
-        debugger;
-        __WEBPACK_IMPORTED_MODULE_2_axios___default.a.post("api/stripe", {
+        __WEBPACK_IMPORTED_MODULE_2_axios___default.a.post("/api/stripe", {
           //send required object to backend
           receipt_email: _this.stripeEmail,
           amount: _this.state.newAmount,
@@ -29305,7 +29326,7 @@ var _CardForm = function (_React$Component) {
           source: payload.token.id
         }).then(function (response) {
           console.log(_this.props.history);
-          _this.props.history.push('/donations/thankyou');
+          _this.props.history.push('/thankyou');
         });
       });
     };
@@ -29615,7 +29636,7 @@ var _CardForm = function (_React$Component) {
 
 var CardForm = Object(__WEBPACK_IMPORTED_MODULE_1_react_stripe_elements__["injectStripe"])(_CardForm);
 
-/* harmony default export */ __webpack_exports__["a"] = (CardForm);
+/* harmony default export */ __webpack_exports__["a"] = (Object(__WEBPACK_IMPORTED_MODULE_3_react_router_dom__["e" /* withRouter */])(CardForm));
 
 /***/ }),
 
@@ -30531,6 +30552,267 @@ var Sports = function (_React$Component) {
 
 /***/ }),
 
+/***/ "./src/components/todo.js":
+/*!********************************!*\
+  !*** ./src/components/todo.js ***!
+  \********************************/
+/*! exports provided: default */
+/*! exports used: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_react__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_react___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_react__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_react_dom__ = __webpack_require__(/*! react-dom */ "./node_modules/react-dom/index.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_react_dom___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1_react_dom__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_axios__ = __webpack_require__(/*! axios */ "./node_modules/axios/index.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_axios___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_2_axios__);
+var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+var _jsxFileName = 'C:\\SF.Code\\Github\\alleyOOP\\Project\\Project.Web\\App\\src\\components\\todo.js',
+    _this = this;
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+
+
+
+
+console.clear();
+
+var Title = function Title(_ref) {
+  var todoCount = _ref.todoCount;
+
+  return __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+    'div',
+    {
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 9
+      },
+      __self: _this
+    },
+    __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+      'div',
+      {
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 10
+        },
+        __self: _this
+      },
+      __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+        'h1',
+        {
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 11
+          },
+          __self: _this
+        },
+        'Messages(',
+        todoCount,
+        ')'
+      )
+    )
+  );
+};
+
+var TodoForm = function TodoForm(_ref2) {
+  var addTodo = _ref2.addTodo;
+
+  // Input Tracker
+  var input = void 0;
+  // Return JSX
+  return __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+    'form',
+    { onSubmit: function onSubmit(e) {
+        e.preventDefault();
+        addTodo(input.value);
+        input.value = '';
+      }, __source: {
+        fileName: _jsxFileName,
+        lineNumber: 22
+      },
+      __self: _this
+    },
+    __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('input', { className: 'form-control col-md-12', ref: function ref(node) {
+        input = node;
+      }, __source: {
+        fileName: _jsxFileName,
+        lineNumber: 27
+      },
+      __self: _this
+    }),
+    __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('br', {
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 30
+      },
+      __self: _this
+    })
+  );
+};
+
+var Todo = function Todo(_ref3) {
+  var todo = _ref3.todo,
+      remove = _ref3.remove;
+
+  // Each Todo
+  return __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+    'a',
+    { href: '#', className: 'list-group-item', onClick: function onClick() {
+        remove(todo.id);
+      }, __source: {
+        fileName: _jsxFileName,
+        lineNumber: 37
+      },
+      __self: _this
+    },
+    todo.text
+  );
+};
+
+var TodoList = function TodoList(_ref4) {
+  var todos = _ref4.todos,
+      remove = _ref4.remove;
+
+  // Map through the todos
+  var todoNode = todos.map(function (todo) {
+    return __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(Todo, { todo: todo, key: todo.id, remove: remove, __source: {
+        fileName: _jsxFileName,
+        lineNumber: 43
+      },
+      __self: _this
+    });
+  });
+  return __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+    'div',
+    { className: 'list-group', style: { marginTop: '30px' }, __source: {
+        fileName: _jsxFileName,
+        lineNumber: 45
+      },
+      __self: _this
+    },
+    todoNode
+  );
+};
+
+// Contaner Component
+// Todo Id
+window.id = 0;
+
+var TodoApp = function (_React$Component) {
+  _inherits(TodoApp, _React$Component);
+
+  function TodoApp(props) {
+    _classCallCheck(this, TodoApp);
+
+    // Set initial state
+    var _this2 = _possibleConstructorReturn(this, (TodoApp.__proto__ || Object.getPrototypeOf(TodoApp)).call(this, props));
+    // Pass props to parent class
+
+
+    _this2.state = {
+      data: []
+    };
+    _this2.apiUrl = 'https://57b1924b46b57d1100a3c3f8.mockapi.io/api/todos';
+    return _this2;
+  }
+  // Lifecycle method
+
+
+  _createClass(TodoApp, [{
+    key: 'componentDidMount',
+    value: function componentDidMount() {
+      var _this3 = this;
+
+      // Make HTTP reques with Axios
+      __WEBPACK_IMPORTED_MODULE_2_axios___default.a.get(this.apiUrl).then(function (res) {
+        // Set state with result
+        _this3.setState({ data: res.data });
+      });
+    }
+    // Add todo handler
+
+  }, {
+    key: 'addTodo',
+    value: function addTodo(val) {
+      var _this4 = this;
+
+      // Assemble data
+      var todo = { text: val
+        // Update data
+      };__WEBPACK_IMPORTED_MODULE_2_axios___default.a.post(this.apiUrl, todo).then(function (res) {
+        _this4.state.data.push(res.data);
+        _this4.setState({ data: _this4.state.data });
+      });
+    }
+    // Handle remove
+
+  }, {
+    key: 'handleRemove',
+    value: function handleRemove(id) {
+      var _this5 = this;
+
+      // Filter all todos except the one to be removed
+      var remainder = this.state.data.filter(function (todo) {
+        if (todo.id !== id) return todo;
+      });
+      // Update state with filter
+      __WEBPACK_IMPORTED_MODULE_2_axios___default.a.delete(this.apiUrl + '/' + id).then(function (res) {
+        _this5.setState({ data: remainder });
+      });
+    }
+  }, {
+    key: 'render',
+    value: function render() {
+      // Render JSX
+      return __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+        'div',
+        {
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 97
+          },
+          __self: this
+        },
+        __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(Title, { todoCount: this.state.data.length, __source: {
+            fileName: _jsxFileName,
+            lineNumber: 98
+          },
+          __self: this
+        }),
+        __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(TodoForm, { addTodo: this.addTodo.bind(this), __source: {
+            fileName: _jsxFileName,
+            lineNumber: 99
+          },
+          __self: this
+        }),
+        __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(TodoList, {
+          todos: this.state.data,
+          remove: this.handleRemove.bind(this),
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 100
+          },
+          __self: this
+        })
+      );
+    }
+  }]);
+
+  return TodoApp;
+}(__WEBPACK_IMPORTED_MODULE_0_react___default.a.Component);
+
+/* harmony default export */ __webpack_exports__["a"] = (TodoApp);
+
+/***/ }),
+
 /***/ "./src/images/final.gif":
 /*!******************************!*\
   !*** ./src/images/final.gif ***!
@@ -30610,8 +30892,10 @@ __WEBPACK_IMPORTED_MODULE_1_react_dom___default.a.render(__WEBPACK_IMPORTED_MODU
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__src_views_Accounts__ = __webpack_require__(/*! ../src/views/Accounts */ "./src/views/Accounts.js");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__src_views_Donations__ = __webpack_require__(/*! ../src/views/Donations */ "./src/views/Donations.js");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_9__src_views_ThankYou__ = __webpack_require__(/*! ../src/views/ThankYou */ "./src/views/ThankYou.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_10__src_views_Messages__ = __webpack_require__(/*! ../src/views/Messages */ "./src/views/Messages.js");
 var _jsxFileName = 'C:\\SF.Code\\Github\\alleyOOP\\Project\\Project.Web\\App\\src\\routes.js',
     _this = this;
+
 
 
 
@@ -30630,7 +30914,7 @@ var Routes = function Routes() {
         {
             __source: {
                 fileName: _jsxFileName,
-                lineNumber: 13
+                lineNumber: 14
             },
             __self: _this
         },
@@ -30638,7 +30922,7 @@ var Routes = function Routes() {
             'div',
             { id: 'topDiv', __source: {
                     fileName: _jsxFileName,
-                    lineNumber: 14
+                    lineNumber: 15
                 },
                 __self: _this
             },
@@ -30647,31 +30931,31 @@ var Routes = function Routes() {
                 {
                     __source: {
                         fileName: _jsxFileName,
-                        lineNumber: 15
+                        lineNumber: 16
                     },
                     __self: _this
                 },
                 __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_1_react_router_dom__["c" /* Route */], { exact: true, path: '/', component: __WEBPACK_IMPORTED_MODULE_3__src_views_Register__["a" /* default */], __source: {
                         fileName: _jsxFileName,
-                        lineNumber: 16
+                        lineNumber: 17
                     },
                     __self: _this
                 }),
                 __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_1_react_router_dom__["c" /* Route */], { path: '/login', component: __WEBPACK_IMPORTED_MODULE_4__src_views_Login__["a" /* default */], __source: {
                         fileName: _jsxFileName,
-                        lineNumber: 17
+                        lineNumber: 18
                     },
                     __self: _this
                 }),
                 __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_1_react_router_dom__["c" /* Route */], { path: '/register', component: __WEBPACK_IMPORTED_MODULE_3__src_views_Register__["a" /* default */], __source: {
                         fileName: _jsxFileName,
-                        lineNumber: 18
+                        lineNumber: 19
                     },
                     __self: _this
                 }),
                 __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_1_react_router_dom__["c" /* Route */], { path: '/terms', component: __WEBPACK_IMPORTED_MODULE_5__src_views_TConditions__["a" /* default */], __source: {
                         fileName: _jsxFileName,
-                        lineNumber: 19
+                        lineNumber: 20
                     },
                     __self: _this
                 }),
@@ -30680,31 +30964,37 @@ var Routes = function Routes() {
                     {
                         __source: {
                             fileName: _jsxFileName,
-                            lineNumber: 20
+                            lineNumber: 21
                         },
                         __self: _this
                     },
                     __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_1_react_router_dom__["c" /* Route */], { path: '/app', component: __WEBPACK_IMPORTED_MODULE_2__src_views_App__["a" /* default */], __source: {
                             fileName: _jsxFileName,
-                            lineNumber: 21
+                            lineNumber: 22
                         },
                         __self: _this
                     }),
                     __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_1_react_router_dom__["c" /* Route */], { path: '/accounts', component: __WEBPACK_IMPORTED_MODULE_7__src_views_Accounts__["a" /* default */], __source: {
                             fileName: _jsxFileName,
-                            lineNumber: 22
+                            lineNumber: 23
                         },
                         __self: _this
                     }),
                     __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_1_react_router_dom__["c" /* Route */], { path: '/donations', component: __WEBPACK_IMPORTED_MODULE_8__src_views_Donations__["a" /* default */], __source: {
                             fileName: _jsxFileName,
-                            lineNumber: 23
+                            lineNumber: 24
                         },
                         __self: _this
                     }),
                     __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_1_react_router_dom__["c" /* Route */], { path: '/thankyou', component: __WEBPACK_IMPORTED_MODULE_9__src_views_ThankYou__["a" /* default */], __source: {
                             fileName: _jsxFileName,
-                            lineNumber: 24
+                            lineNumber: 25
+                        },
+                        __self: _this
+                    }),
+                    __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_1_react_router_dom__["c" /* Route */], { path: '/messages', component: __WEBPACK_IMPORTED_MODULE_10__src_views_Messages__["a" /* default */], __source: {
+                            fileName: _jsxFileName,
+                            lineNumber: 26
                         },
                         __self: _this
                     })
@@ -30780,6 +31070,42 @@ if(true) {
 	if(!content.locals) {
 		module.hot.accept(/*! !../../node_modules/css-loader??ref--1-oneOf-2-1!../../node_modules/postcss-loader/lib??postcss!./Deadpool.css */ "./node_modules/css-loader/index.js?{\"importLoaders\":1}!./node_modules/postcss-loader/lib/index.js?{\"ident\":\"postcss\",\"plugins\":[null,null]}!./src/styles/Deadpool.css", function() {
 			var newContent = __webpack_require__(/*! !../../node_modules/css-loader??ref--1-oneOf-2-1!../../node_modules/postcss-loader/lib??postcss!./Deadpool.css */ "./node_modules/css-loader/index.js?{\"importLoaders\":1}!./node_modules/postcss-loader/lib/index.js?{\"ident\":\"postcss\",\"plugins\":[null,null]}!./src/styles/Deadpool.css");
+			if(typeof newContent === 'string') newContent = [[module.i, newContent, '']];
+			update(newContent);
+		});
+	}
+	// When the module is disposed, remove the <style> tags
+	module.hot.dispose(function() { update(); });
+}
+
+/***/ }),
+
+/***/ "./src/styles/Messages.css":
+/*!*********************************!*\
+  !*** ./src/styles/Messages.css ***!
+  \*********************************/
+/*! dynamic exports provided */
+/***/ (function(module, exports, __webpack_require__) {
+
+// style-loader: Adds some css to the DOM by adding a <style> tag
+
+// load the styles
+var content = __webpack_require__(/*! !../../node_modules/css-loader??ref--1-oneOf-2-1!../../node_modules/postcss-loader/lib??postcss!./Messages.css */ "./node_modules/css-loader/index.js?{\"importLoaders\":1}!./node_modules/postcss-loader/lib/index.js?{\"ident\":\"postcss\",\"plugins\":[null,null]}!./src/styles/Messages.css");
+if(typeof content === 'string') content = [[module.i, content, '']];
+// Prepare cssTransformation
+var transform;
+
+var options = {"hmr":true}
+options.transform = transform
+// add the styles to the DOM
+var update = __webpack_require__(/*! ../../node_modules/style-loader/lib/addStyles.js */ "./node_modules/style-loader/lib/addStyles.js")(content, options);
+if(content.locals) module.exports = content.locals;
+// Hot Module Replacement
+if(true) {
+	// When the styles change, update the <style> tags
+	if(!content.locals) {
+		module.hot.accept(/*! !../../node_modules/css-loader??ref--1-oneOf-2-1!../../node_modules/postcss-loader/lib??postcss!./Messages.css */ "./node_modules/css-loader/index.js?{\"importLoaders\":1}!./node_modules/postcss-loader/lib/index.js?{\"ident\":\"postcss\",\"plugins\":[null,null]}!./src/styles/Messages.css", function() {
+			var newContent = __webpack_require__(/*! !../../node_modules/css-loader??ref--1-oneOf-2-1!../../node_modules/postcss-loader/lib??postcss!./Messages.css */ "./node_modules/css-loader/index.js?{\"importLoaders\":1}!./node_modules/postcss-loader/lib/index.js?{\"ident\":\"postcss\",\"plugins\":[null,null]}!./src/styles/Messages.css");
 			if(typeof newContent === 'string') newContent = [[module.i, newContent, '']];
 			update(newContent);
 		});
@@ -31671,25 +31997,6 @@ var App = function (_React$Component) {
                       __self: this
                     })
                   )
-                ),
-                __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-                  'div',
-                  { className: this.state.panelClass, __source: {
-                      fileName: _jsxFileName,
-                      lineNumber: 83
-                    },
-                    __self: this
-                  },
-                  __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-                    'div',
-                    { className: 'panel-heading', __source: {
-                        fileName: _jsxFileName,
-                        lineNumber: 84
-                      },
-                      __self: this
-                    },
-                    'This is empty'
-                  )
                 )
               )
             ),
@@ -31697,7 +32004,7 @@ var App = function (_React$Component) {
               'div',
               { className: 'col-md-5', __source: {
                   fileName: _jsxFileName,
-                  lineNumber: 91
+                  lineNumber: 86
                 },
                 __self: this
               },
@@ -31705,7 +32012,7 @@ var App = function (_React$Component) {
                 'div',
                 { className: 'panel-group', __source: {
                     fileName: _jsxFileName,
-                    lineNumber: 92
+                    lineNumber: 87
                   },
                   __self: this
                 },
@@ -31713,10 +32020,34 @@ var App = function (_React$Component) {
                   'div',
                   { className: 'noPadding', __source: {
                       fileName: _jsxFileName,
-                      lineNumber: 93
+                      lineNumber: 88
                     },
                     __self: this
                   },
+                  __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                    'div',
+                    { className: this.state.panelClass, __source: {
+                        fileName: _jsxFileName,
+                        lineNumber: 89
+                      },
+                      __self: this
+                    },
+                    __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                      'div',
+                      { className: 'panel-heading video-container', __source: {
+                          fileName: _jsxFileName,
+                          lineNumber: 90
+                        },
+                        __self: this
+                      },
+                      __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('iframe', { src: 'https://www.youtube.com/embed/k4hcdxTHARw', title: 'video1', allowFullScreen: true, __source: {
+                          fileName: _jsxFileName,
+                          lineNumber: 91
+                        },
+                        __self: this
+                      })
+                    )
+                  ),
                   __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
                     'div',
                     { className: this.state.panelClass, __source: {
@@ -31733,7 +32064,7 @@ var App = function (_React$Component) {
                         },
                         __self: this
                       },
-                      __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('iframe', { src: 'https://www.youtube.com/embed/k4hcdxTHARw', title: 'video1', allowFullScreen: true, __source: {
+                      __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('iframe', { src: 'https://www.youtube.com/embed/BwWK2Xd9gWI', title: 'video2', allowFullScreen: true, __source: {
                           fileName: _jsxFileName,
                           lineNumber: 96
                         },
@@ -31757,33 +32088,9 @@ var App = function (_React$Component) {
                         },
                         __self: this
                       },
-                      __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('iframe', { src: 'https://www.youtube.com/embed/BwWK2Xd9gWI', title: 'video2', allowFullScreen: true, __source: {
-                          fileName: _jsxFileName,
-                          lineNumber: 101
-                        },
-                        __self: this
-                      })
-                    )
-                  ),
-                  __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-                    'div',
-                    { className: this.state.panelClass, __source: {
-                        fileName: _jsxFileName,
-                        lineNumber: 104
-                      },
-                      __self: this
-                    },
-                    __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-                      'div',
-                      { className: 'panel-heading video-container', __source: {
-                          fileName: _jsxFileName,
-                          lineNumber: 105
-                        },
-                        __self: this
-                      },
                       __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('iframe', { src: 'https://www.youtube.com/embed/xa-4IAR_9Yw', title: 'video3', allowFullScreen: true, __source: {
                           fileName: _jsxFileName,
-                          lineNumber: 106
+                          lineNumber: 101
                         },
                         __self: this
                       })
@@ -31796,7 +32103,7 @@ var App = function (_React$Component) {
               'div',
               { className: 'col-md-3', __source: {
                   fileName: _jsxFileName,
-                  lineNumber: 113
+                  lineNumber: 108
                 },
                 __self: this
               },
@@ -31804,7 +32111,7 @@ var App = function (_React$Component) {
                 'div',
                 { className: 'panel-group', __source: {
                     fileName: _jsxFileName,
-                    lineNumber: 114
+                    lineNumber: 109
                   },
                   __self: this
                 },
@@ -31812,10 +32119,34 @@ var App = function (_React$Component) {
                   'div',
                   { className: ' noPadding', __source: {
                       fileName: _jsxFileName,
-                      lineNumber: 115
+                      lineNumber: 110
                     },
                     __self: this
                   },
+                  __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                    'div',
+                    { className: this.state.panelClass, __source: {
+                        fileName: _jsxFileName,
+                        lineNumber: 111
+                      },
+                      __self: this
+                    },
+                    __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                      'div',
+                      { className: 'panel-heading', __source: {
+                          fileName: _jsxFileName,
+                          lineNumber: 112
+                        },
+                        __self: this
+                      },
+                      __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('img', { src: __WEBPACK_IMPORTED_MODULE_2__images_thunder_png___default.a, className: 'img-responsive', alt: 'thunder-logo', __source: {
+                          fileName: _jsxFileName,
+                          lineNumber: 113
+                        },
+                        __self: this
+                      })
+                    )
+                  ),
                   __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
                     'div',
                     { className: this.state.panelClass, __source: {
@@ -31832,34 +32163,10 @@ var App = function (_React$Component) {
                         },
                         __self: this
                       },
-                      __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('img', { src: __WEBPACK_IMPORTED_MODULE_2__images_thunder_png___default.a, className: 'img-responsive', alt: 'thunder-logo', __source: {
-                          fileName: _jsxFileName,
-                          lineNumber: 118
-                        },
-                        __self: this
-                      })
-                    )
-                  ),
-                  __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-                    'div',
-                    { className: this.state.panelClass, __source: {
-                        fileName: _jsxFileName,
-                        lineNumber: 121
-                      },
-                      __self: this
-                    },
-                    __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-                      'div',
-                      { className: 'panel-heading', __source: {
-                          fileName: _jsxFileName,
-                          lineNumber: 122
-                        },
-                        __self: this
-                      },
                       __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_4__components_Sports__["a" /* default */], {
                         __source: {
                           fileName: _jsxFileName,
-                          lineNumber: 123
+                          lineNumber: 118
                         },
                         __self: this
                       })
@@ -32737,6 +33044,318 @@ var Login = function (_React$Component) {
 }(__WEBPACK_IMPORTED_MODULE_0_react___default.a.Component);
 
 /* harmony default export */ __webpack_exports__["a"] = (Login);
+
+/***/ }),
+
+/***/ "./src/views/Messages.js":
+/*!*******************************!*\
+  !*** ./src/views/Messages.js ***!
+  \*******************************/
+/*! exports provided: default */
+/*! exports used: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_react__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_react___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_react__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__styles_Messages_css__ = __webpack_require__(/*! ../styles/Messages.css */ "./src/styles/Messages.css");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__styles_Messages_css___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1__styles_Messages_css__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__components_todo__ = __webpack_require__(/*! ../components/todo */ "./src/components/todo.js");
+var _slicedToArray = function () { function sliceIterator(arr, i) { var _arr = []; var _n = true; var _d = false; var _e = undefined; try { for (var _i = arr[Symbol.iterator](), _s; !(_n = (_s = _i.next()).done); _n = true) { _arr.push(_s.value); if (i && _arr.length === i) break; } } catch (err) { _d = true; _e = err; } finally { try { if (!_n && _i["return"]) _i["return"](); } finally { if (_d) throw _e; } } return _arr; } return function (arr, i) { if (Array.isArray(arr)) { return arr; } else if (Symbol.iterator in Object(arr)) { return sliceIterator(arr, i); } else { throw new TypeError("Invalid attempt to destructure non-iterable instance"); } }; }();
+
+var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+var _jsxFileName = 'C:\\SF.Code\\Github\\alleyOOP\\Project\\Project.Web\\App\\src\\views\\Messages.js';
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+
+
+
+
+function Square(props) {
+  return __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+    'button',
+    { className: 'square', onClick: props.onClick, __source: {
+        fileName: _jsxFileName,
+        lineNumber: 7
+      },
+      __self: this
+    },
+    props.value
+  );
+}
+
+var Board = function (_React$Component) {
+  _inherits(Board, _React$Component);
+
+  function Board() {
+    _classCallCheck(this, Board);
+
+    return _possibleConstructorReturn(this, (Board.__proto__ || Object.getPrototypeOf(Board)).apply(this, arguments));
+  }
+
+  _createClass(Board, [{
+    key: 'renderSquare',
+    value: function renderSquare(i) {
+      var _this2 = this;
+
+      return __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(Square, {
+        value: this.props.squares[i],
+        onClick: function onClick() {
+          return _this2.props.onClick(i);
+        },
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 16
+        },
+        __self: this
+      });
+    }
+  }, {
+    key: 'render',
+    value: function render() {
+      return __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+        'div',
+        {
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 25
+          },
+          __self: this
+        },
+        __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+          'div',
+          { className: 'board-row', __source: {
+              fileName: _jsxFileName,
+              lineNumber: 26
+            },
+            __self: this
+          },
+          this.renderSquare(0),
+          this.renderSquare(1),
+          this.renderSquare(2)
+        ),
+        __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+          'div',
+          { className: 'board-row', __source: {
+              fileName: _jsxFileName,
+              lineNumber: 31
+            },
+            __self: this
+          },
+          this.renderSquare(3),
+          this.renderSquare(4),
+          this.renderSquare(5)
+        ),
+        __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+          'div',
+          { className: 'board-row', __source: {
+              fileName: _jsxFileName,
+              lineNumber: 36
+            },
+            __self: this
+          },
+          this.renderSquare(6),
+          this.renderSquare(7),
+          this.renderSquare(8)
+        )
+      );
+    }
+  }]);
+
+  return Board;
+}(__WEBPACK_IMPORTED_MODULE_0_react___default.a.Component);
+
+var Game = function (_React$Component2) {
+  _inherits(Game, _React$Component2);
+
+  function Game(props) {
+    _classCallCheck(this, Game);
+
+    var _this3 = _possibleConstructorReturn(this, (Game.__proto__ || Object.getPrototypeOf(Game)).call(this, props));
+
+    _this3.state = {
+      history: [{
+        squares: Array(9).fill(null)
+      }],
+      stepNumber: 0,
+      xIsNext: true
+    };
+    return _this3;
+  }
+
+  _createClass(Game, [{
+    key: 'handleClick',
+    value: function handleClick(i) {
+      var history = this.state.history.slice(0, this.state.stepNumber + 1);
+      var current = history[history.length - 1];
+      var squares = current.squares.slice();
+      if (calculateWinner(squares) || squares[i]) {
+        return;
+      }
+      squares[i] = this.state.xIsNext ? "X" : "O";
+      this.setState({
+        history: history.concat([{
+          squares: squares
+        }]),
+        stepNumber: history.length,
+        xIsNext: !this.state.xIsNext
+      });
+    }
+  }, {
+    key: 'jumpTo',
+    value: function jumpTo(step) {
+      this.setState({
+        stepNumber: step,
+        xIsNext: step % 2 === 0
+      });
+    }
+  }, {
+    key: 'render',
+    value: function render() {
+      var _this4 = this;
+
+      var history = this.state.history;
+      var current = history[this.state.stepNumber];
+      var winner = calculateWinner(current.squares);
+
+      var moves = history.map(function (step, move) {
+        var desc = move ? 'Go to move #' + move : 'Go to game start';
+        return __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+          'li',
+          { key: move, __source: {
+              fileName: _jsxFileName,
+              lineNumber: 96
+            },
+            __self: _this4
+          },
+          __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+            'button',
+            { onClick: function onClick() {
+                return _this4.jumpTo(move);
+              }, __source: {
+                fileName: _jsxFileName,
+                lineNumber: 97
+              },
+              __self: _this4
+            },
+            desc
+          )
+        );
+      });
+
+      var status = void 0;
+      if (winner) {
+        status = "Winner: " + winner;
+      } else {
+        status = "Next player: " + (this.state.xIsNext ? "X" : "O");
+      }
+
+      return __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+        'div',
+        { className: 'game-info', __source: {
+            fileName: _jsxFileName,
+            lineNumber: 110
+          },
+          __self: this
+        },
+        __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+          'div',
+          { className: 'game', __source: {
+              fileName: _jsxFileName,
+              lineNumber: 111
+            },
+            __self: this
+          },
+          __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+            'div',
+            { className: 'game-board', __source: {
+                fileName: _jsxFileName,
+                lineNumber: 112
+              },
+              __self: this
+            },
+            __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(Board, {
+              squares: current.squares,
+              onClick: function onClick(i) {
+                return _this4.handleClick(i);
+              },
+              __source: {
+                fileName: _jsxFileName,
+                lineNumber: 113
+              },
+              __self: this
+            })
+          ),
+          __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+            'div',
+            { className: 'game-info', __source: {
+                fileName: _jsxFileName,
+                lineNumber: 118
+              },
+              __self: this
+            },
+            __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+              'div',
+              {
+                __source: {
+                  fileName: _jsxFileName,
+                  lineNumber: 119
+                },
+                __self: this
+              },
+              status
+            ),
+            __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+              'ol',
+              {
+                __source: {
+                  fileName: _jsxFileName,
+                  lineNumber: 120
+                },
+                __self: this
+              },
+              moves
+            )
+          )
+        ),
+        __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_2__components_todo__["a" /* default */], {
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 123
+          },
+          __self: this
+        })
+      );
+    }
+  }]);
+
+  return Game;
+}(__WEBPACK_IMPORTED_MODULE_0_react___default.a.Component);
+
+// ========================================
+
+function calculateWinner(squares) {
+  var lines = [[0, 1, 2], [3, 4, 5], [6, 7, 8], [0, 3, 6], [1, 4, 7], [2, 5, 8], [0, 4, 8], [2, 4, 6]];
+  for (var i = 0; i < lines.length; i++) {
+    var _lines$i = _slicedToArray(lines[i], 3),
+        a = _lines$i[0],
+        b = _lines$i[1],
+        c = _lines$i[2];
+
+    if (squares[a] && squares[a] === squares[b] && squares[a] === squares[c]) {
+      return squares[a];
+    }
+  }
+  return null;
+}
+
+/* harmony default export */ __webpack_exports__["a"] = (Game);
 
 /***/ }),
 
