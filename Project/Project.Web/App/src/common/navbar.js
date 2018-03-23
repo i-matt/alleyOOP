@@ -25,11 +25,12 @@ class NavBar extends React.Component{
                             <Link to="/app" className="navbar-brand"><font color="#61DAFB">OOP</font></Link>
                         </div>
                         <ul className="nav navbar-nav">
-                            <li><Link to="/register">Register</Link></li>
-                            <li><Link to="/login">Login</Link></li>
+                            {/* <li><Link to="/register">Register</Link></li>
+                            <li><Link to="/login">Login</Link></li> */}
                             <li><Link to="/accounts">Accounts</Link></li>
+                            
                         </ul>
-                        <form className="navbar-form navbar-left" action="/action_page.php">
+                        <form className="navbar-form navbar-left" action="Https://www.google.com">
                             <div className="input-group">
                                 <input type="text" className="form-control" placeholder="Search" name="search"/>
                                 <div className="input-group-btn">
@@ -41,22 +42,23 @@ class NavBar extends React.Component{
                         </form>
                         <ul className="nav navbar-nav pull-right">
                             <li><img src="https://cdn-images-1.medium.com/max/1920/1*-4nkXQYN05ljzfJez_azbg.jpeg" className="profileIcon img-circle" alt="profilePic"/></li>
-                            <li><a href="/app"><font color="#61DAFB"> Deadpool <i/></font></a></li>
-                            <li><a href="/app"><font color="#61DAFB"> Home <i/></font></a></li>
+                            <li><Link to="/app"><font color="#61DAFB"> Deadpool <i/></font></Link></li>
+                            <li><Link to="/app"><font color="#61DAFB"> Home <i/></font></Link></li>
+                            <li><Link to="/donations">Donate</Link></li>
                             <li><a href="/messages"><i className="fas fa-inbox"/><span className="badge">5</span></a></li>
                             <li className="dropdown">
-                                <a className="dropdown-toggle" data-toggle="dropdown" href=""><i className="fas fa-cog"></i>
+                                <a className="dropdown-toggle" data-toggle="dropdown" ><i className="fas fa-cog"></i>
                                 <span className="caret"></span></a>
                                 <ul className="dropdown-menu">
-                                <li><a href="">Night Mode
+                                <li>Night Mode
                                     <label htmlFor="nightMode"className="switch">
                                         <input type="checkbox" id="nightMode" onClick={this.handleNightMode}/>
                                         <span className="slider round"></span>
-                                    </label></a>
+                                    </label>
                                 </li>
                                 </ul>
                             </li>
-                            <li><a href="/login"><i className="fas fa-sign-out-alt"></i> Logout </a></li>
+                            <li><Link to="/login"><i className="fas fa-sign-out-alt"></i> Logout </Link></li>
                         </ul>
                     </div>
                 </nav>

@@ -61,7 +61,7 @@
 /******/ 	
 /******/ 	
 /******/ 	var hotApplyOnUpdate = true;
-/******/ 	var hotCurrentHash = "0214290ce2c4056404a1"; // eslint-disable-line no-unused-vars
+/******/ 	var hotCurrentHash = "677c56fd031e9eada8d1"; // eslint-disable-line no-unused-vars
 /******/ 	var hotRequestTimeout = 10000;
 /******/ 	var hotCurrentModuleData = {};
 /******/ 	var hotCurrentChildModule; // eslint-disable-line no-unused-vars
@@ -8006,7 +8006,7 @@ module.exports = function(isValidElement, throwOnDirectAccess) {
   !*** ./node_modules/prop-types/index.js ***!
   \******************************************/
 /*! dynamic exports provided */
-/*! exports used: default */
+/*! all exports used */
 /***/ (function(module, exports, __webpack_require__) {
 
 /**
@@ -25068,6 +25068,951 @@ var withRouter = function withRouter(Component) {
 
 /***/ }),
 
+/***/ "./node_modules/react-stripe-elements/es/components/Element.js":
+/*!*********************************************************************!*\
+  !*** ./node_modules/react-stripe-elements/es/components/Element.js ***!
+  \*********************************************************************/
+/*! dynamic exports provided */
+/*! all exports used */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+
+var _react = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+
+var _react2 = _interopRequireDefault(_react);
+
+var _propTypes = __webpack_require__(/*! prop-types */ "./node_modules/prop-types/index.js");
+
+var _propTypes2 = _interopRequireDefault(_propTypes);
+
+var _shallowEqual = __webpack_require__(/*! ../utils/shallowEqual */ "./node_modules/react-stripe-elements/es/utils/shallowEqual.js");
+
+var _shallowEqual2 = _interopRequireDefault(_shallowEqual);
+
+var _Elements = __webpack_require__(/*! ./Elements */ "./node_modules/react-stripe-elements/es/components/Elements.js");
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+function _objectWithoutProperties(obj, keys) { var target = {}; for (var i in obj) { if (keys.indexOf(i) >= 0) continue; if (!Object.prototype.hasOwnProperty.call(obj, i)) continue; target[i] = obj[i]; } return target; }
+
+var noop = function noop() {};
+
+var _extractOptions = function _extractOptions(props) {
+  var id = props.id,
+      className = props.className,
+      elementRef = props.elementRef,
+      onChange = props.onChange,
+      onFocus = props.onFocus,
+      onBlur = props.onBlur,
+      onReady = props.onReady,
+      options = _objectWithoutProperties(props, ['id', 'className', 'elementRef', 'onChange', 'onFocus', 'onBlur', 'onReady']);
+
+  return options;
+};
+
+var Element = function Element(type) {
+  var _class, _temp;
+
+  var hocOptions = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : {};
+  return _temp = _class = function (_React$Component) {
+    _inherits(_class, _React$Component);
+
+    function _class(props, context) {
+      _classCallCheck(this, _class);
+
+      var _this = _possibleConstructorReturn(this, _React$Component.call(this, props, context));
+
+      _this.handleRef = function (ref) {
+        _this._ref = ref;
+      };
+
+      _this._element = null;
+
+      var options = _extractOptions(_this.props);
+      // We keep track of the extracted options on this._options to avoid re-rendering.
+      // (We would unnecessarily re-render if we were tracking them with state.)
+      _this._options = options;
+      return _this;
+    }
+
+    _class.prototype.componentDidMount = function componentDidMount() {
+      var _this2 = this;
+
+      this.context.addElementsLoadListener(function (elements) {
+        var element = elements.create(type, _this2._options);
+        _this2._element = element;
+
+        _this2._setupEventListeners(element);
+
+        element.mount(_this2._ref);
+        if (hocOptions.sourceType) {
+          _this2.context.registerElement(hocOptions.sourceType, element);
+        }
+      });
+    };
+
+    _class.prototype.componentWillReceiveProps = function componentWillReceiveProps(nextProps) {
+      var options = _extractOptions(nextProps);
+      if (Object.keys(options).length !== 0 && !(0, _shallowEqual2.default)(options, this._options)) {
+        this._options = options;
+        if (this._element) {
+          this._element.update(options);
+        }
+      }
+    };
+
+    _class.prototype.componentWillUnmount = function componentWillUnmount() {
+      if (this._element) {
+        var element = this._element;
+        element.destroy();
+        this.context.unregisterElement(element);
+      }
+    };
+
+    _class.prototype._setupEventListeners = function _setupEventListeners(element) {
+      var _this3 = this;
+
+      element.on('ready', function () {
+        if (_this3.props.elementRef) {
+          if (window.console && window.console.warn) {
+            console.warn("'elementRef()' is deprecated and will be removed in a future version of react-stripe-elements. Please use 'onReady()' instead.");
+          }
+          _this3.props.elementRef(_this3._element);
+        }
+        _this3.props.onReady(_this3._element);
+      });
+
+      element.on('change', function (change) {
+        _this3.props.onChange(change);
+      });
+
+      element.on('blur', function () {
+        var _props;
+
+        return (_props = _this3.props).onBlur.apply(_props, arguments);
+      });
+      element.on('focus', function () {
+        var _props2;
+
+        return (_props2 = _this3.props).onFocus.apply(_props2, arguments);
+      });
+    };
+
+    _class.prototype.render = function render() {
+      return _react2.default.createElement('div', {
+        id: this.props.id,
+        className: this.props.className,
+        ref: this.handleRef
+      });
+    };
+
+    return _class;
+  }(_react2.default.Component), _class.propTypes = {
+    id: _propTypes2.default.string,
+    className: _propTypes2.default.string,
+    elementRef: _propTypes2.default.func,
+    onChange: _propTypes2.default.func,
+    onBlur: _propTypes2.default.func,
+    onFocus: _propTypes2.default.func,
+    onReady: _propTypes2.default.func
+  }, _class.defaultProps = {
+    id: undefined,
+    className: undefined,
+    elementRef: undefined,
+    onChange: noop,
+    onBlur: noop,
+    onFocus: noop,
+    onReady: noop
+  }, _class.contextTypes = _Elements.elementContextTypes, _temp;
+};
+
+exports.default = Element;
+
+/***/ }),
+
+/***/ "./node_modules/react-stripe-elements/es/components/Elements.js":
+/*!**********************************************************************!*\
+  !*** ./node_modules/react-stripe-elements/es/components/Elements.js ***!
+  \**********************************************************************/
+/*! dynamic exports provided */
+/*! all exports used */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.elementContextTypes = exports.injectContextTypes = undefined;
+
+var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
+
+var _react = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+
+var _react2 = _interopRequireDefault(_react);
+
+var _propTypes = __webpack_require__(/*! prop-types */ "./node_modules/prop-types/index.js");
+
+var _propTypes2 = _interopRequireDefault(_propTypes);
+
+var _Provider = __webpack_require__(/*! ./Provider */ "./node_modules/react-stripe-elements/es/components/Provider.js");
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+function _objectWithoutProperties(obj, keys) { var target = {}; for (var i in obj) { if (keys.indexOf(i) >= 0) continue; if (!Object.prototype.hasOwnProperty.call(obj, i)) continue; target[i] = obj[i]; } return target; }
+
+function _toConsumableArray(arr) { if (Array.isArray(arr)) { for (var i = 0, arr2 = Array(arr.length); i < arr.length; i++) { arr2[i] = arr[i]; } return arr2; } else { return Array.from(arr); } }
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+var injectContextTypes = exports.injectContextTypes = {
+  getRegisteredElements: _propTypes2.default.func.isRequired
+};
+
+var elementContextTypes = exports.elementContextTypes = {
+  addElementsLoadListener: _propTypes2.default.func.isRequired,
+  registerElement: _propTypes2.default.func.isRequired,
+  unregisterElement: _propTypes2.default.func.isRequired
+};
+
+var Elements = function (_React$Component) {
+  _inherits(Elements, _React$Component);
+
+  function Elements(props, context) {
+    _classCallCheck(this, Elements);
+
+    var _this = _possibleConstructorReturn(this, _React$Component.call(this, props, context));
+
+    _this.handleRegisterElement = function (type, element) {
+      _this.setState(function (prevState) {
+        return {
+          registeredElements: [].concat(_toConsumableArray(prevState.registeredElements), [{ type: type, element: element }])
+        };
+      });
+    };
+
+    _this.handleUnregisterElement = function (el) {
+      _this.setState(function (prevState) {
+        return {
+          registeredElements: prevState.registeredElements.filter(function (_ref) {
+            var element = _ref.element;
+            return element !== el;
+          })
+        };
+      });
+    };
+
+    _this.state = {
+      registeredElements: []
+    };
+    return _this;
+  }
+
+  Elements.prototype.getChildContext = function getChildContext() {
+    var _this2 = this;
+
+    return {
+      addElementsLoadListener: function addElementsLoadListener(fn) {
+        // Return the existing elements instance if we already have one.
+        if (_this2._elements) {
+          fn(_this2._elements);
+          return;
+        }
+
+        var _props = _this2.props,
+            children = _props.children,
+            options = _objectWithoutProperties(_props, ['children']);
+
+        if (_this2.context.tag === 'sync') {
+          _this2._elements = _this2.context.stripe.elements(options);
+          fn(_this2._elements);
+        } else {
+          _this2.context.addStripeLoadListener(function (stripe) {
+            if (_this2._elements) {
+              fn(_this2._elements);
+            } else {
+              _this2._elements = stripe.elements(options);
+              fn(_this2._elements);
+            }
+          });
+        }
+      },
+      registerElement: this.handleRegisterElement,
+      unregisterElement: this.handleUnregisterElement,
+      getRegisteredElements: function getRegisteredElements() {
+        return _this2.state.registeredElements;
+      }
+    };
+  };
+
+  Elements.prototype.render = function render() {
+    return _react2.default.Children.only(this.props.children);
+  };
+
+  return Elements;
+}(_react2.default.Component);
+
+Elements.childContextTypes = _extends({}, injectContextTypes, elementContextTypes);
+Elements.contextTypes = _Provider.providerContextTypes;
+Elements.defaultProps = {
+  children: null
+};
+exports.default = Elements;
+
+/***/ }),
+
+/***/ "./node_modules/react-stripe-elements/es/components/PaymentRequestButtonElement.js":
+/*!*****************************************************************************************!*\
+  !*** ./node_modules/react-stripe-elements/es/components/PaymentRequestButtonElement.js ***!
+  \*****************************************************************************************/
+/*! dynamic exports provided */
+/*! all exports used */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+
+var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
+
+var _react = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+
+var _react2 = _interopRequireDefault(_react);
+
+var _propTypes = __webpack_require__(/*! prop-types */ "./node_modules/prop-types/index.js");
+
+var _propTypes2 = _interopRequireDefault(_propTypes);
+
+var _shallowEqual = __webpack_require__(/*! ../utils/shallowEqual */ "./node_modules/react-stripe-elements/es/utils/shallowEqual.js");
+
+var _shallowEqual2 = _interopRequireDefault(_shallowEqual);
+
+var _Elements = __webpack_require__(/*! ./Elements */ "./node_modules/react-stripe-elements/es/components/Elements.js");
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+function _objectWithoutProperties(obj, keys) { var target = {}; for (var i in obj) { if (keys.indexOf(i) >= 0) continue; if (!Object.prototype.hasOwnProperty.call(obj, i)) continue; target[i] = obj[i]; } return target; }
+
+var noop = function noop() {};
+
+var _extractOptions = function _extractOptions(props) {
+  var id = props.id,
+      className = props.className,
+      elementRef = props.elementRef,
+      onBlur = props.onBlur,
+      onClick = props.onClick,
+      onFocus = props.onFocus,
+      onReady = props.onReady,
+      paymentRequest = props.paymentRequest,
+      options = _objectWithoutProperties(props, ['id', 'className', 'elementRef', 'onBlur', 'onClick', 'onFocus', 'onReady', 'paymentRequest']);
+
+  return options;
+};
+
+var PaymentRequestButtonElement = function (_React$Component) {
+  _inherits(PaymentRequestButtonElement, _React$Component);
+
+  function PaymentRequestButtonElement(props, context) {
+    _classCallCheck(this, PaymentRequestButtonElement);
+
+    var _this = _possibleConstructorReturn(this, _React$Component.call(this, props, context));
+
+    _this.handleRef = function (ref) {
+      _this._ref = ref;
+    };
+
+    var options = _extractOptions(props);
+    // We keep track of the extracted options on this._options to avoid re-rendering.
+    // (We would unnecessarily re-render if we were tracking them with state.)
+    _this._options = options;
+    return _this;
+  }
+
+  PaymentRequestButtonElement.prototype.componentDidMount = function componentDidMount() {
+    var _this2 = this;
+
+    this.context.addElementsLoadListener(function (elements) {
+      _this2._element = elements.create('paymentRequestButton', _extends({
+        paymentRequest: _this2.props.paymentRequest
+      }, _this2._options));
+      _this2._element.on('ready', function () {
+        if (_this2.props.elementRef) {
+          if (window.console && window.console.warn) {
+            console.warn("'elementRef()' is deprecated and will be removed in a future version of react-stripe-elements. Please use 'onReady()' instead.");
+          }
+          _this2.props.elementRef(_this2._element);
+        }
+        _this2.props.onReady(_this2._element);
+      });
+      _this2._element.on('focus', function () {
+        var _props;
+
+        return (_props = _this2.props).onFocus.apply(_props, arguments);
+      });
+      _this2._element.on('click', function () {
+        var _props2;
+
+        return (_props2 = _this2.props).onClick.apply(_props2, arguments);
+      });
+      _this2._element.on('blur', function () {
+        var _props3;
+
+        return (_props3 = _this2.props).onBlur.apply(_props3, arguments);
+      });
+      _this2._element.mount(_this2._ref);
+    });
+  };
+
+  PaymentRequestButtonElement.prototype.componentWillReceiveProps = function componentWillReceiveProps(nextProps) {
+    if (this.props.paymentRequest !== nextProps.paymentRequest) {
+      console.warn('Unsupported prop change: paymentRequest is not a customizable property.');
+    }
+    var options = _extractOptions(nextProps);
+    if (Object.keys(options).length !== 0 && !(0, _shallowEqual2.default)(options, this._options)) {
+      this._options = options;
+      this._element.update(options);
+    }
+  };
+
+  PaymentRequestButtonElement.prototype.componentWillUnmount = function componentWillUnmount() {
+    this._element.destroy();
+  };
+
+  PaymentRequestButtonElement.prototype.render = function render() {
+    return _react2.default.createElement('div', {
+      id: this.props.id,
+      className: this.props.className,
+      ref: this.handleRef
+    });
+  };
+
+  return PaymentRequestButtonElement;
+}(_react2.default.Component);
+
+PaymentRequestButtonElement.propTypes = {
+  id: _propTypes2.default.string,
+  className: _propTypes2.default.string,
+  elementRef: _propTypes2.default.func,
+  onBlur: _propTypes2.default.func,
+  onClick: _propTypes2.default.func,
+  onFocus: _propTypes2.default.func,
+  onReady: _propTypes2.default.func,
+  paymentRequest: _propTypes2.default.shape({
+    canMakePayment: _propTypes2.default.func.isRequired,
+    on: _propTypes2.default.func.isRequired,
+    show: _propTypes2.default.func.isRequired
+  }).isRequired
+};
+PaymentRequestButtonElement.defaultProps = {
+  id: undefined,
+  className: undefined,
+  elementRef: undefined,
+  onBlur: noop,
+  onClick: noop,
+  onFocus: noop,
+  onReady: noop
+};
+PaymentRequestButtonElement.contextTypes = _Elements.elementContextTypes;
+exports.default = PaymentRequestButtonElement;
+
+/***/ }),
+
+/***/ "./node_modules/react-stripe-elements/es/components/Provider.js":
+/*!**********************************************************************!*\
+  !*** ./node_modules/react-stripe-elements/es/components/Provider.js ***!
+  \**********************************************************************/
+/*! dynamic exports provided */
+/*! all exports used */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.providerContextTypes = undefined;
+
+var _react = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+
+var _react2 = _interopRequireDefault(_react);
+
+var _propTypes = __webpack_require__(/*! prop-types */ "./node_modules/prop-types/index.js");
+
+var _propTypes2 = _interopRequireDefault(_propTypes);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+function _objectWithoutProperties(obj, keys) { var target = {}; for (var i in obj) { if (keys.indexOf(i) >= 0) continue; if (!Object.prototype.hasOwnProperty.call(obj, i)) continue; target[i] = obj[i]; } return target; }
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+// TODO(jez) 'sync' and 'async' are bad tag names.
+// TODO(jez) What if redux also uses this.context.tag?
+var providerContextTypes = exports.providerContextTypes = {
+  tag: _propTypes2.default.string.isRequired,
+  stripe: _propTypes2.default.object,
+  addStripeLoadListener: _propTypes2.default.func
+};
+
+var getOrCreateStripe = function getOrCreateStripe(apiKey, options) {
+  /**
+   * Note that this is not meant to be a generic memoization solution.
+   * This is specifically a solution for `StripeProvider`s being initialized
+   * and destroyed regularly (with the same set of props) when users only
+   * use `StripeProvider` for the subtree that contains their checkout form.
+   */
+  window.Stripe.__cachedInstances = window.Stripe.__cachedInstances || {};
+  var cacheKey = 'key=' + apiKey + ' options=' + JSON.stringify(options);
+
+  var stripe = window.Stripe.__cachedInstances[cacheKey] || window.Stripe(apiKey, options);
+  window.Stripe.__cachedInstances[cacheKey] = stripe;
+
+  return stripe;
+};
+
+var ensureStripeShape = function ensureStripeShape(stripe) {
+  if (stripe && stripe.elements && stripe.createSource && stripe.createToken) {
+    return stripe;
+  } else {
+    throw new Error("Please pass a valid Stripe object to StripeProvider. You can obtain a Stripe object by calling 'Stripe(...)' with your publishable key.");
+  }
+};
+
+var Provider = function (_React$Component) {
+  _inherits(Provider, _React$Component);
+
+  // on the other hand: childContextTypes is *required* to use context.
+  function Provider(props) {
+    _classCallCheck(this, Provider);
+
+    var _this = _possibleConstructorReturn(this, _React$Component.call(this, props));
+
+    if (_this.props.apiKey && _this.props.stripe) {
+      throw new Error("Please pass either 'apiKey' or 'stripe' to StripeProvider, not both.");
+    } else if (_this.props.apiKey) {
+      if (!window.Stripe) {
+        throw new Error("Please load Stripe.js (https://js.stripe.com/v3/) on this page to use react-stripe-elements. If Stripe.js isn't available yet (it's loading asynchronously, or you're using server-side rendering), see https://github.com/stripe/react-stripe-elements#advanced-integrations");
+      } else {
+        var _this$props = _this.props,
+            _apiKey = _this$props.apiKey,
+            _children = _this$props.children,
+            _stripe = _this$props.stripe,
+            options = _objectWithoutProperties(_this$props, ['apiKey', 'children', 'stripe']);
+
+        _this._meta = {
+          tag: 'sync',
+          stripe: getOrCreateStripe(_apiKey, options)
+        };
+      }
+    } else if (_this.props.stripe) {
+      // If we already have a stripe instance (in the constructor), we can behave synchronously.
+      _this._meta = {
+        tag: 'sync',
+        stripe: ensureStripeShape(_this.props.stripe)
+      };
+    } else if (_this.props.stripe === null) {
+      _this._meta = {
+        tag: 'async',
+        stripe: null
+      };
+    } else {
+      throw new Error("Please pass either 'apiKey' or 'stripe' to StripeProvider. If you're using 'stripe' but don't have a Stripe instance yet, pass 'null' explicitly.");
+    }
+
+    _this._didWarn = false;
+    _this._didWakeUpListeners = false;
+    _this._listeners = [];
+    return _this;
+  }
+  // Even though we're using flow, also use PropTypes so we can take advantage of developer warnings.
+
+
+  Provider.prototype.getChildContext = function getChildContext() {
+    var _this2 = this;
+
+    // getChildContext is run after the constructor, so we WILL have access to
+    // the initial state.
+    //
+    // However, context doesn't update in respnse to state changes like you
+    // might expect: context is pulled by the child, not pushed by the parent.
+    if (this._meta.tag === 'sync') {
+      return {
+        tag: 'sync',
+        stripe: this._meta.stripe
+      };
+    } else {
+      return {
+        tag: 'async',
+        addStripeLoadListener: function addStripeLoadListener(fn) {
+          if (_this2._meta.stripe) {
+            fn(_this2._meta.stripe);
+          } else {
+            _this2._listeners.push(fn);
+          }
+        }
+      };
+    }
+  };
+
+  Provider.prototype.componentWillReceiveProps = function componentWillReceiveProps(nextProps) {
+    var apiKeyChanged = this.props.apiKey && nextProps.apiKey && this.props.apiKey !== nextProps.apiKey;
+
+    var stripeInstanceChanged = this.props.stripe && nextProps.stripe && this.props.stripe !== nextProps.stripe;
+    if (!this._didWarn && (apiKeyChanged || stripeInstanceChanged) && window.console && window.console.error) {
+      this._didWarn = true;
+      // eslint-disable-next-line no-console
+      console.error('StripeProvider does not support changing the apiKey parameter.');
+      return;
+    }
+
+    if (!this._didWakeUpListeners && nextProps.stripe) {
+      // Wake up the listeners if we've finally been given a StripeShape
+      this._didWakeUpListeners = true;
+      var _stripe2 = ensureStripeShape(nextProps.stripe);
+      this._meta.stripe = _stripe2;
+      this._listeners.forEach(function (fn) {
+        fn(_stripe2);
+      });
+    }
+  };
+
+  Provider.prototype.render = function render() {
+    return _react2.default.Children.only(this.props.children);
+  };
+
+  return Provider;
+}(_react2.default.Component);
+
+Provider.propTypes = {
+  apiKey: _propTypes2.default.string,
+  // PropTypes.object is the only way we can accept a Stripe instance
+  // eslint-disable-next-line react/forbid-prop-types
+  stripe: _propTypes2.default.object,
+  children: _propTypes2.default.node
+};
+Provider.childContextTypes = providerContextTypes;
+Provider.defaultProps = {
+  apiKey: undefined,
+  stripe: undefined,
+  children: null
+};
+exports.default = Provider;
+
+/***/ }),
+
+/***/ "./node_modules/react-stripe-elements/es/components/inject.js":
+/*!********************************************************************!*\
+  !*** ./node_modules/react-stripe-elements/es/components/inject.js ***!
+  \********************************************************************/
+/*! dynamic exports provided */
+/*! all exports used */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+
+var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
+
+var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol" ? function (obj) { return typeof obj; } : function (obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; };
+
+var _react = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+
+var _react2 = _interopRequireDefault(_react);
+
+var _Elements = __webpack_require__(/*! ./Elements */ "./node_modules/react-stripe-elements/es/components/Elements.js");
+
+var _Provider = __webpack_require__(/*! ./Provider */ "./node_modules/react-stripe-elements/es/components/Provider.js");
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+function _objectWithoutProperties(obj, keys) { var target = {}; for (var i in obj) { if (keys.indexOf(i) >= 0) continue; if (!Object.prototype.hasOwnProperty.call(obj, i)) continue; target[i] = obj[i]; } return target; }
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+// react-redux does a bunch of stuff with pure components / checking if it needs to re-render.
+// not sure if we need to do the same.
+var inject = function inject(WrappedComponent) {
+  var _class, _temp;
+
+  var componentOptions = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : {};
+  var _componentOptions$wit = componentOptions.withRef,
+      withRef = _componentOptions$wit === undefined ? false : _componentOptions$wit;
+
+
+  return _temp = _class = function (_React$Component) {
+    _inherits(_class, _React$Component);
+
+    function _class(props, context) {
+      _classCallCheck(this, _class);
+
+      if (!context || !context.getRegisteredElements) {
+        throw new Error('It looks like you are trying to inject Stripe context outside of an Elements context.\nPlease be sure the component that calls createSource or createToken is within an <Elements> component.');
+      }
+
+      var _this = _possibleConstructorReturn(this, _React$Component.call(this, props, context));
+
+      _this.findElement = function (specifiedType) {
+        var allElements = _this.context.getRegisteredElements();
+        var matchingElements = specifiedType === 'auto' ? allElements : allElements.filter(function (_ref) {
+          var type = _ref.type;
+          return type === specifiedType;
+        });
+
+        if (matchingElements.length === 1) {
+          return matchingElements[0].element;
+        } else if (matchingElements.length > 1) {
+          throw new Error('You did not specify the type of Source or Token to create.\n        We could not infer which Element you want to use for this operation.');
+        } else {
+          return null;
+        }
+      };
+
+      _this.requireElement = function (specifiedType) {
+        var element = _this.findElement(specifiedType);
+        if (element) {
+          return element;
+        } else {
+          throw new Error('You did not specify the type of Source or Token to create.\n        We could not infer which Element you want to use for this operation.');
+        }
+      };
+
+      _this.wrappedCreateToken = function (stripe) {
+        return function () {
+          var typeOrOptions = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : {};
+          var options = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : {};
+
+          if (typeOrOptions && (typeof typeOrOptions === 'undefined' ? 'undefined' : _typeof(typeOrOptions)) === 'object') {
+            var type = typeOrOptions.type,
+                rest = _objectWithoutProperties(typeOrOptions, ['type']);
+
+            var specifiedType = typeof type === 'string' ? type : 'auto';
+            var element = _this.requireElement(specifiedType);
+            return stripe.createToken(element, rest);
+          } else if (typeof typeOrOptions === 'string') {
+            return stripe.createToken(typeOrOptions, options);
+          } else {
+            throw new Error('Invalid options passed to createToken. Expected an object, got ' + (typeof typeOrOptions === 'undefined' ? 'undefined' : _typeof(typeOrOptions)) + '.');
+          }
+        };
+      };
+
+      _this.wrappedCreateSource = function (stripe) {
+        return function () {
+          var options = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : {};
+
+          if (options && (typeof options === 'undefined' ? 'undefined' : _typeof(options)) === 'object') {
+            var type = options.type,
+                rest = _objectWithoutProperties(options, ['type']); // eslint-disable-line no-unused-vars
+
+
+            var specifiedType = typeof type === 'string' ? type : 'auto';
+            var element = _this.findElement(specifiedType);
+            if (element) {
+              return stripe.createSource(element, rest);
+            } else if (specifiedType !== 'auto') {
+              return stripe.createSource(options);
+            } else {
+              throw new Error('You did not specify the type of Source to create.\n          We also could not find any Elements in the current context.');
+            }
+          } else {
+            throw new Error('Invalid options passed to createSource. Expected an object, got ' + (typeof options === 'undefined' ? 'undefined' : _typeof(options)) + '.');
+          }
+        };
+      };
+
+      if (_this.context.tag === 'sync') {
+        _this.state = {
+          stripe: _this.stripeProps(_this.context.stripe)
+        };
+      } else {
+        _this.state = {
+          stripe: null
+        };
+      }
+      return _this;
+    }
+
+    _class.prototype.componentDidMount = function componentDidMount() {
+      var _this2 = this;
+
+      if (this.context.tag === 'async') {
+        this.context.addStripeLoadListener(function (stripe) {
+          _this2.setState({
+            stripe: _this2.stripeProps(stripe)
+          });
+        });
+      } else {
+        // when 'sync', it's already set in the constructor.
+      }
+    };
+
+    _class.prototype.getWrappedInstance = function getWrappedInstance() {
+      if (!withRef) {
+        throw new Error('To access the wrapped instance, the `{withRef: true}` option must be set when calling `injectStripe()`');
+      }
+      return this.wrappedInstance;
+    };
+
+    _class.prototype.stripeProps = function stripeProps(stripe) {
+      return _extends({}, stripe, {
+        // These are the only functions that take elements.
+        createToken: this.wrappedCreateToken(stripe),
+        createSource: this.wrappedCreateSource(stripe)
+      });
+    };
+    // Finds the element by the specified type. Throws if multiple Elements match.
+
+    // Require that exactly one Element is found.
+
+
+    // createToken has a bit of an unusual method signature for legacy reasons
+    // -- we're allowed to pass in the token type OR the element as the first parameter,
+    // so we need to check if we're passing in a string as the first parameter and
+    // just pass through the options if that's the case.
+
+
+    _class.prototype.render = function render() {
+      var _this3 = this;
+
+      return _react2.default.createElement(WrappedComponent, _extends({}, this.props, {
+        stripe: this.state.stripe,
+        ref: withRef ? function (c) {
+          _this3.wrappedInstance = c;
+        } : null
+      }));
+    };
+
+    return _class;
+  }(_react2.default.Component), _class.contextTypes = _extends({}, _Provider.providerContextTypes, _Elements.injectContextTypes), _class.displayName = 'InjectStripe(' + (WrappedComponent.displayName || WrappedComponent.name || 'Component') + ')', _temp;
+};
+
+exports.default = inject;
+
+/***/ }),
+
+/***/ "./node_modules/react-stripe-elements/es/index.js":
+/*!********************************************************!*\
+  !*** ./node_modules/react-stripe-elements/es/index.js ***!
+  \********************************************************/
+/*! dynamic exports provided */
+/*! exports used: CardElement, Elements, StripeProvider, injectStripe */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.PaymentRequestButtonElement = exports.PostalCodeElement = exports.CardCVCElement = exports.CardExpiryElement = exports.CardNumberElement = exports.CardElement = exports.Elements = exports.injectStripe = exports.StripeProvider = undefined;
+
+var _Provider = __webpack_require__(/*! ./components/Provider */ "./node_modules/react-stripe-elements/es/components/Provider.js");
+
+var _Provider2 = _interopRequireDefault(_Provider);
+
+var _inject = __webpack_require__(/*! ./components/inject */ "./node_modules/react-stripe-elements/es/components/inject.js");
+
+var _inject2 = _interopRequireDefault(_inject);
+
+var _Elements = __webpack_require__(/*! ./components/Elements */ "./node_modules/react-stripe-elements/es/components/Elements.js");
+
+var _Elements2 = _interopRequireDefault(_Elements);
+
+var _Element = __webpack_require__(/*! ./components/Element */ "./node_modules/react-stripe-elements/es/components/Element.js");
+
+var _Element2 = _interopRequireDefault(_Element);
+
+var _PaymentRequestButtonElement = __webpack_require__(/*! ./components/PaymentRequestButtonElement */ "./node_modules/react-stripe-elements/es/components/PaymentRequestButtonElement.js");
+
+var _PaymentRequestButtonElement2 = _interopRequireDefault(_PaymentRequestButtonElement);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+var CardElement = (0, _Element2.default)('card', { sourceType: 'card' });
+
+var CardNumberElement = (0, _Element2.default)('cardNumber', { sourceType: 'card' });
+var CardExpiryElement = (0, _Element2.default)('cardExpiry');
+var CardCVCElement = (0, _Element2.default)('cardCvc');
+var PostalCodeElement = (0, _Element2.default)('postalCode');
+
+exports.StripeProvider = _Provider2.default;
+exports.injectStripe = _inject2.default;
+exports.Elements = _Elements2.default;
+exports.CardElement = CardElement;
+exports.CardNumberElement = CardNumberElement;
+exports.CardExpiryElement = CardExpiryElement;
+exports.CardCVCElement = CardCVCElement;
+exports.PostalCodeElement = PostalCodeElement;
+exports.PaymentRequestButtonElement = _PaymentRequestButtonElement2.default;
+
+/***/ }),
+
+/***/ "./node_modules/react-stripe-elements/es/utils/shallowEqual.js":
+/*!*********************************************************************!*\
+  !*** ./node_modules/react-stripe-elements/es/utils/shallowEqual.js ***!
+  \*********************************************************************/
+/*! dynamic exports provided */
+/*! all exports used */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+var shallowEqual = function shallowEqual(a, b) {
+  var keysA = Object.keys(a);
+  var keysB = Object.keys(b);
+
+  return keysA.length === keysB.length && keysA.every(function (key) {
+    return b.hasOwnProperty(key) && b[key] === a[key];
+  });
+};
+
+exports.default = shallowEqual;
+
+/***/ }),
+
 /***/ "./node_modules/react/cjs/react.development.js":
 /*!*****************************************************!*\
   !*** ./node_modules/react/cjs/react.development.js ***!
@@ -27932,46 +28877,6 @@ var NavBar = function (_React$Component) {
                                 {
                                     __source: {
                                         fileName: _jsxFileName,
-                                        lineNumber: 28
-                                    },
-                                    __self: this
-                                },
-                                __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-                                    __WEBPACK_IMPORTED_MODULE_1_react_router_dom__["b" /* Link */],
-                                    { to: '/register', __source: {
-                                            fileName: _jsxFileName,
-                                            lineNumber: 28
-                                        },
-                                        __self: this
-                                    },
-                                    'Register'
-                                )
-                            ),
-                            __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-                                'li',
-                                {
-                                    __source: {
-                                        fileName: _jsxFileName,
-                                        lineNumber: 29
-                                    },
-                                    __self: this
-                                },
-                                __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-                                    __WEBPACK_IMPORTED_MODULE_1_react_router_dom__["b" /* Link */],
-                                    { to: '/login', __source: {
-                                            fileName: _jsxFileName,
-                                            lineNumber: 29
-                                        },
-                                        __self: this
-                                    },
-                                    'Login'
-                                )
-                            ),
-                            __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-                                'li',
-                                {
-                                    __source: {
-                                        fileName: _jsxFileName,
                                         lineNumber: 30
                                     },
                                     __self: this
@@ -27990,9 +28895,9 @@ var NavBar = function (_React$Component) {
                         ),
                         __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
                             'form',
-                            { className: 'navbar-form navbar-left', action: '/action_page.php', __source: {
+                            { className: 'navbar-form navbar-left', action: 'Https://www.google.com', __source: {
                                     fileName: _jsxFileName,
-                                    lineNumber: 32
+                                    lineNumber: 33
                                 },
                                 __self: this
                             },
@@ -28000,13 +28905,13 @@ var NavBar = function (_React$Component) {
                                 'div',
                                 { className: 'input-group', __source: {
                                         fileName: _jsxFileName,
-                                        lineNumber: 33
+                                        lineNumber: 34
                                     },
                                     __self: this
                                 },
                                 __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('input', { type: 'text', className: 'form-control', placeholder: 'Search', name: 'search', __source: {
                                         fileName: _jsxFileName,
-                                        lineNumber: 34
+                                        lineNumber: 35
                                     },
                                     __self: this
                                 }),
@@ -28014,7 +28919,7 @@ var NavBar = function (_React$Component) {
                                     'div',
                                     { className: 'input-group-btn', __source: {
                                             fileName: _jsxFileName,
-                                            lineNumber: 35
+                                            lineNumber: 36
                                         },
                                         __self: this
                                     },
@@ -28022,13 +28927,13 @@ var NavBar = function (_React$Component) {
                                         'button',
                                         { className: 'btn btn-default', type: 'submit', __source: {
                                                 fileName: _jsxFileName,
-                                                lineNumber: 36
+                                                lineNumber: 37
                                             },
                                             __self: this
                                         },
                                         __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('i', { className: 'glyphicon glyphicon-search', __source: {
                                                 fileName: _jsxFileName,
-                                                lineNumber: 37
+                                                lineNumber: 38
                                             },
                                             __self: this
                                         })
@@ -28040,26 +28945,10 @@ var NavBar = function (_React$Component) {
                             'ul',
                             { className: 'nav navbar-nav pull-right', __source: {
                                     fileName: _jsxFileName,
-                                    lineNumber: 42
+                                    lineNumber: 43
                                 },
                                 __self: this
                             },
-                            __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-                                'li',
-                                {
-                                    __source: {
-                                        fileName: _jsxFileName,
-                                        lineNumber: 43
-                                    },
-                                    __self: this
-                                },
-                                __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('img', { src: 'https://cdn-images-1.medium.com/max/1920/1*-4nkXQYN05ljzfJez_azbg.jpeg', className: 'profileIcon img-circle', alt: 'profilePic', __source: {
-                                        fileName: _jsxFileName,
-                                        lineNumber: 43
-                                    },
-                                    __self: this
-                                })
-                            ),
                             __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
                                 'li',
                                 {
@@ -28069,32 +28958,12 @@ var NavBar = function (_React$Component) {
                                     },
                                     __self: this
                                 },
-                                __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-                                    'a',
-                                    { href: '/app', __source: {
-                                            fileName: _jsxFileName,
-                                            lineNumber: 44
-                                        },
-                                        __self: this
+                                __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('img', { src: 'https://cdn-images-1.medium.com/max/1920/1*-4nkXQYN05ljzfJez_azbg.jpeg', className: 'profileIcon img-circle', alt: 'profilePic', __source: {
+                                        fileName: _jsxFileName,
+                                        lineNumber: 44
                                     },
-                                    __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-                                        'font',
-                                        { color: '#61DAFB', __source: {
-                                                fileName: _jsxFileName,
-                                                lineNumber: 44
-                                            },
-                                            __self: this
-                                        },
-                                        ' Deadpool ',
-                                        __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('i', {
-                                            __source: {
-                                                fileName: _jsxFileName,
-                                                lineNumber: 44
-                                            },
-                                            __self: this
-                                        })
-                                    )
-                                )
+                                    __self: this
+                                })
                             ),
                             __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
                                 'li',
@@ -28106,8 +28975,8 @@ var NavBar = function (_React$Component) {
                                     __self: this
                                 },
                                 __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-                                    'a',
-                                    { href: '/app', __source: {
+                                    __WEBPACK_IMPORTED_MODULE_1_react_router_dom__["b" /* Link */],
+                                    { to: '/app', __source: {
                                             fileName: _jsxFileName,
                                             lineNumber: 45
                                         },
@@ -28121,7 +28990,7 @@ var NavBar = function (_React$Component) {
                                             },
                                             __self: this
                                         },
-                                        ' Home ',
+                                        ' Deadpool ',
                                         __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('i', {
                                             __source: {
                                                 fileName: _jsxFileName,
@@ -28142,16 +29011,72 @@ var NavBar = function (_React$Component) {
                                     __self: this
                                 },
                                 __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-                                    'a',
-                                    { href: '/messages', __source: {
+                                    __WEBPACK_IMPORTED_MODULE_1_react_router_dom__["b" /* Link */],
+                                    { to: '/app', __source: {
                                             fileName: _jsxFileName,
                                             lineNumber: 46
                                         },
                                         __self: this
                                     },
+                                    __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                                        'font',
+                                        { color: '#61DAFB', __source: {
+                                                fileName: _jsxFileName,
+                                                lineNumber: 46
+                                            },
+                                            __self: this
+                                        },
+                                        ' Home ',
+                                        __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('i', {
+                                            __source: {
+                                                fileName: _jsxFileName,
+                                                lineNumber: 46
+                                            },
+                                            __self: this
+                                        })
+                                    )
+                                )
+                            ),
+                            __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                                'li',
+                                {
+                                    __source: {
+                                        fileName: _jsxFileName,
+                                        lineNumber: 47
+                                    },
+                                    __self: this
+                                },
+                                __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                                    __WEBPACK_IMPORTED_MODULE_1_react_router_dom__["b" /* Link */],
+                                    { to: '/donations', __source: {
+                                            fileName: _jsxFileName,
+                                            lineNumber: 47
+                                        },
+                                        __self: this
+                                    },
+                                    'Donate'
+                                )
+                            ),
+                            __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                                'li',
+                                {
+                                    __source: {
+                                        fileName: _jsxFileName,
+                                        lineNumber: 48
+                                    },
+                                    __self: this
+                                },
+                                __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                                    'a',
+                                    { href: '/messages', __source: {
+                                            fileName: _jsxFileName,
+                                            lineNumber: 48
+                                        },
+                                        __self: this
+                                    },
                                     __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('i', { className: 'fas fa-inbox', __source: {
                                             fileName: _jsxFileName,
-                                            lineNumber: 46
+                                            lineNumber: 48
                                         },
                                         __self: this
                                     }),
@@ -28159,7 +29084,7 @@ var NavBar = function (_React$Component) {
                                         'span',
                                         { className: 'badge', __source: {
                                                 fileName: _jsxFileName,
-                                                lineNumber: 46
+                                                lineNumber: 48
                                             },
                                             __self: this
                                         },
@@ -28171,27 +29096,27 @@ var NavBar = function (_React$Component) {
                                 'li',
                                 { className: 'dropdown', __source: {
                                         fileName: _jsxFileName,
-                                        lineNumber: 47
+                                        lineNumber: 49
                                     },
                                     __self: this
                                 },
                                 __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
                                     'a',
-                                    { className: 'dropdown-toggle', 'data-toggle': 'dropdown', href: '', __source: {
+                                    { className: 'dropdown-toggle', 'data-toggle': 'dropdown', __source: {
                                             fileName: _jsxFileName,
-                                            lineNumber: 48
+                                            lineNumber: 50
                                         },
                                         __self: this
                                     },
                                     __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('i', { className: 'fas fa-cog', __source: {
                                             fileName: _jsxFileName,
-                                            lineNumber: 48
+                                            lineNumber: 50
                                         },
                                         __self: this
                                     }),
                                     __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('span', { className: 'caret', __source: {
                                             fileName: _jsxFileName,
-                                            lineNumber: 49
+                                            lineNumber: 51
                                         },
                                         __self: this
                                     })
@@ -28200,7 +29125,7 @@ var NavBar = function (_React$Component) {
                                     'ul',
                                     { className: 'dropdown-menu', __source: {
                                             fileName: _jsxFileName,
-                                            lineNumber: 50
+                                            lineNumber: 52
                                         },
                                         __self: this
                                     },
@@ -28209,40 +29134,31 @@ var NavBar = function (_React$Component) {
                                         {
                                             __source: {
                                                 fileName: _jsxFileName,
-                                                lineNumber: 51
+                                                lineNumber: 53
                                             },
                                             __self: this
                                         },
+                                        'Night Mode',
                                         __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-                                            'a',
-                                            { href: '', __source: {
+                                            'label',
+                                            { htmlFor: 'nightMode', className: 'switch', __source: {
                                                     fileName: _jsxFileName,
-                                                    lineNumber: 51
+                                                    lineNumber: 54
                                                 },
                                                 __self: this
                                             },
-                                            'Night Mode',
-                                            __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-                                                'label',
-                                                { htmlFor: 'nightMode', className: 'switch', __source: {
-                                                        fileName: _jsxFileName,
-                                                        lineNumber: 52
-                                                    },
-                                                    __self: this
+                                            __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('input', { type: 'checkbox', id: 'nightMode', onClick: this.handleNightMode, __source: {
+                                                    fileName: _jsxFileName,
+                                                    lineNumber: 55
                                                 },
-                                                __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('input', { type: 'checkbox', id: 'nightMode', onClick: this.handleNightMode, __source: {
-                                                        fileName: _jsxFileName,
-                                                        lineNumber: 53
-                                                    },
-                                                    __self: this
-                                                }),
-                                                __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('span', { className: 'slider round', __source: {
-                                                        fileName: _jsxFileName,
-                                                        lineNumber: 54
-                                                    },
-                                                    __self: this
-                                                })
-                                            )
+                                                __self: this
+                                            }),
+                                            __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('span', { className: 'slider round', __source: {
+                                                    fileName: _jsxFileName,
+                                                    lineNumber: 56
+                                                },
+                                                __self: this
+                                            })
                                         )
                                     )
                                 )
@@ -28252,21 +29168,21 @@ var NavBar = function (_React$Component) {
                                 {
                                     __source: {
                                         fileName: _jsxFileName,
-                                        lineNumber: 59
+                                        lineNumber: 61
                                     },
                                     __self: this
                                 },
                                 __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-                                    'a',
-                                    { href: '/login', __source: {
+                                    __WEBPACK_IMPORTED_MODULE_1_react_router_dom__["b" /* Link */],
+                                    { to: '/login', __source: {
                                             fileName: _jsxFileName,
-                                            lineNumber: 59
+                                            lineNumber: 61
                                         },
                                         __self: this
                                     },
                                     __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('i', { className: 'fas fa-sign-out-alt', __source: {
                                             fileName: _jsxFileName,
-                                            lineNumber: 59
+                                            lineNumber: 61
                                         },
                                         __self: this
                                     }),
@@ -28281,7 +29197,7 @@ var NavBar = function (_React$Component) {
                     {
                         __source: {
                             fileName: _jsxFileName,
-                            lineNumber: 63
+                            lineNumber: 65
                         },
                         __self: this
                     },
@@ -28290,7 +29206,7 @@ var NavBar = function (_React$Component) {
                 __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_2__common_footer__["a" /* default */], {
                     __source: {
                         fileName: _jsxFileName,
-                        lineNumber: 66
+                        lineNumber: 68
                     },
                     __self: this
                 })
@@ -28302,6 +29218,562 @@ var NavBar = function (_React$Component) {
 }(__WEBPACK_IMPORTED_MODULE_0_react___default.a.Component);
 
 /* harmony default export */ __webpack_exports__["a"] = (NavBar);
+
+/***/ }),
+
+/***/ "./src/components/Donations/CardForm.js":
+/*!**********************************************!*\
+  !*** ./src/components/Donations/CardForm.js ***!
+  \**********************************************/
+/*! exports provided: default */
+/*! exports used: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_react__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_react___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_react__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_react_stripe_elements__ = __webpack_require__(/*! react-stripe-elements */ "./node_modules/react-stripe-elements/es/index.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_react_stripe_elements___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1_react_stripe_elements__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_axios__ = __webpack_require__(/*! axios */ "./node_modules/axios/index.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_axios___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_2_axios__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_react_router_dom__ = __webpack_require__(/*! react-router-dom */ "./node_modules/react-router-dom/es/index.js");
+var _jsxFileName = 'C:\\SF.Code\\Github\\alleyOOP\\Project\\Project.Web\\App\\src\\components\\Donations\\CardForm.js';
+
+var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+
+
+
+
+
+
+var createOptions = function createOptions(fontSize) {
+  return {
+    style: {
+      base: {
+        fontSize: fontSize,
+        color: '#424770',
+        letterSpacing: '0.025em',
+        fontFamily: 'Source Code Pro, Menlo, monospace',
+        '::placeholder': {
+          color: '#aab7c4'
+        }
+      },
+      invalid: {
+        color: '#9e2146'
+      }
+    }
+  };
+};
+
+var _CardForm = function (_React$Component) {
+  _inherits(_CardForm, _React$Component);
+
+  function _CardForm(props) {
+    _classCallCheck(this, _CardForm);
+
+    var _this = _possibleConstructorReturn(this, (_CardForm.__proto__ || Object.getPrototypeOf(_CardForm)).call(this, props));
+
+    _this.handleSubmit = function (ev) {
+      ev.preventDefault();
+      _this.props.stripe.createToken().then(function (payload) {
+        //if 'other' was selection, grab input value and set state
+        if (_this.state.value == '0.00') {
+          var newAmount = _this.state.manualInput * 100;
+          _this.setState({
+            newAmount: newAmount
+          });
+        } else {
+          var newAmount = $("#stripeAmount").val() * 100;
+          _this.setState({
+            newAmount: newAmount
+          });
+        }
+        debugger;
+        __WEBPACK_IMPORTED_MODULE_2_axios___default.a.post("api/stripe", {
+          //send required object to backend
+          receipt_email: _this.stripeEmail,
+          amount: _this.state.newAmount,
+          currency: 'usd',
+          description: 'Donation',
+          source: payload.token.id
+        }).then(function (response) {
+          console.log(_this.props.history);
+          _this.props.history.push('/donations/thankyou');
+        });
+      });
+    };
+
+    _this.handleChange = function (ev) {
+      _this.setState({
+        value: ev.target.value
+      });
+    };
+
+    _this.inputChange = function (ev) {
+      _this.setState({
+        manualInput: ev.target.value
+      });
+    };
+
+    _this.handleBlur = function (ev) {
+      var num = parseFloat(_this.state.manualInput);
+      var cleanNum = num.toFixed(2);
+      _this.setState({
+        manualInput: cleanNum
+      });
+    };
+
+    _this.state = {
+      value: "",
+      manualInput: "",
+      newAmount: ""
+    };
+    return _this;
+  }
+
+  _createClass(_CardForm, [{
+    key: 'render',
+    value: function render() {
+      var chosen = this.state.value;
+      return __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+        'form',
+        { onSubmit: this.handleSubmit, __source: {
+            fileName: _jsxFileName,
+            lineNumber: 90
+          },
+          __self: this
+        },
+        __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+          'div',
+          {
+            __source: {
+              fileName: _jsxFileName,
+              lineNumber: 91
+            },
+            __self: this
+          },
+          __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+            'h4',
+            {
+              __source: {
+                fileName: _jsxFileName,
+                lineNumber: 92
+              },
+              __self: this
+            },
+            '*All fields are required'
+          ),
+          __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('br', {
+            __source: {
+              fileName: _jsxFileName,
+              lineNumber: 95
+            },
+            __self: this
+          }),
+          __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+            'label',
+            {
+              __source: {
+                fileName: _jsxFileName,
+                lineNumber: 96
+              },
+              __self: this
+            },
+            'Card Holder\'s Name'
+          ),
+          __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('br', {
+            __source: {
+              fileName: _jsxFileName,
+              lineNumber: 99
+            },
+            __self: this
+          }),
+          __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('input', { type: 'name', id: 'stripeName', placeholder: 'Name', className: 'form-control stripe-manual-input', required: true, __source: {
+              fileName: _jsxFileName,
+              lineNumber: 100
+            },
+            __self: this
+          }),
+          __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('br', {
+            __source: {
+              fileName: _jsxFileName,
+              lineNumber: 101
+            },
+            __self: this
+          })
+        ),
+        __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+          'div',
+          {
+            __source: {
+              fileName: _jsxFileName,
+              lineNumber: 103
+            },
+            __self: this
+          },
+          __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+            'label',
+            {
+              __source: {
+                fileName: _jsxFileName,
+                lineNumber: 104
+              },
+              __self: this
+            },
+            'E-mail'
+          ),
+          __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('br', {
+            __source: {
+              fileName: _jsxFileName,
+              lineNumber: 107
+            },
+            __self: this
+          }),
+          __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('input', { type: 'email', id: 'stripeEmail', placeholder: 'Email Address', className: 'form-control stripe-manual-input', required: true, __source: {
+              fileName: _jsxFileName,
+              lineNumber: 108
+            },
+            __self: this
+          }),
+          __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('br', {
+            __source: {
+              fileName: _jsxFileName,
+              lineNumber: 109
+            },
+            __self: this
+          })
+        ),
+        __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+          'div',
+          { className: 'form-group', __source: {
+              fileName: _jsxFileName,
+              lineNumber: 111
+            },
+            __self: this
+          },
+          __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+            'label',
+            {
+              __source: {
+                fileName: _jsxFileName,
+                lineNumber: 112
+              },
+              __self: this
+            },
+            'Amount'
+          ),
+          __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('br', {
+            __source: {
+              fileName: _jsxFileName,
+              lineNumber: 115
+            },
+            __self: this
+          }),
+          __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+            'select',
+            { name: 'amount', value: this.state.value, id: 'stripeAmount', className: 'form-control stripe-manual-input', onChange: this.handleChange, required: true, __source: {
+                fileName: _jsxFileName,
+                lineNumber: 116
+              },
+              __self: this
+            },
+            __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+              'option',
+              { value: '', disabled: true, __source: {
+                  fileName: _jsxFileName,
+                  lineNumber: 117
+                },
+                __self: this
+              },
+              ' Please Select an Amount'
+            ),
+            __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+              'option',
+              { value: '3.00', __source: {
+                  fileName: _jsxFileName,
+                  lineNumber: 118
+                },
+                __self: this
+              },
+              '$3.00'
+            ),
+            __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+              'option',
+              { value: '10.00', __source: {
+                  fileName: _jsxFileName,
+                  lineNumber: 119
+                },
+                __self: this
+              },
+              '$10.00'
+            ),
+            __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+              'option',
+              { value: '20.00', __source: {
+                  fileName: _jsxFileName,
+                  lineNumber: 120
+                },
+                __self: this
+              },
+              '$20.00'
+            ),
+            __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+              'option',
+              { value: '50.00', __source: {
+                  fileName: _jsxFileName,
+                  lineNumber: 121
+                },
+                __self: this
+              },
+              '$50.00'
+            ),
+            __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+              'option',
+              { value: '100.00', __source: {
+                  fileName: _jsxFileName,
+                  lineNumber: 122
+                },
+                __self: this
+              },
+              '$100.00'
+            ),
+            __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+              'option',
+              { value: '0.00', __source: {
+                  fileName: _jsxFileName,
+                  lineNumber: 123
+                },
+                __self: this
+              },
+              'Other'
+            )
+          ),
+          chosen == '0.00' && __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('input', { type: 'number', value: this.state.manualInput, name: 'myDecimal',
+            className: 'form-control stripe-manual-input', min: '1.00', placeholder: '1.00', step: '0.01', pattern: '/^[0-9]+(\\.[0-9]{1,2})?$/',
+            onChange: this.inputChange, onBlur: this.handleBlur, __source: {
+              fileName: _jsxFileName,
+              lineNumber: 126
+            },
+            __self: this
+          })
+        ),
+        __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+          'label',
+          {
+            __source: {
+              fileName: _jsxFileName,
+              lineNumber: 131
+            },
+            __self: this
+          },
+          'Card details'
+        ),
+        __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('br', {
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 134
+          },
+          __self: this
+        }),
+        __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_1_react_stripe_elements__["CardElement"], Object.assign({}, createOptions(this.props.fontSize), {
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 135
+          },
+          __self: this
+        })),
+        __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('br', {
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 138
+          },
+          __self: this
+        }),
+        __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+          'button',
+          { className: 'btn btn-primary', __source: {
+              fileName: _jsxFileName,
+              lineNumber: 139
+            },
+            __self: this
+          },
+          'Donate'
+        )
+      );
+    }
+  }]);
+
+  return _CardForm;
+}(__WEBPACK_IMPORTED_MODULE_0_react___default.a.Component);
+
+var CardForm = Object(__WEBPACK_IMPORTED_MODULE_1_react_stripe_elements__["injectStripe"])(_CardForm);
+
+/* harmony default export */ __webpack_exports__["a"] = (CardForm);
+
+/***/ }),
+
+/***/ "./src/components/Donations/Checkout.js":
+/*!**********************************************!*\
+  !*** ./src/components/Donations/Checkout.js ***!
+  \**********************************************/
+/*! exports provided: default */
+/*! exports used: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_react__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_react___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_react__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_react_stripe_elements__ = __webpack_require__(/*! react-stripe-elements */ "./node_modules/react-stripe-elements/es/index.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_react_stripe_elements___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1_react_stripe_elements__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__Donations_CardForm__ = __webpack_require__(/*! ../Donations/CardForm */ "./src/components/Donations/CardForm.js");
+var _jsxFileName = 'C:\\SF.Code\\Github\\alleyOOP\\Project\\Project.Web\\App\\src\\components\\Donations\\Checkout.js';
+
+var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+
+
+
+
+var Checkout = function (_React$Component) {
+  _inherits(Checkout, _React$Component);
+
+  function Checkout(props) {
+    _classCallCheck(this, Checkout);
+
+    var _this = _possibleConstructorReturn(this, (Checkout.__proto__ || Object.getPrototypeOf(Checkout)).call(this, props));
+
+    _this.state = {
+      elementFontSize: window.innerWidth < 450 ? '14px' : '18px'
+    };
+    window.addEventListener('resize', function () {
+      if (window.innerWidth < 450 && _this.state.elementFontSize !== '14px') {
+        _this.setState({ elementFontSize: '14px' });
+      } else if (window.innerWidth >= 450 && _this.state.elementFontSize !== '18px') {
+        _this.setState({ elementFontSize: '18px' });
+      }
+    });
+    return _this;
+  }
+
+  _createClass(Checkout, [{
+    key: 'render',
+    value: function render() {
+      var elementFontSize = this.state.elementFontSize;
+
+      return __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+        'div',
+        { className: 'Checkout', __source: {
+            fileName: _jsxFileName,
+            lineNumber: 26
+          },
+          __self: this
+        },
+        __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+          __WEBPACK_IMPORTED_MODULE_1_react_stripe_elements__["Elements"],
+          {
+            __source: {
+              fileName: _jsxFileName,
+              lineNumber: 27
+            },
+            __self: this
+          },
+          __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_2__Donations_CardForm__["a" /* default */], { fontSize: elementFontSize, __source: {
+              fileName: _jsxFileName,
+              lineNumber: 28
+            },
+            __self: this
+          })
+        )
+      );
+    }
+  }]);
+
+  return Checkout;
+}(__WEBPACK_IMPORTED_MODULE_0_react___default.a.Component);
+
+/* harmony default export */ __webpack_exports__["a"] = (Checkout);
+
+/***/ }),
+
+/***/ "./src/components/Donations/Stripe.js":
+/*!********************************************!*\
+  !*** ./src/components/Donations/Stripe.js ***!
+  \********************************************/
+/*! exports provided: default */
+/*! exports used: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_react__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_react___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_react__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_react_stripe_elements__ = __webpack_require__(/*! react-stripe-elements */ "./node_modules/react-stripe-elements/es/index.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_react_stripe_elements___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1_react_stripe_elements__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__Donations_Checkout__ = __webpack_require__(/*! ../Donations/Checkout */ "./src/components/Donations/Checkout.js");
+var _jsxFileName = 'C:\\SF.Code\\Github\\alleyOOP\\Project\\Project.Web\\App\\src\\components\\Donations\\Stripe.js';
+
+var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+
+
+
+
+var Stripe = function (_React$Component) {
+    _inherits(Stripe, _React$Component);
+
+    function Stripe(props) {
+        _classCallCheck(this, Stripe);
+
+        var _this = _possibleConstructorReturn(this, (Stripe.__proto__ || Object.getPrototypeOf(Stripe)).call(this, props));
+
+        _this.state = {};
+        return _this;
+    }
+
+    _createClass(Stripe, [{
+        key: 'render',
+        value: function render() {
+            return __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                __WEBPACK_IMPORTED_MODULE_1_react_stripe_elements__["StripeProvider"],
+                { apiKey: 'pk_test_6pRNASCoBOKtIshFeQd4XMUh', __source: {
+                        fileName: _jsxFileName,
+                        lineNumber: 14
+                    },
+                    __self: this
+                },
+                __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_2__Donations_Checkout__["a" /* default */], {
+                    __source: {
+                        fileName: _jsxFileName,
+                        lineNumber: 15
+                    },
+                    __self: this
+                })
+            );
+        }
+    }]);
+
+    return Stripe;
+}(__WEBPACK_IMPORTED_MODULE_0_react___default.a.Component);
+
+/* harmony default export */ __webpack_exports__["a"] = (Stripe);
 
 /***/ }),
 
@@ -29136,6 +30608,8 @@ __WEBPACK_IMPORTED_MODULE_1_react_dom___default.a.render(__WEBPACK_IMPORTED_MODU
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__src_views_TConditions__ = __webpack_require__(/*! ../src/views/TConditions */ "./src/views/TConditions.js");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__src_common_navbar__ = __webpack_require__(/*! ../src/common/navbar */ "./src/common/navbar.js");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__src_views_Accounts__ = __webpack_require__(/*! ../src/views/Accounts */ "./src/views/Accounts.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__src_views_Donations__ = __webpack_require__(/*! ../src/views/Donations */ "./src/views/Donations.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_9__src_views_ThankYou__ = __webpack_require__(/*! ../src/views/ThankYou */ "./src/views/ThankYou.js");
 var _jsxFileName = 'C:\\SF.Code\\Github\\alleyOOP\\Project\\Project.Web\\App\\src\\routes.js',
     _this = this;
 
@@ -29147,7 +30621,8 @@ var _jsxFileName = 'C:\\SF.Code\\Github\\alleyOOP\\Project\\Project.Web\\App\\sr
 
 
 
-// import Donations from '../src/Views/Donations';
+
+
 
 var Routes = function Routes() {
     return __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
@@ -29155,7 +30630,7 @@ var Routes = function Routes() {
         {
             __source: {
                 fileName: _jsxFileName,
-                lineNumber: 12
+                lineNumber: 13
             },
             __self: _this
         },
@@ -29163,7 +30638,7 @@ var Routes = function Routes() {
             'div',
             { id: 'topDiv', __source: {
                     fileName: _jsxFileName,
-                    lineNumber: 13
+                    lineNumber: 14
                 },
                 __self: _this
             },
@@ -29172,31 +30647,31 @@ var Routes = function Routes() {
                 {
                     __source: {
                         fileName: _jsxFileName,
-                        lineNumber: 14
+                        lineNumber: 15
                     },
                     __self: _this
                 },
                 __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_1_react_router_dom__["c" /* Route */], { exact: true, path: '/', component: __WEBPACK_IMPORTED_MODULE_3__src_views_Register__["a" /* default */], __source: {
                         fileName: _jsxFileName,
-                        lineNumber: 15
+                        lineNumber: 16
                     },
                     __self: _this
                 }),
                 __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_1_react_router_dom__["c" /* Route */], { path: '/login', component: __WEBPACK_IMPORTED_MODULE_4__src_views_Login__["a" /* default */], __source: {
                         fileName: _jsxFileName,
-                        lineNumber: 16
+                        lineNumber: 17
                     },
                     __self: _this
                 }),
                 __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_1_react_router_dom__["c" /* Route */], { path: '/register', component: __WEBPACK_IMPORTED_MODULE_3__src_views_Register__["a" /* default */], __source: {
                         fileName: _jsxFileName,
-                        lineNumber: 17
+                        lineNumber: 18
                     },
                     __self: _this
                 }),
                 __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_1_react_router_dom__["c" /* Route */], { path: '/terms', component: __WEBPACK_IMPORTED_MODULE_5__src_views_TConditions__["a" /* default */], __source: {
                         fileName: _jsxFileName,
-                        lineNumber: 18
+                        lineNumber: 19
                     },
                     __self: _this
                 }),
@@ -29218,6 +30693,18 @@ var Routes = function Routes() {
                     __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_1_react_router_dom__["c" /* Route */], { path: '/accounts', component: __WEBPACK_IMPORTED_MODULE_7__src_views_Accounts__["a" /* default */], __source: {
                             fileName: _jsxFileName,
                             lineNumber: 22
+                        },
+                        __self: _this
+                    }),
+                    __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_1_react_router_dom__["c" /* Route */], { path: '/donations', component: __WEBPACK_IMPORTED_MODULE_8__src_views_Donations__["a" /* default */], __source: {
+                            fileName: _jsxFileName,
+                            lineNumber: 23
+                        },
+                        __self: _this
+                    }),
+                    __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_1_react_router_dom__["c" /* Route */], { path: '/thankyou', component: __WEBPACK_IMPORTED_MODULE_9__src_views_ThankYou__["a" /* default */], __source: {
+                            fileName: _jsxFileName,
+                            lineNumber: 24
                         },
                         __self: _this
                     })
@@ -29849,7 +31336,7 @@ var Accounts = function (_React$Component) {
                         __self: this
                     },
                     this.mapper(),
-                    __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('img', { src: 'https://media.giphy.com/media/R2wLkrs5Uh0ty/giphy.gif', id: 'dpToon', className: 'deadPool', __source: {
+                    __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('img', { src: 'https://media.giphy.com/media/R2wLkrs5Uh0ty/giphy.gif', alt: 'deadPoolGif', id: 'dpToon', className: 'deadPool', __source: {
                             fileName: _jsxFileName,
                             lineNumber: 147
                         },
@@ -30391,6 +31878,642 @@ var App = function (_React$Component) {
 }(__WEBPACK_IMPORTED_MODULE_0_react___default.a.Component);
 
 /* harmony default export */ __webpack_exports__["a"] = (App);
+
+/***/ }),
+
+/***/ "./src/views/Donations.js":
+/*!********************************!*\
+  !*** ./src/views/Donations.js ***!
+  \********************************/
+/*! exports provided: default */
+/*! exports used: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_react__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_react___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_react__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__images_final_gif__ = __webpack_require__(/*! ../images/final.gif */ "./src/images/final.gif");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__images_final_gif___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1__images_final_gif__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__components_Donations_Stripe__ = __webpack_require__(/*! ../components/Donations/Stripe */ "./src/components/Donations/Stripe.js");
+var _jsxFileName = 'C:\\SF.Code\\Github\\alleyOOP\\Project\\Project.Web\\App\\src\\views\\Donations.js';
+
+var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+
+
+
+
+var Donations = function (_React$Component) {
+    _inherits(Donations, _React$Component);
+
+    function Donations(props) {
+        _classCallCheck(this, Donations);
+
+        var _this = _possibleConstructorReturn(this, (Donations.__proto__ || Object.getPrototypeOf(Donations)).call(this, props));
+
+        _this.state = {};
+        return _this;
+    }
+
+    _createClass(Donations, [{
+        key: 'render',
+        value: function render() {
+            return __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                'div',
+                { id: 'wrapper', className: 'gray-bg', __source: {
+                        fileName: _jsxFileName,
+                        lineNumber: 13
+                    },
+                    __self: this
+                },
+                __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                    'div',
+                    { className: 'text-center donation-top', __source: {
+                            fileName: _jsxFileName,
+                            lineNumber: 14
+                        },
+                        __self: this
+                    },
+                    __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('img', { src: __WEBPACK_IMPORTED_MODULE_1__images_final_gif___default.a, height: '50px', width: '50px', alt: 'logo', __source: {
+                            fileName: _jsxFileName,
+                            lineNumber: 15
+                        },
+                        __self: this
+                    }),
+                    __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('img', { src: __WEBPACK_IMPORTED_MODULE_1__images_final_gif___default.a, height: '50px', width: '50px', alt: 'logo', __source: {
+                            fileName: _jsxFileName,
+                            lineNumber: 16
+                        },
+                        __self: this
+                    }),
+                    __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('img', { src: __WEBPACK_IMPORTED_MODULE_1__images_final_gif___default.a, height: '50px', width: '50px', alt: 'logo', __source: {
+                            fileName: _jsxFileName,
+                            lineNumber: 17
+                        },
+                        __self: this
+                    }),
+                    __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('img', { src: __WEBPACK_IMPORTED_MODULE_1__images_final_gif___default.a, height: '50px', width: '50px', alt: 'logo', __source: {
+                            fileName: _jsxFileName,
+                            lineNumber: 18
+                        },
+                        __self: this
+                    })
+                ),
+                __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                    'div',
+                    { className: 'wrapper wrapper-content', __source: {
+                            fileName: _jsxFileName,
+                            lineNumber: 20
+                        },
+                        __self: this
+                    },
+                    __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                        'div',
+                        { className: 'row', __source: {
+                                fileName: _jsxFileName,
+                                lineNumber: 21
+                            },
+                            __self: this
+                        },
+                        __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                            'div',
+                            { className: 'col-lg-12', __source: {
+                                    fileName: _jsxFileName,
+                                    lineNumber: 22
+                                },
+                                __self: this
+                            },
+                            __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                                'div',
+                                { className: 'ibox', __source: {
+                                        fileName: _jsxFileName,
+                                        lineNumber: 23
+                                    },
+                                    __self: this
+                                },
+                                __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                                    'div',
+                                    { className: 'ibox-content', __source: {
+                                            fileName: _jsxFileName,
+                                            lineNumber: 24
+                                        },
+                                        __self: this
+                                    },
+                                    __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                                        'div',
+                                        { className: 'panel-group payments-method', id: 'accordion', __source: {
+                                                fileName: _jsxFileName,
+                                                lineNumber: 25
+                                            },
+                                            __self: this
+                                        },
+                                        __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                                            'div',
+                                            { className: 'panel panel-default', __source: {
+                                                    fileName: _jsxFileName,
+                                                    lineNumber: 26
+                                                },
+                                                __self: this
+                                            },
+                                            __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                                                'div',
+                                                { className: 'panel-heading', __source: {
+                                                        fileName: _jsxFileName,
+                                                        lineNumber: 27
+                                                    },
+                                                    __self: this
+                                                },
+                                                __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                                                    'div',
+                                                    { className: 'pull-right', __source: {
+                                                            fileName: _jsxFileName,
+                                                            lineNumber: 28
+                                                        },
+                                                        __self: this
+                                                    },
+                                                    __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('i', { className: 'fa fa-cc-paypal text-primary', __source: {
+                                                            fileName: _jsxFileName,
+                                                            lineNumber: 29
+                                                        },
+                                                        __self: this
+                                                    })
+                                                ),
+                                                __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                                                    'h5',
+                                                    { className: 'panel-title', __source: {
+                                                            fileName: _jsxFileName,
+                                                            lineNumber: 31
+                                                        },
+                                                        __self: this
+                                                    },
+                                                    __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                                                        'a',
+                                                        { 'data-toggle': 'collapse', 'data-parent': '#accordion', href: '#collapseOne', __source: {
+                                                                fileName: _jsxFileName,
+                                                                lineNumber: 32
+                                                            },
+                                                            __self: this
+                                                        },
+                                                        'PayPal'
+                                                    )
+                                                )
+                                            ),
+                                            __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                                                'div',
+                                                { id: 'collapseOne', className: 'panel-collapse collapse', __source: {
+                                                        fileName: _jsxFileName,
+                                                        lineNumber: 35
+                                                    },
+                                                    __self: this
+                                                },
+                                                __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                                                    'div',
+                                                    { className: 'panel-body', __source: {
+                                                            fileName: _jsxFileName,
+                                                            lineNumber: 36
+                                                        },
+                                                        __self: this
+                                                    },
+                                                    __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                                                        'div',
+                                                        { className: 'row', __source: {
+                                                                fileName: _jsxFileName,
+                                                                lineNumber: 37
+                                                            },
+                                                            __self: this
+                                                        },
+                                                        __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                                                            'div',
+                                                            { className: 'col-md-4', __source: {
+                                                                    fileName: _jsxFileName,
+                                                                    lineNumber: 38
+                                                                },
+                                                                __self: this
+                                                            },
+                                                            __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                                                                'h2',
+                                                                {
+                                                                    __source: {
+                                                                        fileName: _jsxFileName,
+                                                                        lineNumber: 39
+                                                                    },
+                                                                    __self: this
+                                                                },
+                                                                'Summary'
+                                                            ),
+                                                            __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                                                                'strong',
+                                                                {
+                                                                    __source: {
+                                                                        fileName: _jsxFileName,
+                                                                        lineNumber: 40
+                                                                    },
+                                                                    __self: this
+                                                                },
+                                                                'Alley OOP'
+                                                            ),
+                                                            ': ',
+                                                            __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                                                                'span',
+                                                                { className: 'text-navy', __source: {
+                                                                        fileName: _jsxFileName,
+                                                                        lineNumber: 40
+                                                                    },
+                                                                    __self: this
+                                                                },
+                                                                'Donation'
+                                                            ),
+                                                            __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('br', {
+                                                                __source: {
+                                                                    fileName: _jsxFileName,
+                                                                    lineNumber: 40
+                                                                },
+                                                                __self: this
+                                                            }),
+                                                            __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                                                                'p',
+                                                                { className: 'm-t', __source: {
+                                                                        fileName: _jsxFileName,
+                                                                        lineNumber: 41
+                                                                    },
+                                                                    __self: this
+                                                                },
+                                                                'Paypal\'s easy right? Making this site wasn\'t... Show your support. Thanks!'
+                                                            )
+                                                        ),
+                                                        __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                                                            'div',
+                                                            {
+                                                                __source: {
+                                                                    fileName: _jsxFileName,
+                                                                    lineNumber: 46
+                                                                },
+                                                                __self: this
+                                                            },
+                                                            __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                                                                'form',
+                                                                { id: 'paypalForm', name: '_xclick', action: 'YOUR PAYPAL ACC', method: 'post', __source: {
+                                                                        fileName: _jsxFileName,
+                                                                        lineNumber: 47
+                                                                    },
+                                                                    __self: this
+                                                                },
+                                                                __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('input', { type: 'hidden', name: 'cmd', value: '_donations', __source: {
+                                                                        fileName: _jsxFileName,
+                                                                        lineNumber: 48
+                                                                    },
+                                                                    __self: this
+                                                                }),
+                                                                __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('input', { id: 'donation-amount', type: 'hidden', name: 'amount', value: '', __source: {
+                                                                        fileName: _jsxFileName,
+                                                                        lineNumber: 49
+                                                                    },
+                                                                    __self: this
+                                                                }),
+                                                                __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('input', { type: 'hidden', name: 'business', value: this.state.email, __source: {
+                                                                        fileName: _jsxFileName,
+                                                                        lineNumber: 50
+                                                                    },
+                                                                    __self: this
+                                                                }),
+                                                                __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('input', { type: 'hidden', name: 'item_name', value: 'My Donation', __source: {
+                                                                        fileName: _jsxFileName,
+                                                                        lineNumber: 51
+                                                                    },
+                                                                    __self: this
+                                                                }),
+                                                                __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('input', { type: 'hidden', name: 'return', value: 'THANK YOU PAGE', __source: {
+                                                                        fileName: _jsxFileName,
+                                                                        lineNumber: 52
+                                                                    },
+                                                                    __self: this
+                                                                }),
+                                                                __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('input', { type: 'hidden', name: 'cancel_return', value: 'DONATION PAGE', __source: {
+                                                                        fileName: _jsxFileName,
+                                                                        lineNumber: 53
+                                                                    },
+                                                                    __self: this
+                                                                }),
+                                                                __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('input', { type: 'hidden', name: 'currency_code', value: 'USD', __source: {
+                                                                        fileName: _jsxFileName,
+                                                                        lineNumber: 54
+                                                                    },
+                                                                    __self: this
+                                                                }),
+                                                                __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                                                                    'div',
+                                                                    { className: 'form-group col-md-4', __source: {
+                                                                            fileName: _jsxFileName,
+                                                                            lineNumber: 55
+                                                                        },
+                                                                        __self: this
+                                                                    },
+                                                                    __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                                                                        'label',
+                                                                        {
+                                                                            __source: {
+                                                                                fileName: _jsxFileName,
+                                                                                lineNumber: 56
+                                                                            },
+                                                                            __self: this
+                                                                        },
+                                                                        'Amount'
+                                                                    ),
+                                                                    __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('br', {
+                                                                        __source: {
+                                                                            fileName: _jsxFileName,
+                                                                            lineNumber: 57
+                                                                        },
+                                                                        __self: this
+                                                                    }),
+                                                                    __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                                                                        'select',
+                                                                        { className: 'amount form-control', name: 'amount', id: 'amount', __source: {
+                                                                                fileName: _jsxFileName,
+                                                                                lineNumber: 58
+                                                                            },
+                                                                            __self: this
+                                                                        },
+                                                                        __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                                                                            'option',
+                                                                            { value: '', __source: {
+                                                                                    fileName: _jsxFileName,
+                                                                                    lineNumber: 59
+                                                                                },
+                                                                                __self: this
+                                                                            },
+                                                                            ' Please Select an Amount'
+                                                                        ),
+                                                                        __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                                                                            'option',
+                                                                            { value: '3.00', __source: {
+                                                                                    fileName: _jsxFileName,
+                                                                                    lineNumber: 60
+                                                                                },
+                                                                                __self: this
+                                                                            },
+                                                                            '$3.00'
+                                                                        ),
+                                                                        __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                                                                            'option',
+                                                                            { value: '10.00', __source: {
+                                                                                    fileName: _jsxFileName,
+                                                                                    lineNumber: 61
+                                                                                },
+                                                                                __self: this
+                                                                            },
+                                                                            '$10.00'
+                                                                        ),
+                                                                        __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                                                                            'option',
+                                                                            { value: '20.00', __source: {
+                                                                                    fileName: _jsxFileName,
+                                                                                    lineNumber: 62
+                                                                                },
+                                                                                __self: this
+                                                                            },
+                                                                            '$20.00'
+                                                                        ),
+                                                                        __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                                                                            'option',
+                                                                            { value: '50.00', __source: {
+                                                                                    fileName: _jsxFileName,
+                                                                                    lineNumber: 63
+                                                                                },
+                                                                                __self: this
+                                                                            },
+                                                                            '$50.00'
+                                                                        ),
+                                                                        __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                                                                            'option',
+                                                                            { value: '100.00', __source: {
+                                                                                    fileName: _jsxFileName,
+                                                                                    lineNumber: 64
+                                                                                },
+                                                                                __self: this
+                                                                            },
+                                                                            '$100.00'
+                                                                        ),
+                                                                        __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                                                                            'option',
+                                                                            { value: '0.00', __source: {
+                                                                                    fileName: _jsxFileName,
+                                                                                    lineNumber: 65
+                                                                                },
+                                                                                __self: this
+                                                                            },
+                                                                            'Other'
+                                                                        )
+                                                                    ),
+                                                                    __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('br', {
+                                                                        __source: {
+                                                                            fileName: _jsxFileName,
+                                                                            lineNumber: 67
+                                                                        },
+                                                                        __self: this
+                                                                    }),
+                                                                    __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                                                                        'button',
+                                                                        { type: 'image', className: 'btn btn-success fa fa-cc-paypal', name: 'PP-submit', alt: 'Make a donation with PayPal', __source: {
+                                                                                fileName: _jsxFileName,
+                                                                                lineNumber: 68
+                                                                            },
+                                                                            __self: this
+                                                                        },
+                                                                        '  Donate'
+                                                                    )
+                                                                )
+                                                            )
+                                                        )
+                                                    )
+                                                )
+                                            )
+                                        ),
+                                        __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                                            'div',
+                                            { className: 'panel panel-default', __source: {
+                                                    fileName: _jsxFileName,
+                                                    lineNumber: 77
+                                                },
+                                                __self: this
+                                            },
+                                            __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                                                'div',
+                                                { className: 'panel-heading', __source: {
+                                                        fileName: _jsxFileName,
+                                                        lineNumber: 78
+                                                    },
+                                                    __self: this
+                                                },
+                                                __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                                                    'div',
+                                                    { className: 'pull-right', __source: {
+                                                            fileName: _jsxFileName,
+                                                            lineNumber: 79
+                                                        },
+                                                        __self: this
+                                                    },
+                                                    __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('i', { className: 'fa fa-cc-amex text-primary', __source: {
+                                                            fileName: _jsxFileName,
+                                                            lineNumber: 80
+                                                        },
+                                                        __self: this
+                                                    }),
+                                                    __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('i', { className: 'fa fa-cc-mastercard text-warning', __source: {
+                                                            fileName: _jsxFileName,
+                                                            lineNumber: 81
+                                                        },
+                                                        __self: this
+                                                    }),
+                                                    __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('i', { className: 'fa fa-cc-discover text-danger', __source: {
+                                                            fileName: _jsxFileName,
+                                                            lineNumber: 82
+                                                        },
+                                                        __self: this
+                                                    })
+                                                ),
+                                                __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                                                    'h5',
+                                                    { className: 'panel-title', __source: {
+                                                            fileName: _jsxFileName,
+                                                            lineNumber: 84
+                                                        },
+                                                        __self: this
+                                                    },
+                                                    __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                                                        'a',
+                                                        { 'data-toggle': 'collapse', 'data-parent': '#accordion', href: '#collapseTwo', __source: {
+                                                                fileName: _jsxFileName,
+                                                                lineNumber: 85
+                                                            },
+                                                            __self: this
+                                                        },
+                                                        'Credit Card'
+                                                    )
+                                                )
+                                            ),
+                                            __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                                                'div',
+                                                { id: 'collapseTwo', className: 'panel-collapse collapse in', __source: {
+                                                        fileName: _jsxFileName,
+                                                        lineNumber: 88
+                                                    },
+                                                    __self: this
+                                                },
+                                                __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                                                    'div',
+                                                    { className: 'panel-body', __source: {
+                                                            fileName: _jsxFileName,
+                                                            lineNumber: 89
+                                                        },
+                                                        __self: this
+                                                    },
+                                                    __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                                                        'div',
+                                                        { className: 'row', __source: {
+                                                                fileName: _jsxFileName,
+                                                                lineNumber: 90
+                                                            },
+                                                            __self: this
+                                                        },
+                                                        __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                                                            'div',
+                                                            { className: 'col-md-4', __source: {
+                                                                    fileName: _jsxFileName,
+                                                                    lineNumber: 91
+                                                                },
+                                                                __self: this
+                                                            },
+                                                            __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                                                                'h2',
+                                                                {
+                                                                    __source: {
+                                                                        fileName: _jsxFileName,
+                                                                        lineNumber: 92
+                                                                    },
+                                                                    __self: this
+                                                                },
+                                                                'Summary'
+                                                            ),
+                                                            __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                                                                'strong',
+                                                                {
+                                                                    __source: {
+                                                                        fileName: _jsxFileName,
+                                                                        lineNumber: 93
+                                                                    },
+                                                                    __self: this
+                                                                },
+                                                                'Alley OOP'
+                                                            ),
+                                                            ': ',
+                                                            __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                                                                'span',
+                                                                { className: 'text-navy', __source: {
+                                                                        fileName: _jsxFileName,
+                                                                        lineNumber: 93
+                                                                    },
+                                                                    __self: this
+                                                                },
+                                                                'Donation'
+                                                            ),
+                                                            __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('br', {
+                                                                __source: {
+                                                                    fileName: _jsxFileName,
+                                                                    lineNumber: 93
+                                                                },
+                                                                __self: this
+                                                            }),
+                                                            __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                                                                'p',
+                                                                { className: 'm-t', __source: {
+                                                                        fileName: _jsxFileName,
+                                                                        lineNumber: 94
+                                                                    },
+                                                                    __self: this
+                                                                },
+                                                                'If you don\'t have a Paypal account or you just want to type in everything manually... feel free to send me money using Stripe.'
+                                                            )
+                                                        ),
+                                                        __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                                                            'div',
+                                                            { className: 'col-md-8', __source: {
+                                                                    fileName: _jsxFileName,
+                                                                    lineNumber: 99
+                                                                },
+                                                                __self: this
+                                                            },
+                                                            __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_2__components_Donations_Stripe__["a" /* default */], { onClick: this.stripeChargeToken, __source: {
+                                                                    fileName: _jsxFileName,
+                                                                    lineNumber: 100
+                                                                },
+                                                                __self: this
+                                                            })
+                                                        )
+                                                    )
+                                                )
+                                            )
+                                        )
+                                    )
+                                )
+                            )
+                        )
+                    )
+                )
+            );
+        }
+    }]);
+
+    return Donations;
+}(__WEBPACK_IMPORTED_MODULE_0_react___default.a.Component);
+
+/* harmony default export */ __webpack_exports__["a"] = (Donations);
 
 /***/ }),
 
@@ -31103,6 +33226,70 @@ var TConditions = function (_React$Component) {
 }(__WEBPACK_IMPORTED_MODULE_0_react___default.a.Component);
 
 /* harmony default export */ __webpack_exports__["a"] = (TConditions);
+
+/***/ }),
+
+/***/ "./src/views/ThankYou.js":
+/*!*******************************!*\
+  !*** ./src/views/ThankYou.js ***!
+  \*******************************/
+/*! exports provided: default */
+/*! exports used: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_react__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_react___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_react__);
+var _jsxFileName = "C:\\SF.Code\\Github\\alleyOOP\\Project\\Project.Web\\App\\src\\views\\ThankYou.js";
+
+var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+
+
+var ThankYou = function (_React$Component) {
+    _inherits(ThankYou, _React$Component);
+
+    function ThankYou(props) {
+        _classCallCheck(this, ThankYou);
+
+        var _this = _possibleConstructorReturn(this, (ThankYou.__proto__ || Object.getPrototypeOf(ThankYou)).call(this, props));
+
+        _this.state = {};
+        return _this;
+    }
+
+    _createClass(ThankYou, [{
+        key: "render",
+        value: function render() {
+            return __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                "div",
+                {
+                    __source: {
+                        fileName: _jsxFileName,
+                        lineNumber: 11
+                    },
+                    __self: this
+                },
+                __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement("img", { src: "https://media.giphy.com/media/VTxmwaCEwSlZm/giphy.gif", height: "675px", width: "1680px", alt: "moneyRain", __source: {
+                        fileName: _jsxFileName,
+                        lineNumber: 12
+                    },
+                    __self: this
+                })
+            );
+        }
+    }]);
+
+    return ThankYou;
+}(__WEBPACK_IMPORTED_MODULE_0_react___default.a.Component);
+
+/* harmony default export */ __webpack_exports__["a"] = (ThankYou);
 
 /***/ }),
 
