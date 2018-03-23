@@ -144,7 +144,7 @@ class Accounts extends React.Component{
            return(
                 <div>
                     {this.mapper()}
-                    <img src="https://media.giphy.com/media/R2wLkrs5Uh0ty/giphy.gif" id="dpToon" className="deadPool"/>
+                    <img src="https://media.giphy.com/media/R2wLkrs5Uh0ty/giphy.gif" alt="deadPoolGif" id="dpToon" className="deadPool"/>
                 </div>
            ) 
         }

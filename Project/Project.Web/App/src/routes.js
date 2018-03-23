@@ -6,7 +6,8 @@ import Login from '../src/views/Login';
 import TConditions from '../src/views/TConditions';
 import NavBar from '../src/common/navbar';
 import Accounts from '../src/views/Accounts';
-// import Donations from '../src/Views/Donations';
+import Donations from '../src/views/Donations';
+import ThankYou from '../src/views/ThankYou';
 
 const Routes = () => (
     <Router>
@@ -16,10 +17,11 @@ const Routes = () => (
                 <Route path="/login" component={Login}/>
                 <Route path="/register" component={Register} />
                 <Route path="/terms" component={TConditions} />
-                {/* <Route path="/donations" component={Donations}/> */}
                 <NavBar>
                     <Route path="/app" component={App} />
                     <Route path="/accounts" component={Accounts}/>
+                    <Route path="/donations" component={Donations}/>
+                    <Route path="/thankyou" component={ThankYou}/>
                 </NavBar>
             </Switch>
         </div>
