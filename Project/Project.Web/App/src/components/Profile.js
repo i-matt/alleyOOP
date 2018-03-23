@@ -13,9 +13,6 @@ class Profile extends React.Component{
     componentDidMount = () =>{
         axios.get("/api/person/4")
             .then(resp=>{
-                // let object = resp.data.Items;
-                // let length = resp.data.Items.length;
-                // let description = object[length-1].Description;ß
                 let description = resp.data.Item.Description;
                 let name = resp.data.Item.Username;
                 this.setState({
@@ -24,7 +21,6 @@ class Profile extends React.Component{
                 });
             })
     }
-
 
     handleChange = (e) =>{
         let value = e.target.value;
@@ -44,7 +40,6 @@ class Profile extends React.Component{
         
         axios.put("/api/person/4", data)
             .then(resp =>{
-                console.log(resp);
             })
     }
     

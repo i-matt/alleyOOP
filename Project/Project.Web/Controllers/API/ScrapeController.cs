@@ -15,8 +15,6 @@ namespace Project.Web.Controllers.API
     [RoutePrefix("api")]
     public class ScrapeController : ApiController
     {
-        ScrapeService svc = new ScrapeService();
-
         // POST api/<controller>
         [Route("espn"), HttpGet]
         public HttpResponseMessage GetAll()

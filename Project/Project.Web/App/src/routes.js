@@ -5,6 +5,7 @@ import Register from '../src/views/Register';
 import Login from '../src/views/Login';
 import TConditions from '../src/views/TConditions';
 import NavBar from '../src/common/navbar';
+import Accounts from '../src/views/Accounts';
 // import Donations from '../src/Views/Donations';
 
 const Routes = () => (
@@ -18,6 +19,7 @@ const Routes = () => (
                 {/* <Route path="/donations" component={Donations}/> */}
                 <NavBar>
                     <Route path="/app" component={App} />
+                    <Route path="/accounts" component={Accounts}/>
                 </NavBar>
             </Switch>
         </div>

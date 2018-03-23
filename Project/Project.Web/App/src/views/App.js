@@ -77,7 +77,7 @@ class App extends React.Component {
                 </div>
                 <div>
                   <div className="panel-heading video-container"> 
-        <iframe src="https://open.spotify.com/embed/user/spotifycharts/playlist/37i9dQZEVXbLRQDuF5jeBp" title="spotify" width="300" height="380" allow="encrypted-media"></iframe>
+                    <iframe src="https://open.spotify.com/embed/user/spotifycharts/playlist/37i9dQZEVXbLRQDuF5jeBp" title="spotify" width="300" height="380" allow="encrypted-media"></iframe>
                   </div>
                 </div>
                 <div className={this.state.panelClass}>

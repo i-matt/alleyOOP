@@ -41,11 +41,13 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Domain\Account.cs" />
     <Compile Include="Domain\Person.cs" />
     <Compile Include="Domain\Scrape.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Requests\AccountAddRequest.cs" />
+    <Compile Include="Requests\AccountUpdateRequest.cs" />
     <Compile Include="Requests\PersonAddRequest.cs" />
-    <Compile Include="Requests\ScrapeAddRequest.cs" />
     <Compile Include="Responses\ErrorResponse.cs" />
     <Compile Include="Responses\ItemListResponse.cs" />
     <Compile Include="Responses\ItemResponse.cs" />
